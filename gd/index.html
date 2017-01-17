@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>光大机票</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+	
+	<link rel="stylesheet" href="style/main.css">
+	<link rel="stylesheet" href="style/swiper.min.css">
+	<link rel="stylesheet" href="style/jquery.datetimepicker.css">
+
+	
+	<script src="js/adaptation.js"></script>
+</head>
+<body class="page1 fastclick">
+<!-- <img src="http://placehold.it/350x150"> -->
+	<div class="wrap">
+		<section class="slider">
+			<!-- 轮播图 -->
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a href="#"><img src="http://placehold.it/750x350"></a>
+			        </div>
+			        <div class="swiper-slide"><a href="#"><img src="http://placehold.it/750x350"></a></div>
+			        <div class="swiper-slide"><a href="#"><img src="http://placehold.it/750x350"></a></div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</section>
+		<section class="main">
+			<nav>
+				<li class="cur">单程</li>
+				<li>往返</li>
+			</nav>
+			<div class="tab-content">
+				<div class="place">
+					<span id="starting">北京</span>
+					<span></span>
+					<span id="destination">上海</span>
+				</div>
+				<div class="time" style="border:none;">
+
+                    <span id="s-time1" style="float: left;width: 6rem;border-bottom: 1px solid #bcbcbc;"><input type="text" class="cinput" id="datetimepicker" name="" value="06月21日" placeholder="06月21日"><span style="font-size: 0.6rem;">明天</span> </span>
+                    <span style="  height: 1.5rem;float: left;width: 3.55rem;background-image: url(images/p1ico1.png);background-repeat: no-repeat;background-size: 40%;background-position: center center;"></span>
+                    <span id="s-time3" style="float: left;text-align: right;width: 6rem;border-bottom: 1px solid #bcbcbc;"><input type="text" class="cinput" id="datetimepicker4" name="" value="06月21日" placeholder="06月21日" style="max-width: 4.4em;"><span style="font-size: 0.6rem;">明天</span> </span>
+                </div>
+				<div class="btn">
+					<a href="flight.html">搜　索</a>
+				</div>
+			</div>
+			<div class="tab-content" style="display:none;">
+				<div class="place">
+					<span id="starting2">北京</span>
+					<span></span>
+					<span id="destination2">上海</span>
+				</div>
+				<div class="time" style="border:none;">
+					<p style="width:6rem;border-bottom: 1px solid #bcbcbc;">
+						<span id="s-time2" class="s-time"><input type="text" class="cinput" id="datetimepicker2" name="" value="05月17日" placeholder="05月17日"></span><span>明天</span>
+					</p>
+                    <span style="  height: 1.5rem;float: left;width: 3.55rem;background-image: url(images/p1ico1.png);background-repeat: no-repeat;background-size: 40%;background-position: center center;"></span>
+					<p style="width:6rem;border-bottom: 1px solid #bcbcbc;text-align: right">
+						<span id="b-time2" class="b-time"><input type="text" class="cinput" id="datetimepicker3" name="" value="05月17日" placeholder="06月21日"></span><span>明天</span>
+					</p>
+				</div>
+				<div class="btn">
+					<a href="#">搜　索</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 底部菜单 -->
+    	<menu>
+    		<li><s class="kf"></s><a href="#">联系客服</a></li>
+    		<li><s class="dd" ></s><a href="orderlist.html" style="display:inline-block; color:#be4bd7;background: none;">订单详情</a></li>
+    	</menu>
+
+		<!-- 城市列表 -->
+		<div class="city-list">
+			<div class="city-hd">
+				<a class="back" href="javascript:;"></a> <input type="text" placeholder="搜索您要出发的城市">
+			</div>
+			<div class="city-commen">
+				<dl>
+					<dt>定位</dt>
+					<dd>
+						<ul>
+							<li data-place="11">北京</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>历史</dt>
+					<dd>
+						<ul>
+							<li data-id="2">北京</li>
+							<li data-id="3">上海</li>
+							<li data-id="4">深圳</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>热门</dt>
+					<dd>
+						<ul>
+							<li class="cur" data-id="2">北京</li>
+							<li data-id="3">上海</li>
+							<li data-id="4">深圳</li>
+							<li data-id="5">成都</li>
+							<li data-id="6">重庆</li>
+							<li data-id="7">西安</li>
+							<li data-id="8">昆明</li>
+							<li data-id="9">厦门</li>
+							<li data-id="10">三亚</li>
+							<li data-id="11">南京</li>
+							<li data-id="12">乌鲁木齐</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div class="city-choose">
+				<dl>
+					<dt>A</dt>
+					<dd data-id="11">阿克苏</dd>
+					<dd data-id="12">澳门</dd>
+					<dd data-id="13">澳门</dd>
+					<dd data-id="14">澳门</dd>
+					<dd data-id="15">澳门</dd>
+					<dd data-id="16">澳门</dd>
+					<dd data-id="17">澳门</dd>
+					<dd data-id="18">澳门</dd>
+					<dd data-id="19">澳门</dd>
+					<dd data-id="20">澳门</dd>
+					<dd data-id="21">澳门</dd>
+					<dd data-id="22">澳门</dd>
+					<dd data-id="23">澳门</dd>
+					<dd data-id="24">澳门</dd>
+					<dd data-id="25">澳门</dd>
+				</dl>
+				<dl>
+					<dt>B</dt>
+					<dd data-id="11">阿克苏</dd>
+					<dd data-id="12">澳门</dd>
+					<dd data-id="13">澳门</dd>
+					<dd data-id="14">澳门</dd>
+					<dd data-id="15">澳门</dd>
+					<dd data-id="16">澳门</dd>
+					<dd data-id="17">澳门</dd>
+					<dd data-id="18">澳门</dd>
+					<dd data-id="19">澳门</dd>
+					<dd data-id="20">澳门</dd>
+					<dd data-id="21">澳门</dd>
+					<dd data-id="22">澳门</dd>
+					<dd data-id="23">澳门</dd>
+					<dd data-id="24">澳门</dd>
+					<dd data-id="25">澳门</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.datetimepicker.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script>
+	//tab切换 
+			$('.main nav').find('li').on('touchstart',function(){
+				var _index = $(this).index();
+				$(this).addClass('cur').siblings().removeClass('cur');
+				$('.tab-content').eq(_index).show().siblings('.tab-content').hide();
+			})
+		$(function(){
+			//浮层点透修复
+			var button = document.querySelector(".fastclick");
+			new FastClick(button);
+
+			//轮播图
+			var mySwiper = new Swiper ('.swiper-container', {
+				loop: true,
+				pagination: '.swiper-pagination'
+			})     
+
+			
+			//城市列表
+			var citypop = {
+				cityEle:$('.city-list'),
+				init:function(id){
+					var _this = this;
+					_this.btnEle = $(id);
+					_this.showCityPanel();
+
+					_this.bindFuntion = function(eventObj){
+						 _this.city = _this.getCity(eventObj.target);
+
+						_this.btnEle.text(_this.city[0])
+						_this.btnEle.attr('data-id',_this.city[1]);
+
+						_this.hideCityPanel();
+					}
+					$('.city-commen').on('click','li',_this.bindFuntion);
+					$('.city-choose').on('click','dd',_this.bindFuntion);
+				},
+				getCity:function(ele){
+					return [$(ele).text(),$(ele).data('id')];
+				},
+				showCityPanel:function(){
+					this.cityEle.show();
+				},
+				hideCityPanel:function(){
+					this.cityEle.hide();
+				}
+			}
+			
+			//日期选择
+			 $('#datetimepicker').datetimepicker({
+                lang:'ch',
+                format:'m月d日',
+                timepicker:false
+            });
+
+			 $('#datetimepicker2').datetimepicker({
+                lang:'ch',
+                format:'m月d日',
+                timepicker:false
+            });
+
+			 $('#datetimepicker3').datetimepicker({
+                lang:'ch',
+                format:'m月d日',
+                timepicker:false
+            });
+
+
+			$('#starting').on('click',function(){
+				citypop.init(this);
+
+			})
+			$('#destination').on('click',function(){
+				citypop.init(this);
+			})
+
+			$('#starting2').on('click',function(){
+				citypop.init(this);
+
+			})
+			$('#destination2').on('click',function(){
+				citypop.init(this);
+			})
+
+			
+		})
+		 
+
+		 
+
+		 $('.back').on('click',function(){
+		 	$('.city-list').hide();
+		 })
+
+		
+
+
+	
+
+	</script>
+</body>
+</html>

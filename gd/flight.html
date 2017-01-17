@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>光大机票</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+	
+	<link rel="stylesheet" href="style/main.css">
+
+	
+	<script src="js/adaptation.js"></script>
+</head>
+<body onload="loaded()" class="flight">
+    <div id="jz" style="position: fixed; top:50%; margin-left: -32px; margin-top: -32px; left: 50%;"><img src="images/loading1.gif"></div>
+	<div id="wrap" class="wrap" style="display:none">
+		<div class="flight-hd">
+			<div class="flight-menu">
+				<a class="back" href="javascript:;"></a>
+
+				<ul>
+					<li>北京</li>
+					<li></li>
+					<li>上海</li>
+				</ul>
+					
+				<a class="choose" href="javascript:;">
+					筛选
+				</a>
+			</div>
+			<div class="flight-submenu">
+				<a class="prev" href="javascript:;">前一天</a>
+				<div class="date">05-19 周四</div>
+				<a class="next" href="javascript:;">后一天</a>
+			</div>
+		</div>
+		
+		<div class="flight-list">
+			<ul>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>9张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f11.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd>
+							<span>停</span>
+						</dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>头等舱</span></p>
+							<p>122张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f22.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>11张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f33.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>9张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f11.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd>
+							<span>停</span>
+						</dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>头等舱</span></p>
+							<p>122张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f22.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>11张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f33.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>9张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f11.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd>
+							<span>停</span>
+						</dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>头等舱</span></p>
+							<p>122张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f22.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>11张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f33.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>9张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f11.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd>
+							<span>停</span>
+						</dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>头等舱</span></p>
+							<p>122张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f22.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>11张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f33.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>9张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f11.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd>
+							<span>停</span>
+						</dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>头等舱</span></p>
+							<p>122张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f22.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				<li onclick="location.href='positioninfo.html'">
+					<dl>
+						<dd>
+							<p>06:30</p>
+							<p>首都机场T2</p>
+						</dd>
+						<dd></dd>
+						<dd>
+							<p>08:45</p>
+							<p>虹桥机场T2</p>
+						</dd>
+						<dd>
+							<p><span>¥</span>1360</p>
+							<p><span>经济舱</span></p>
+							<p>11张</p>
+						</dd>
+					</dl>
+					<dl>
+						<dd><s><img src="images/f33.png" alt=""></s>南航CZ6412</dd>
+						<dd>空客321（中）</dd>
+					</dl>
+				</li>
+				
+			</ul>
+		</div>
+		
+    	<menu>
+    		<li class="cur">
+    			<a href="#">
+					<p><s class="price"></s></p>
+					<p>价格排序</p>
+				</a>
+			</li>
+    		<li>
+				<a href="#" style="background: none;">
+					<p><s class="time"></s></p>
+					<p>时间排序</p>
+				</a>
+    		</li>
+    	</menu>
+		<!--筛选菜单 -->
+    	<div class="slide-menu-wrap" style="display: none">
+    		<div class="slide-menu">
+    			<div class="slide-menu-top">
+    				<span>取消</span>
+    				<span>重置</span>
+    				<span>确定</span>
+    			</div>
+    			<div class="slide-main">
+    				<div class="slide-sidebar">
+    					<ul>
+    						<li class="cur">机　　型</li>
+    						<li>航空公司</li>
+    						<li>起飞时间</li>
+    						<li>机	　场</li>
+    					</ul>
+    				</div>
+    				<div class="slide-content">
+    					<div class="slide-wrap">
+    						<ul>
+    							<li><label for="cb10">不限</label> <i><input id="cb10" type="checkbox"></i></li>
+    							<li><span><label for="cb11">首都机场</label></span><input id="cb11" type="checkbox"></li>
+    							<li><span><label for="cb12">南苑机场</label></span><input  id="cb12" type="checkbox"></li>
+    						</ul>
+    					</div>
+    					<div class="slide-wrap">
+    						<ul>
+    							<li><label for="cb20">不限</label> <i><input id="cb20" type="checkbox"></i></li>
+    							<li><span><label for="cb21"><s></s><em>海南航空</em></label></span><input id="cb21" type="checkbox"></li>
+    							<li><span><label for="cb21"><s></s><em>海南航空</em></label></span><input id="cb22" type="checkbox"></li>
+    							<li><span><label for="cb21"><s></s><em>海南航空</em></label></span><input id="cb23" type="checkbox"></li>
+    							<li><span><label for="cb21"><s></s><em>海南航空</em></label></span><input id="cb24" type="checkbox"></li>
+    							<!-- <li><span><label for="cb22"><s><img src="images/f2.png" alt=""></s><em>中国航空</em></span></label><input id="cb22" type="checkbox"></li>
+    							<li><span><label for="cb23"><s><img src="images/f3.png" alt=""></s><em>南方航空</em></label></span><input id="cb23" type="checkbox"></li>
+    							<li><span><label for="cb24"><s><img src="images/f4.png" alt=""></s><em>吉祥航空</em></label></span><input id="cb24" type="checkbox"></li> -->
+    						</ul>
+    					</div>
+    					<div class="slide-wrap">
+    						<ul>
+    							<li><label for="cb30">不限</label> <i><input id="cb30" type="checkbox"></i></li>
+    							<li><span><label for="cb31">00:00-06:00</label></span><input id="cb31" type="checkbox"></li>
+    							<li><span><label for="cb32">06:00-12:00</label></span><input id="cb32" type="checkbox"></li>
+    							<li><span><label for="cb33">12:00-18:00</label></span><input id="cb33" type="checkbox"></li>
+    							<li><span><label for="cb34">18:00-24:00</label></span><input id="cb34" type="checkbox"></li>
+    						</ul>
+    					</div>
+    					<div class="slide-wrap">
+    						<ul>
+    							<li><label for="cb40">不限</label> <i><input id="cb40" type="checkbox"></i></li>
+    							<li><span><label for="cb41">大型机</label></span><input   id="cb41" type="checkbox"></li>
+    							<li><span><label for="cb42">中型机</label></span><input   id="cb42" type="checkbox"></li>
+    						</ul>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+
+    	</div>
+	</div>
+	
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script>
+        function loaded(){
+            setTimeout(function(){
+                new Image().src='images/loading1.gif';
+            },1000);
+        };
+		var slideMenu = {};
+		slideMenu.init = function(){
+			this.topMenu(menuConfirm);
+			this.tab();
+
+			function menuConfirm(){
+				console.log('aaaa')
+				//菜单确认后的回调
+			}
+		}
+		slideMenu.topMenu = function(confirmcallback){ //点击确认后的回调函数
+			var _this = this;
+			var menuTop = $('.slide-menu-top');
+			menuTop.find('span').eq(0).on('click',function(){
+				_this.slideDown();	
+			})
+			menuTop.find('span').eq(1).on('click',function(){
+				_this.slideDown();	
+			})
+
+			menuTop.find('span').eq(2).on('click',function(){
+				confirmcallback&&confirmcallback();
+				_this.slideDown();
+			})
+		}
+		slideMenu.tab = function(){
+			var sideLi = $('.slide-sidebar li');
+			var wrap = $('.slide-wrap');
+
+			sideLi.on('click',function(){
+				var _this = $(this);
+				_this.addClass('cur').siblings().removeClass('cur');
+
+				wrap.eq(_this.index()).show().siblings().hide();
+			})
+		}
+
+		slideMenu.slideUp = function(){
+			var mask = $('.slide-menu-wrap');
+			var menu = $('.slide-menu');
+
+			mask.fadeIn(100);
+			menu.animate({
+				bottom:0
+			}, 100);
+		}
+		slideMenu.slideDown = function(){
+			var mask = $('.slide-menu-wrap');
+			var menu = $('.slide-menu');
+
+			menu.animate({
+				bottom:-(menu.height())
+			}, 100,function(){
+				mask.fadeOut(100);
+			});
+		}
+
+		var filter = function(){
+			slideMenu.slideUp();
+		}
+
+		$('.choose').on('click',function(){
+			filter();
+		})
+		$('.slide-wrap li:nth-of-type(1) label').on('click',function(){
+			$(this).toggleClass("cur");
+		})
+		$(function(){
+            document.getElementById("jz").style.display="none";
+            document.getElementById("wrap").style.display="block";
+			slideMenu.init();
+		})
+
+
+
+		$('menu li').on('click',function(){
+			$(this).addClass('cur').siblings().removeClass('cur');
+		})
+	</script>
+</body>
+</html>
