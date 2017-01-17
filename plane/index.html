@@ -1,0 +1,543 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>飞机大战</title>
+<style>
+  *{ margin:0; padding:0; }
+  #cv{ width:480px; height:640px; box-shadow:0 0 3px #f00; margin:0 auto; display:block; }
+</style>
+</head>
+<body>
+ <canvas id="cv" width="480" height="640"></canvas>
+<script>
+// 画布和canvas
+ var canvas=document.getElementById("cv")
+ var ctx=canvas.getContext('2d')
+ 
+ // 全局的值
+ var life=3; // 我方飞机生命
+ var score=0;// 游戏得分
+ 
+ // 定义背景类
+ 
+ var bg=new Image();
+ bg.src="images/background.png"
+function drawBg(){
+	this.y1=0;
+    this.y2=-852;
+	this.chg=function(){
+		 this.y1+=1;
+	    if(this.y1>=852){
+		  this.y1=-852
+		   }
+	  this.y2+=1;
+	    if(this.y2>=852){
+		  this.y2=-852
+	      }
+		return this;
+	}
+   this.draw=function(){
+	   ctx.drawImage(bg,0,this.y1,480,852)
+       ctx.drawImage(bg,0,this.y2,480,852)
+	   return this;
+	   }
+   }
+ var dbg=new drawBg();
+
+// 定义logo类
+	//@1
+ var logo=new Image();
+ logo.src="images/start.png"
+   //@2
+ function drawLogo(){
+	 this.draw=function(){
+		 ctx.drawImage(logo,40,0)
+		 return this;
+		 }
+	 }
+ //@3	 
+ var dlogo=new drawLogo()
+ 
+ 
+ //定义loading@1 
+ var loadimg=[new Image(),new Image(),new Image(),new Image()];
+ // var arr=["d",new String("df"),new String("dd")]
+ loadimg[0].src="images/game_loading1.png"
+ loadimg[1].src="images/game_loading2.png"
+ loadimg[2].src="images/game_loading3.png"
+ loadimg[3].src="images/game_loading4.png"
+//@2
+ function drawLd(){
+	 this.index=0;// 当前要播放的图片0
+	 // 改变当前下标变量值
+	 this.chg=function(){
+		 this.index++; // 递增让绘图函数绘制下一副图
+		 if(this.index>=3){
+			 step=2;
+			 }
+		 return this;
+		 }
+	// 绘制	 
+	 this.draw=function(){  //调用画布绘制图形
+		 ctx.drawImage(loadimg[this.index],0,640-38)
+		 return this;
+		 }
+	 }
+//@3
+ var dld=new drawLd();
+ 
+ // 绘制hero
+var heroimg=[new Image(),new Image(),new Image(),new Image(),new Image(),new Image()]
+ //前两张用于正常状态
+ heroimg[0].src="images/hero1.png" 
+ heroimg[1].src="images/hero2.png"
+ //用于爆炸
+ heroimg[2].src="images/hero_blowup_n1.png"
+ heroimg[3].src="images/hero_blowup_n2.png" 
+ heroimg[4].src="images/hero_blowup_n3.png"
+ heroimg[5].src="images/hero_blowup_n4.png" 
+ // 我方飞机
+ function drawHero(){
+	 // 绘制我方飞机到画布
+	 this.index=0;//飞机播放图片
+	 this.x=190// 飞机的坐标
+	 this.y=516// 飞机的坐标
+	 this.width=99;
+	 this.height=124;
+	 this.biao=0;// 减少子弹发射数量
+	 this.die=false;// 控制飞机是否死亡
+	 
+	 this.draw=function(){
+		 //this.index=this.index==0?1:0;
+		 //让下标在0-1之间切换
+		 
+		/*if(this.index==0){
+			 this.index=1;
+		 }
+		 else {
+			 this.index=0
+		 }*/
+	if(this.die){
+	  this.index++;//
+	  if(this.index>5){
+		  //完全死掉
+		   //new drawHero()// 不对 控制不住它
+		   /*var abc= new drawHero()
+		   abc.draw()*/
+		     if(life<=0){
+			     step=4;
+				 dhr.index=	4 
+				 }
+			 else{
+				 dhr=new drawHero();
+				 }
+		     
+		  }else{
+		   ctx.drawImage(heroimg[this.index],this.x,this.y)
+		  }
+	 }else{
+	this.index=this.index==0?1:0;
+	ctx.drawImage(heroimg[this.index],this.x,this.y)
+	}	
+}
+	 // 更改我方飞机的位置
+	 this.chg=function(){}
+	 // 发射 产生一个子弹
+	 this.shoot=function(){
+		 // 隔100ms后实例化一颗子弹  压入数组中
+		 this.biao++;
+		 if(this.biao%3==0){ 
+		      var dbullet=new drawBullet();
+              dbullet.x=this.x+50-5;
+              dbullet.y=this.y; 
+		      bullets.push(dbullet); 
+			  /*var dbullet=new drawBullet();
+              dbullet.x=this.x+99;
+              dbullet.y=this.y;
+			  bullets.push(dbullet);*/
+			  
+		  }
+		}
+	// 撞击方法 	
+	 this.bang=function(){
+		
+			life--;
+	        if(life<=0){ life=0; }
+	        this.die=true; // 由活 调整成死亡状态
+		
+	  
+	  }
+	}
+ var dhr=new drawHero()
+
+// 敌人的飞机
+// 资源
+ var enemy=[new Image(),new Image(),new Image(),new Image(),new Image()]
+ enemy[0].src="images/enemy1.png"
+ enemy[1].src="images/enemy1_down1.png"
+ enemy[2].src="images/enemy1_down2.png"
+ enemy[3].src="images/enemy1_down3.png"
+ enemy[4].src="images/enemy1_down4.png"
+
+ var config1={
+	 i:enemy, // i图标
+	 w:57,    // 敌机的宽度
+	 h:59,    // 敌机的高度
+	 t:1,     // 敌机的类别
+	 ai:2,    // 敌机承受的子弹数量
+	 fen:1,   // 得分
+	 zhen:1
+	 }
+  
+  function drawEnemyF(cf){
+	  this.imgs=cf.i
+	  this.width=cf.w
+	  this.height=cf.h;
+	  this.x=Math.random()*(480-this.width);
+	  this.y=-this.height;
+	  this.type=cf.t;
+	  this.ai=cf.ai;
+	  this.fen=cf.fen;
+	  this.zhen=cf.zhen;
+	  this.die=false;// 标记  敌人飞机是否挂掉
+	  this.index=0;// 播放的下标
+	  this.candel=false;//死了但是能删除
+	  this.draw=function(){
+	   if(this.die){
+		  this.index++
+		  if(this.index>this.imgs.length-1){	//ctx.fillRect(this.x,this.y,this.width,this.height) 
+			this.candel=true;
+			}else{
+			ctx.drawImage(this.imgs[this.index],this.x,this.y)     
+			}
+		 }else{
+		  if(this.zhen==1){
+			 ctx.drawImage(this.imgs[0],this.x,this.y)        }else if(this.zhen==2){
+			 this.index=this.index==0?1:0	 
+			 ctx.drawImage(this.imgs[this.index],this.x,this.y)	 
+		   }
+		             
+		
+		  }
+		}
+	  this.chg=function(){
+		  this.y+=10;
+		  }
+	  //敌方飞机死亡  
+	  this.bang=function(){
+		  this.ai--;
+		  if(this.ai==0){
+			 this.die=true; 
+		  }
+		  
+		 }	
+		  
+	   // 碰撞检测  obj表示要碰撞的内容 obj我方飞机  子弹
+	  this.checkHit=function(obj){
+	 // this 本飞机  box1 // obj  box2
+	/*  box2.x  box1.x-box2.w  box1.x+box1.w     
+		box2.y  box1.y-box2.h  box1.y+box1.h
+	obj.x   this.x-obj.width   this.x+this.width
+	obj.y   this.y-obj.height  this.y+this.height*/
+		   var zhuang=false; 
+		   if(obj.x>=this.x-obj.width&&
+		   obj.x<=this.x+this.width&&
+		   obj.y>=this.y-obj.height&&
+		   obj.y<=this.y+this.height
+		  ){  zhuang=true; }else{
+			  zhuang=false; }
+		return zhuang; 	  
+		 } 
+		 	    
+	 }	  		
+ // var den=new drawEnemy();
+
+ var enemy2=[new Image(),new Image(),new Image(),new Image(),new Image()]
+ enemy2[0].src="images/enemy2.png"
+ enemy2[1].src="images/enemy2_down1.png"
+ enemy2[2].src="images/enemy2_down2.png"
+ enemy2[3].src="images/enemy2_down3.png"
+ enemy2[4].src="images/enemy2_down4.png"
+var config2={
+	 i:enemy2,
+	 w:69,
+	 h:95,
+	 t:2,
+	 ai:5,
+	 fen:3,
+	 zhen:1
+	 }
+ 
+
+ var enemy3=[new Image(),new Image(),new Image(),new Image(),new Image(),new Image(),new Image(),new Image()]
+ enemy3[0].src="images/enemy3_n1.png"
+ enemy3[1].src="images/enemy3_n2.png"
+ enemy3[2].src="images/enemy3_down1.png"
+ enemy3[3].src="images/enemy3_down2.png"
+ enemy3[4].src="images/enemy3_down3.png"
+ enemy3[5].src="images/enemy3_down4.png"
+ enemy3[6].src="images/enemy3_down5.png"
+ enemy3[7].src="images/enemy3_down6.png"
+ var config3={
+	 i:enemy3,
+	 w:169,
+	 h:258,
+	 t:3,
+	 ai:10,
+	 fen:8,
+	 zhen:2
+	 }	 
+
+
+ 
+var dens=[]// 敌机的个数是未知的
+// 产生一架敌人的飞机
+
+function initEnemy(){
+	var a=Math.floor(Math.random()*100)
+	if(a<=5){
+		var a=new drawEnemyF(config1)
+	     dens.push(a)
+		}
+	 else if(a>=97&&a<=98){
+		 var a=new drawEnemyF(config2)
+	     dens.push(a)
+		}
+	else if(a==99){
+		 var a=new drawEnemyF(config3)
+		 if(dens[0].type==3){
+			}else{
+			 dens.splice(0,0,a) 
+			}
+	 }
+}
+// 绘制敌人的飞机
+function paintEnemys(){
+	// 绘制所有的飞机
+		for(var i=0;i<dens.length;i++){
+			dens[i].draw();
+			}
+	}
+// 改变敌人的飞机位置
+function chgEnemys(){
+	for(var i=0;i<dens.length;i++){
+			dens[i].chg();
+			}
+	}
+// 删除超过边界的敌人飞机，节省内存	
+function delEnemys(){
+	for(var i=0;i<dens.length;i++){
+		if(dens[i].y>=640||dens[i].candel==true){
+				dens.splice(i,1)
+				i--
+			}
+		}
+}
+
+// 遍历每一个可撞击物体 检测是否和敌机碰撞
+function hit(){
+   for(var i=0;i<dens.length;i++){
+	   if(dens[i].checkHit(dhr)&&dhr.die==false){
+		   dens[i].bang();
+		   dhr.bang()
+		   }
+	   // 判断每个子弹  和每个 敌人飞机
+	   for(var k=0;k<bullets.length;k++){
+		if(dens[i].checkHit(bullets[k])){
+			 dens[i].bang()
+			 bullets[k].bang();
+			 score+=dens[i].fen
+		  }
+		}
+	  }	
+}
+
+ //onmouseover 一次 
+ //move  频率函数	 
+ canvas.onmousemove=function(e){
+	 //坐标位置  鼠标相对于画布坐标e.offsetX
+	 if(step==2){
+		 var mousex=e.offsetX;
+	     var mousey=e.offsetY;
+	     dhr.x=mousex-50
+	     dhr.y=mousey-62
+	   }	
+ }
+ 
+// 资源 
+ var bullet=new Image();
+ bullet.src="images/bullet1.png"
+ //构造函数
+ function drawBullet(){
+	 this.x=0;
+	 this.y=0;
+	 this.width=9;
+	 this.height=21;
+	 this.die=false;
+	 this.draw=function(){
+		 // 如果死了 不绘制  存活 绘制子弹
+		 if(this.die){
+			 
+			 }else{
+			 ctx.drawImage(bullet,this.x,this.y)
+			 }
+		 }
+	 this.chg=function(){
+		 this.y-=10;
+		 }
+	 this.bang=function(){
+		 this.die=true; 
+		 }
+	}
+ //示例化-->发射函数
+ 
+ 
+		
+var bullets=[]
+// 绘制所有子弹
+function paintBullets(){
+	for(var i=0;i<bullets.length;i++){
+		  bullets[i].draw()
+		  }
+	}
+// 移动所有子弹的位置
+function chgBullets(){
+	for(var i=0;i<bullets.length;i++){
+			bullets[i].chg();
+		  }	
+	}
+// 删除子弹
+function delBullets(){
+	for(var i=0;i<bullets.length;i++){
+			if(bullets[i].y<=-21||bullets[i].die==true){
+				bullets.splice(i,1);
+				i--;
+			}
+		} 	
+	}
+ function drawScore(){
+	 ctx.font='900 30px "微软雅黑"';
+	 ctx.fillText("得分:"+score,20,50)
+	 }
+ function drawLife(){
+	 ctx.font='900 30px "微软雅黑"';
+	 ctx.fillText("生命:"+life,350,50)
+	 }
+ function drawOver(){
+	 ctx.font='900 40px "微软雅黑"';
+	 ctx.fillText("GAME OVER",130,300)
+	 }
+
+var pause1=new Image()	
+pause1.src="images/game_pause_nor.png"
+ function drawPause(){
+	 ctx.drawImage(pause1,30,80)
+	 }	 
+
+ var step=0;
+ //步骤 变量决定的游戏处于哪个环节 
+ //0 表示第一阶段 等待欢迎界面
+ //1 表示第二个阶段  加载进度条
+ //2 表示游戏环节
+ //3 表示暂停环节
+ //4 表示结束
+ 
+ canvas.onclick=function(){
+	if(step==0){
+		step=1;// 加载进度条
+		}
+	 }
+ canvas.onmouseout=function(){
+	 if(step==2){
+		 step=3;
+		 }
+	 }
+ canvas.onmouseover=function(){
+	 if(step==3){
+		 step=2;
+		}
+	 }	 
+window.setInterval(function(){
+	//ctx.clearRect(0,0,480,640)
+	// 绘制的天空
+	dbg.draw().chg()
+	if(step==0){
+	  //绘制的logo
+	  dlogo.draw();
+	  }
+	else if(step==1){
+	  // 绘制进度条
+	  dld.draw();
+	  dld.chg();
+	  }
+	else if(step==2){
+		//开始游戏
+		//alert("开始游戏")
+		dhr.draw();
+		dhr.chg();
+		dhr.shoot();
+		
+		// 绘制子弹
+		paintBullets()
+		 // 让子弹挪动位置 
+		chgBullets()
+		  //删除子弹
+		delBullets()	
+		// 初始化一个敌机 
+		initEnemy()
+		paintEnemys() // 绘制所有飞机
+		// 让所有飞机都在自己原来的值的基础上下移 
+		chgEnemys()
+		// 让敌机超过一定值就消失
+		delEnemys()
+		// 撞击
+		hit();
+		
+		// 绘制得分
+		drawScore()
+		// 绘制生命
+		drawLife()
+		
+		/*den2.draw();
+		den2.chg();*/
+		
+		/*den3.draw();
+		den3.chg();*/
+		
+		//console.log(dens)
+		// dhr.bang();
+		/*den.draw();
+		den.chg();*/
+		
+		/*dbullet.draw();
+		dbullet.chg();*/
+	  }
+	else if(step==3){
+		//alert("暂停")
+		dhr.draw();
+		paintBullets()
+		paintEnemys()
+		drawScore()
+		// 绘制生命
+		drawLife()
+		// 游戏暂停
+		drawPause()
+	}else if(step==4){
+		// 游戏结束
+		// 绘制结束
+		dhr.draw();
+		paintBullets()
+		paintEnemys()
+		drawScore()
+		// 绘制生命
+		drawLife()
+		// 游戏暂停
+		drawOver()
+		dhr.draw();
+		console.log("游戏结束")
+	}  		 
+},100)
+</script>
+</body>
+</html>
