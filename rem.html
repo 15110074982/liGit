@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+
+        }
+        div{
+            width:10rem;
+            font-size: 0.5rem;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    中华人民共和国一名光荣的共产党员
+    中华人民共和国一名光荣的共产党员
+    中华人民共和国一名光荣的共产党员
+</div>
+<script>
+    (function(window,document){
+        function fresh(){
+            var html=document.documentElement
+            var w=html.clientWidth;
+            html.style.fontSize=w/10+'px';
+        }
+        if(document.readyState==='complete'){
+            fresh();
+        }else{
+            document.addEventListener('DOMContentLoaded',fresh,false)
+        }
+        window.addEventListener('resize',fresh,false)
+    })(window,document);
+
+
+</script>
+</body>
+</html>
