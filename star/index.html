@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+        #ca{
+            display: block;
+            margin: auto;
+            background: url('images/1.jpg') ;
+            -webkit-background-size:100%;
+            background-size:100%;
+
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="ca" width="900px" height="900px"></canvas>
+<script>
+    var ca=document.getElementById("ca");
+    var ctx=ca.getContext("2d");
+    //x,y表示坐标，r半径；false表示逆时针
+function drawTrack(){
+    ctx.strokeStyle="#fff";
+
+    for(var i=0;i<8;i++){
+        ctx.beginPath()
+        ctx.arc(450,450,(i+1)*50,0,Math.PI*2,false);
+        ctx.stroke();//绘制空心圆
+    }
+    var color=ctx.createRadialGradient(450,450,0,450,450,20);
+    color.addColorStop(0,"#f00");//0表示起始位置的颜色；
+    //color.addColorStop(0.5,"#0f0");//0表示起始位置的颜色；
+    color.addColorStop(1,"#ff0");//1表示结束位置的颜色；
+    ctx.beginPath();
+    ctx.arc(450,450,20,0,Math.PI*2,false);
+    ctx.fillStyle=color;
+    ctx.fill();//绘制空心圆
+}
+    drawTrack();
+    //绘制实心圆
+
+
+    //重新改变坐标系；另外开辟一个空间；
+var time=0;
+    function drawStare(x,y,r,cycle,Scolor,Ecolor){
+        ctx.save();
+        ctx.translate(450,450);
+        ctx.beginPath();
+        ctx.rotate(time*Math.PI*(360/cycle)/180)//弧度公式Math.PI*deg/180
+        var color=ctx.createRadialGradient(x,y,0,x,y,r);
+        color.addColorStop(0,Scolor);//0表示起始位置的颜色；
+        color.addColorStop(1,Ecolor);//1表示结束位置的颜色
+        ctx.arc(x,y,r,0,Math.PI*2,false);
+        ctx.fillStyle=color;
+        ctx.fill();
+        ctx.restore();//释放之前保存的内容;
+        time+=0.5;
+    }
+        var arr=["#fc0","#f00","#00f","#ccc","#631"];
+        var index=parseInt(Math.random()*arr.length);
+        var color1=arr[index];
+
+
+    setInterval(function(){
+        ctx.clearRect(0,0,900,900);
+        drawTrack();
+
+
+            drawStare(50, 0,10,300,color1,"#dd95ab");
+            drawStare(100,0,20,800,color1,"#ff0");
+            drawStare(150,0,12,700,color1,"#ddd657");
+            drawStare(200,0,20,3000,color1,"#47dd84");
+            drawStare(250,0,22,2000,color1,"#4a6fdd");
+            drawStare(300,0,16,6000,color1,"#dd25d7");
+            drawStare(350,0,13,5000,color1,"#84dd7d");
+            drawStare(400,0,30,4000,color1,"#75dadd");
+
+    },30)
+
+
+</script>
+</body>
+</html>
