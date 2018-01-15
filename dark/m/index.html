@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="headImg" id="headImg" content="" />
+<meta name="description"  id="description" content="">
+<title>小鸭找朋友</title>
+<style>
+	*{margin:0;padding:0}
+	html,body{width:100%;height:100%;overflow: hidden;background: #89d5d1;}
+	li{list-style: none;}
+ 	#container{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;} 
+	#container .pic{width:100%;height:100%} 
+	.start{position:absolute;left:10%;bottom:10%;width:65px;}
+	.start img{width:100%;display: block;}
+	.read{position:absolute;left:32%;bottom:10%;width:65px;}
+	.read img{width:100%;display: block;}
+	.listen{position:absolute;left:54%;bottom:10%;width:65px;}
+	.listen img{width:100%;display: block;}
+	.quite{position:absolute;left:76%;bottom:10%;width:65px;}
+	.quite img{width:100%;display: block;}
+	@-webkit-keyframes animate 	{
+       0% { -webkit-transform:scale(1); }
+       50% { -webkit-transform:scale(0.9); } 
+       100% { -webkit-transform:scale(1); } 
+      }
+   .animate { -webkit-animation:animate 1.5s linear; }
+   	@-webkit-keyframes fade{
+       0% { -webkit-transform:translate3d(0,0,0); }
+       100% { -webkit-transform:translate3d(-100%,0,0); } 
+      }
+   .fade { -webkit-animation:fade 1.5s linear; }
+   
+    	@-webkit-keyframes show{
+       0% { -webkit-transform:translate3d(-100%,0,0); }
+       100% { -webkit-transform:translate3d(0,0,0); } 
+      }
+   .show { -webkit-animation:show 1.5s linear; }
+   
+.page-one{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;}
+.page-two{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;background: white;display: none;}
+.page-three{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 800;background: white;display: none;}
+.page-four{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 700;background: white;display: none;}
+.left{width:30px;height:30px;position:fixed;left:10px;top:50%;margin-top: -15px;z-index: 950;}
+.left img{width: 100%;display: block;}
+.right{width:30px;height:30px;position:fixed;right:10px;top:50%;margin-top: -15px;z-index: 950;}
+.right img{width: 100%;display: block;}
+ul{width:40%;overflow:hidden;position:absolute;left:30%;bottom:1%;z-index: 950;}
+li{width:33.3%;float:left;}
+.circle1{width:100%;height:15px}
+.circle{width:10px;height: 10px;border-radius: 10px;background: #313131;margin: auto;}
+li p{margin: auto;color:#313131;text-align: center;}
+.active{color:red;font-weight: bold;}
+.active1{width:12px;height: 12px;border-radius: 12px;}
+</style>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/ration.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body >
+  <div id="container">
+  		<audio id="media"  src="audio/P0.mp3"></audio> 
+  		<audio id="media1" src="audio/P1.mp3"></audio> 
+  		<audio id="media2" src="audio/P2.mp3"></audio> 
+  		<audio id="media3" src="audio/P3.mp3"></audio> 
+  		<audio id="media4" src="audio/P4.mp3"></audio>
+		<div class="page-one">
+			<img src="images/bg.jpg" alt=""  class="pic"/>
+			<div class="start button"><img src="images/start.png"/><p style="text-align: center;margin-top: 5px;">播放</p></div>
+			<div class="read button"><img src="images/read.png"/><p style="text-align: center;margin-top: 5px;">阅读</p></div>
+			<div class="listen button"><img src="images/listen.png"/><p style="text-align: center;margin-top: 5px;">倾听</p></div>
+			<div class="quite button"><img src="images/quite.png"/><p style="text-align: center;margin-top: 5px;">静音</p></div>
+		</div>
+		<div class="page-two">
+			<img src="images/1.png" alt=""  class="pic"/>
+		</div>
+		<div class="page-three">
+			<img src="images/2.png" alt=""  class="pic"/>
+		</div>
+		<div class="page-four">
+			<img src="images/3.png" alt=""  class="pic"/>
+		</div>
+		<div class="left"><img src="images/left.png"/></div>
+		<div class="right"><img src="images/right.png"/></div>
+		<ul>
+			<li>
+				<div class="circle1">
+					<div class="circle"></div>
+				</div>
+				<p class="num">1</p>
+			</li>
+			<li>
+				<div class="circle1">
+					<div class="circle"></div>
+				</div>
+				<p class="num">2</p>
+			</li>
+			<li>
+				<div class="circle1">
+					<div class="circle"></div>
+				</div>
+				<p class="num">3</p>
+			</li>
+		</ul>
+   </div>
+<script type="text/javascript">
+	var $print=$("#container");
+	changeOrientation($print);
+	$(".button").click(function(){
+		$(".button").removeClass("animate");
+		 $(this).addClass("animate");
+		 var btn=$(this);
+        setTimeout(function(){
+            btn.removeClass("animate");    
+        },1500)
+	});
+	var list;
+	$(".listen").click(function(){
+		$("#media").attr("src","audio/P4.mp3");
+		$("#media")[0].play();
+		list=false;
+	});
+	var quite=true;
+	$(".quite").click(function(){
+		$(".page-one").removeClass("fade");
+		    $(".page-one").addClass("fade");
+		    $(".page-two").fadeIn();
+		     $(".page-three").fadeOut();
+		      $(".page-four").fadeOut();
+		     $("li .circle").removeClass("active1");
+		      $("li").eq(0).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(0).find(".num").addClass("active");
+		      quite=false;
+		    setTimeout(function(){
+		    	$(".page-one").removeClass("fade");
+		    	  $(".page-one").hide();
+		    	  currentPage="2";
+		    },1400);
+	});
+	var currentPage="";
+     var isPlaying = false; 
+	$(".start").click(function(){
+		$("#media").attr("src","audio/P0.mp3");
+		$("#media")[0].play();
+		 $(".left").hide();
+		  $(".right").hide();
+		 $(this).addClass("animate");
+		 var btn=$(this);
+        setTimeout(function(){
+            btn.removeClass("animate");    
+        },1500)
+        isPlaying=true;
+        list=true;
+         quite=true;
+	});
+	$(".read").click(function(){
+		 list=true;
+		$("#media").attr("src","audio/P0.mp3");
+		$("#media")[0].play();
+		 $(this).addClass("animate");
+		 var btn=$(this);
+        setTimeout(function(){
+            btn.removeClass("animate");    
+        },1500);
+         $(".left").show();
+		 $(".right").show();
+		 currentPage=2;
+		 isPlaying=false;
+		   quite=true;
+	});
+	var flag;
+	$(".left").click(function(){
+		flag=true;
+		if(currentPage==4){
+		  if(flag){
+			currentPage=3;
+			$(".page-three").fadeIn();
+			$(".page-two").fadeOut();
+			$(".page-four").fadeOut();
+			if(quite){
+					$("#media2").attr("src","audio/P2.mp3");
+		   			$("#media2")[0].play();
+		   	}
+   			$("#media1").attr("src","");
+			$("#media").attr("src","");
+			$("#media3").attr("src","");
+			 $("li .circle").removeClass("active1");
+		      $("li").eq(1).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(1).find(".num").addClass("active");
+		      flag=false;
+		     }
+		}
+		if(currentPage==3){
+			 if(flag){
+			currentPage=2;
+			$(".page-two").fadeIn();
+			$(".page-three").fadeOut();
+			$(".page-four").fadeOut();
+			if(quite){
+				$("#media1").attr("src","audio/P1.mp3");
+	   			$("#media1")[0].play();
+   			}
+   			$("#media").attr("src","");
+			$("#media2").attr("src","");
+			$("#media3").attr("src","");
+			 $("li .circle").removeClass("active1");
+		      $("li").eq(0).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(0).find(".num").addClass("active");
+		      flag=false;
+		     }
+		}
+		if(currentPage==2){
+			 if(flag){
+			currentPage=1;
+			  $(".page-one").show();
+			$(".page-one").removeClass("show");
+		    $(".page-one").addClass("show");
+		   
+		       setTimeout(function(){
+		    	  $(".page-one").removeClass("show");
+		    	   $(".page-two").fadeOut();
+			     $(".page-three").fadeOut();
+			      $(".page-four").fadeOut();
+		    },1400);
+			$("#media1").attr("src","");
+   			$("#media").attr("src","");
+			$("#media2").attr("src","");
+			$("#media3").attr("src","");
+		}
+			 flag=false;
+	 }	
+	});
+	var flag1;
+	$(".right").click(function(){
+		flag1=true;
+		if(currentPage==4){
+			 if(flag1){
+			currentPage=1;
+			  $(".page-one").show();
+			$(".page-one").removeClass("show");
+		    $(".page-one").addClass("show");
+		       setTimeout(function(){
+		    	  $(".page-one").removeClass("show");
+		    	   $(".page-two").fadeOut();
+			     $(".page-three").fadeOut();
+			      $(".page-four").fadeOut();
+		    },1400);
+			$("#media2").attr("src","");
+   			$("#media1").attr("src","");
+			$("#media").attr("src","");
+			$("#media3").attr("src","");
+			 $("li .circle").removeClass("active1");
+		      $("li").eq(0).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(0).find(".num").addClass("active");
+		      flag1=false;
+		     }
+		}
+		if(currentPage==3){
+			 if(flag1){
+			currentPage=4;
+			$(".page-two").fadeOut();
+			$(".page-three").fadeOut();
+			$(".page-four").fadeIn();
+			if(quite){
+				$("#media3").attr("src","audio/P3.mp3");
+	   			$("#media3")[0].play();
+   			}
+   			$("#media").attr("src","");
+			$("#media2").attr("src","");
+			$("#media1").attr("src","");
+			 $("li .circle").removeClass("active1");
+		      $("li").eq(2).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(2).find(".num").addClass("active");
+		      flag1=false;
+		     }
+		}
+		if(currentPage==2){
+			 if(flag1){
+			currentPage=3;
+			$(".page-three").fadeIn();
+			$(".page-two").fadeOut();
+			$(".page-four").fadeOut();
+			if(quite){
+				$("#media2").attr("src","audio/P2.mp3");
+	   			$("#media2")[0].play();
+   		  }
+   			$("#media1").attr("src","");
+			$("#media").attr("src","");
+			$("#media3").attr("src","");
+			 $("li .circle").removeClass("active1");
+		      $("li").eq(1).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(1).find(".num").addClass("active");
+		      flag1=false;
+		     }
+		}
+	});
+	
+	media.onended = function() {
+		if(list){
+			$(".page-one").removeClass("fade");
+		    $(".page-one").addClass("fade");
+		    $(".page-two").fadeIn();
+		     $(".page-three").fadeOut();
+		      $(".page-four").fadeOut();
+		   
+		     $("li .circle").removeClass("active1");
+		      $("li").eq(0).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(0).find(".num").addClass("active");
+		       $("#media1").attr("src","audio/P1.mp3");
+		    setTimeout(function(){
+		    	$(".page-one").removeClass("fade");
+		    	  $(".page-one").hide();
+		    	  $("#media1")[0].play();
+		    	  currentPage="2";
+		    },1400);
+		   }
+	    };
+	 
+	    media1.onended = function() {
+	     if(isPlaying){
+	    	$("li .circle").removeClass("active1");
+		      $("li").eq(1).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(1).find(".num").addClass("active");
+	    	 $(".page-two").fadeOut();
+	    	 $(".page-three").fadeIn();
+		      $(".page-four").fadeOut();
+	    	 $("#media2").attr("src","audio/P2.mp3");
+   			 $("#media2")[0].play();
+   			  currentPage="3";
+   			 }
+	    };
+	    media2.onended = function() {
+	    	   if(isPlaying){
+	    	$("li .circle").removeClass("active1");
+		      $("li").eq(2).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(2).find(".num").addClass("active");
+	    	$(".page-three").fadeOut();
+	    	 $(".page-four").fadeIn();
+	    	  $(".page-two").fadeOut();
+	    	 $("#media3").attr("src","audio/P3.mp3");
+   			 $("#media3")[0].play();
+   			  currentPage="4";
+   			  }
+	    };
+	    media3.onended = function() {
+	     if(isPlaying){
+	    	  $(".page-one").show();
+			$(".page-one").removeClass("show");
+		    $(".page-one").addClass("show");
+		       setTimeout(function(){
+		    	  $(".page-one").removeClass("show");
+		    	   $(".page-two").fadeOut();
+			     $(".page-three").fadeOut();
+			      $(".page-four").fadeOut();
+		    },1400);
+	    };
+	 }   
+	$("li").click(function(){
+		var index=$(this).index();
+		if(index==0){
+			$(".page-two").fadeIn();
+			$(".page-one").fadeOut();
+			$(".page-three").fadeOut();
+			$(".page-four").fadeOut();
+			if(quite){
+			$("#media1").attr("src","audio/P1.mp3");
+			$("#media1")[0].play();
+			}
+			 currentPage="2";
+			$("#media").attr("src","");
+			$("#media2").attr("src","");
+			$("#media3").attr("src","");
+			  $("li .circle").removeClass("active1");
+		      $("li").eq(0).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(0).find(".num").addClass("active");
+		};
+		if(index==1){
+			$(".page-three").fadeIn();
+			$(".page-one").fadeOut();
+			$(".page-two").fadeOut();
+			$(".page-four").fadeOut();
+			if(quite){
+			$("#media2").attr("src","audio/P2.mp3");
+			$("#media2")[0].play();
+			}
+			 currentPage="3";
+			$("#media1").attr("src","");
+			$("#media").attr("src","");
+			$("#media3").attr("src","");
+			  $("li .circle").removeClass("active1");
+		      $("li").eq(1).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(1).find(".num").addClass("active");
+		};
+		if(index==2){
+			$(".page-four").fadeIn();
+			$(".page-one").fadeOut();
+			$(".page-three").fadeOut();
+			$(".page-two").fadeOut();
+			if(quite){
+			$("#media3").attr("src","audio/P3.mp3");
+			$("#media3")[0].play();
+			}
+			 currentPage="4";
+			$("#media1").attr("src","");
+			$("#media2").attr("src","");
+			$("#media").attr("src","");
+			  $("li .circle").removeClass("active1");
+		      $("li").eq(2).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(2).find(".num").addClass("active");
+		}
+		
+	})
+	
+</script>
+
+</body>
+</html>
