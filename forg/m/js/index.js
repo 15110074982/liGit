@@ -34,6 +34,8 @@ var str="";
 		    for(var i=3;i<length+1;i++){
 		       $(".page"+i).fadeOut();
 		    }
+		 $(".left").show();
+		 $(".right").show();
 		      $("li .circle").removeClass("active1");
 		      $("li").eq(0).find(".circle").addClass("active1");
 		      $("li .num").removeClass("active");
