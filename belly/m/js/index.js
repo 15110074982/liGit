@@ -7,6 +7,20 @@ var str="";
 	$(".list-group").html(str);
 	var $print=$("#container");
 	changeOrientation($print);
+	  //按钮点击操作
+	$(".icon").click(function(){
+			  $(".page1").show();
+			$(".page1").removeClass("show");
+		    $(".page1").addClass("show");
+		       setTimeout(function(){
+		    	   $(".page1").removeClass("show");
+		    	   for(var i=2;i<length+1;i++){
+		    	     $(".page"+i).fadeOut();
+		    	   }
+		    },1400);
+		    $("#media").attr("src","");
+   			$("#media1").attr("src","");
+	});
 	$(".button").click(function(){
 		$(".button").removeClass("animate");
 		 $(this).addClass("animate");
@@ -34,8 +48,8 @@ var str="";
 		    for(var i=3;i<length+1;i++){
 		       $(".page"+i).fadeOut();
 		    }
-		 $(".left").show();
-		 $(".right").show();
+		     $(".left").show();
+		    $(".right").show();
 		      $("li .circle").removeClass("active1");
 		      $("li").eq(0).find(".circle").addClass("active1");
 		      $("li .num").removeClass("active");
