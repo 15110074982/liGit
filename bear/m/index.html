@@ -11,9 +11,16 @@
 <title>傻小熊进城</title>
 <style>
 	*{margin:0;padding:0}
-	html,body{width:100%;height:100%;overflow: hidden;background: #89d5d1;}
+	html,body{width:100%;height:100%;overflow: hidden;}
 	li{list-style: none;}
  	#container{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;} 
+ 	/*进度条*/
+	.alertbox{position :absolute;top:0;left :0;width:100%;height:100%;background: #000;z-index: 10000;} 
+	.progress{width:40%;height: 10px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin:auto;border-radius:10px;background: #734b06;}
+	.progressbar{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #b3f826;-webkit-transition:width ease-in 500ms;border-radius:10px;}
+	.progresstext{position: absolute;top: 30px;right: 0;color:#fff}
+	.icon{width:30px;height:30px;position:fixed;right:15px;top:15px;z-index: 950;}
+    .icon img{width: 100%;display: block;}
 	#container .pic{width:100%;height:100%} 
 	.start{position:absolute;left:10%;bottom:16%;width:65px;}
 	.start img{width:100%;display: block;}
@@ -29,7 +36,7 @@
 	.p4{position:absolute;left:76%;bottom:8%;width:65px;text-align: center;}
 	@-webkit-keyframes animate 	{
        0% { -webkit-transform:scale(1); }
-       50% { -webkit-transform:scale(0.9); } 
+       50% { -webkit-transform:scale(0.8); } 
        100% { -webkit-transform:scale(1); } 
       }
    .animate { -webkit-animation:animate 1.5s linear; }
@@ -70,11 +77,22 @@ li p{margin: auto;color:#313131;text-align: center;}
 .active{color:red;font-weight: bold;}
 .active1{width:12px;height: 12px;border-radius: 12px;}
 </style>
+<script src="js/resLoader.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery-1.11.0.js"></script>
 <script src="js/ration.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body >
+
   <div id="container">
+	  	<div class="alertbox">
+			<div class="progress">
+				<div class="progressbar"></div>
+				<div class="progresstext">
+					<span class="current"></span> /
+					<span class="total"></span>
+				</div>
+			</div>
+	   </div>
   		<audio id="media"  src=""></audio> 
   		<audio id="media1"  src=""></audio> 
 		<div class="page1 pad">
@@ -124,10 +142,72 @@ li p{margin: auto;color:#313131;text-align: center;}
 		<div class="page13 pad">
 			<img src="images/12.png" alt=""  class="pic"/>
 		</div>
+		<div class="icon"><img src="images/ico.png" alt="" /></div>
 		<div class="left"><img src="images/left.png"/></div>
 		<div class="right"><img src="images/right.png"/></div>
 		<ul class="list-group"></ul>
    </div>
+<script type="text/javascript">
+	var locate=location.href.split('index.html')[0];
+   	var loader = new resLoader({
+	   	resourceType : 'image,mpeg,script',
+		resources : [
+		    locate+'audio/P0.mp3',
+		    locate+'audio/P1.mp3',
+		    locate+'audio/P2.mp3',
+		    locate+'audio/P3.mp3',
+		    locate+'audio/P4.mp3',
+		    locate+'audio/P5.mp3',
+		    locate+'audio/P6.mp3',
+		    locate+'audio/P7.mp3',
+		    locate+'audio/P8.mp3',
+		    locate+'audio/P9.mp3',
+		    locate+'audio/P10.mp3',
+		    locate+'audio/P11.mp3',
+		    locate+'audio/P12.mp3',
+		    locate+'audio/P13.mp3',
+			locate+'images/1.png',
+			locate+'images/2.png',
+			locate+'images/3.png',
+			locate+'images/4.png',
+			locate+'images/5.png',
+			locate+'images/6.png',
+			locate+'images/7.png',
+			locate+'images/8.png',
+			locate+'images/9.png',
+			locate+'images/10.png',
+			locate+'images/11.png',
+			locate+'images/12.png',
+			locate+'images/bg.jpg',
+			locate+'images/left.png',
+			locate+'images/right.png',
+			locate+'images/listen.png',
+			locate+'images/start.png',
+			locate+'images/quite.png',
+			locate+'images/read.png',
+			locate+'images/ico.png',
+			locate+'js/jquery-1.11.0.js',
+		],
+		onStart : function(total){
+			//console.log('start:'+total);
+		},
+		onProgress : function(current, total){
+			//console.log(current+'/'+total);
+			var percent = current/total*100;
+			$('.progressbar').css('width', percent+'%');
+			$('.progresstext .current').text(current);
+			$('.progresstext .total').text(total);
+		},
+		onComplete : function(total){
+			$('.progresstext').html('已加载完,精彩即将呈现...');
+			setTimeout(function(){
+				$(".alertbox").hide();
+			},1000)
+			
+		}
+	});
+    loader.start();
+</script>
 <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
