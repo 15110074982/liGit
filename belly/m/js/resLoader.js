@@ -49,11 +49,18 @@
             else{
                 url = baseUrl + r;
             }
-
-            var image = new Image();
-            image.onload = function(){_this.loaded();};
-            image.onerror = function(){_this.loaded();};
-            image.src = url;
+            if(r.indexOf('mp3')!=-1){
+				var audio = new Audio();
+	             audio.oncanplaythrough = function(){_this.loaded();};
+	             audio.src = url;
+				 audio.preload;
+			}else{
+			    var image = new Image();
+			    image.src = url;
+	            image.onload = function(){_this.loaded();};
+	            image.onerror = function(){_this.loaded();}; 
+	           
+			}
         }
         if(isFunc(this.option.onStart)){
             this.option.onStart(this.total);
