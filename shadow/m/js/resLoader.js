@@ -52,6 +52,9 @@
 	      if(r.indexOf('mp3')!=-1){
 				var audio = new Audio();
 	             audio.oncanplaythrough = function(){_this.loaded();};
+		         document.addEventListener("WeixinJSBridgeReady", function () {
+	             	_this.loaded();
+				}, false);
 	             audio.src = url;
 				 audio.preload;
 			}else{
