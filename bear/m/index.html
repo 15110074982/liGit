@@ -8,6 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="headImg" id="headImg" content="" />
 <meta name="description"  id="description" content="">
+<meta http-equiv='x-dns-prefetch-control' content='on'>
 <title>傻小熊进城</title>
 <style>
 	*{margin:0;padding:0}
@@ -149,6 +150,8 @@ li p{margin: auto;color:#313131;text-align: center;}
 		<ul class="list-group"></ul>
    </div>
 <script type="text/javascript">
+		var tagLink="";
+   	var length1=$(".pad").length;
 	var locate=location.href.split('index.html')[0];
    	var loader = new resLoader({
 	   	resourceType : 'image,mpeg,script',
@@ -199,6 +202,21 @@ li p{margin: auto;color:#313131;text-align: center;}
 			$('.progresstext .total').text(total);
 		},
 		onComplete : function(total){
+			for(var i=0;i<length1+1;i++){
+			tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
+				if(i<=3){
+					tagLink+='<link rel="prefetch" href="images/'+(i+1)+'.png" />';
+				}
+			}
+			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>'
+			+'<link rel="prefetch" href="images/ico.png"/>'
+			+'<link rel="prefetch" href="images/left.png"/>'
+			+'<link rel="prefetch" href="images/right.png"/>'
+			+'<link rel="prefetch" href="images/listen.png"/>'
+			+'<link rel="prefetch" href="images/quite.png"/>'
+			+'<link rel="prefetch" href="images/read.png"/>'
+			+'<link rel="prefetch" href="images/start.png"/>';
+			$($('head')[0]).append(tagLink);
 			$('.progresstext').html('已加载完,精彩即将呈现...');
 			setTimeout(function(){
 				$(".alertbox").hide();
