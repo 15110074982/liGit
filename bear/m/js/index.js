@@ -196,6 +196,30 @@
 		}  
 	});
 	//播放结束操作
+document.addEventListener("WeixinJSBridgeReady", function () {  
+		 $("#media1")[0].play();
+	media.onended = function() {
+		if(list){
+			$(".page1").removeClass("fade");
+		    $(".page1").addClass("fade");
+		    $(".page2").fadeIn();
+		    for(var i=3;i<length+1;i++){
+		      $(".page"+i).fadeOut();
+		    }
+		      $("li .circle").removeClass("active1");
+		      $("li").eq(0).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(0).find(".num").addClass("active");
+		       $("#media").attr("src","");
+		       $("#media1").attr("src","audio/P1.mp3");
+		    setTimeout(function(){
+		    	$(".page1").removeClass("fade");
+		    	  $(".page1").hide();
+		    	  $("#media1")[0].play();
+		    },1400);
+		 }
+	 } 
+	 }, false); 
 	media.onended = function() {
 		if(list){
 			$(".page1").removeClass("fade");
