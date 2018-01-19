@@ -57,6 +57,7 @@
 				}, false);
 	             audio.src = url;
 				 audio.preload;
+		       audio.load();
 			}else{
 			    var image = new Image();
 			    image.src = url;
