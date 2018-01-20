@@ -219,6 +219,155 @@ document.addEventListener("WeixinJSBridgeReady", function () {
 		    },1400);
 		 }
 	 } 
+	//按钮点击操作
+	$(".left").click(function(){
+		flag=true;
+		for(var i=2;i<length+1;i++){
+			if($(".page"+i).css('display')=="block"){
+				console.log(i)
+				if(i==2){
+					 if(flag){
+							  $(".page1").show();
+							$(".page1").removeClass("show");
+						    $(".page1").addClass("show");
+						       setTimeout(function(){
+						    	   $(".page1").removeClass("show");
+						    	   for(var i=2;i<length+1;i++){
+						    	     $(".page"+i).fadeOut();
+						    	   }
+						    },1400);
+				   			$("#media1").attr("src","");
+							 flag=false;
+				     }
+				}else{
+				 if(flag){
+					currentPage=i-1;
+					for( var i=1;i<length+1;i++){
+							if(i==currentPage){
+								$(".page"+currentPage).fadeIn();
+							 }else{
+							 	$(".page"+i).fadeOut();
+							 }
+						}
+							
+					if(quite){
+							$("#media1").attr("src","audio/P"+(currentPage-1)+".mp3");
+				   			$("#media1")[0].play();
+				   	}
+					  $("li .circle").removeClass("active1");
+				      $("li").eq(currentPage-2).find(".circle").addClass("active1");
+				      $("li .num").removeClass("active");
+				      $("li").eq(currentPage-2).find(".num").addClass("active");
+				      flag=false;
+				    }
+				}
+			}else{
+				    	$(".page"+i).fadeOut();
+				    };
+		}
+		
+	});
+	var flag1;
+	$(".right").click(function(){
+		flag1=true;
+		for(var i=2;i<length+1;i++){
+			if($(".page"+i).css('display')=="block"){
+				console.log(i)
+				if(i==length){
+					 if(flag1){
+						$(".page1").show();
+						$(".page1").removeClass("show");
+					    $(".page1").addClass("show");
+					       setTimeout(function(){
+					    	  $(".page1").removeClass("show");
+					    	  for(var i=2;i<length+1;i++){
+						    	     $(".page"+i).fadeOut();
+						    	   }
+					    },1400);
+						  $("#media1").attr("src","");
+						  $("li .circle").removeClass("active1");
+					      $("li").eq(0).find(".circle").addClass("active1");
+					      $("li .num").removeClass("active");
+					      $("li").eq(0).find(".num").addClass("active");
+					      flag1=false;
+				     }
+				}else{
+				 if(flag1 ){
+					currentPage=i+1;
+					for( var i=1;i<length+1;i++){
+							if(i==currentPage){
+								$(".page"+currentPage).fadeIn();
+							 }else{
+							 	$(".page"+i).fadeOut();
+							 }
+						}
+					if(quite){
+						$("#media1").attr("src","audio/P"+(currentPage-1)+".mp3");
+			   			$("#media1")[0].play();
+		   			}
+					$("li .circle").removeClass("active1");
+				    $("li").eq(currentPage-2).find(".circle").addClass("active1");
+				    $("li .num").removeClass("active");
+				    $("li").eq(currentPage-2).find(".num").addClass("active");
+				    flag1=false;
+				    }
+				}
+			}else{
+				   $(".page"+i).fadeOut();
+				};
+		}  
+	});
+	 media1.onended = function(){
+	 	++pg;
+	 	 if(isPlaying){
+			  if(pg==length){
+	   			$(".page1").show();
+				$(".page1").removeClass("show");
+			    $(".page1").addClass("show");
+			    $("#media").attr("src","");
+			     $("#media1").attr("src","");
+		       setTimeout(function(){
+		    	  $(".page1").removeClass("show");
+			      $(".page"+pg).fadeOut();
+		       },1400);
+		       return;
+	   		 }else{
+	   		 	 if($(".page"+pg).css('display')=="block"){
+			    	  $("li .circle").removeClass("active1");
+				      $("li").eq(pg-1).find(".circle").addClass("active1");
+				      $("li .num").removeClass("active");
+				      $("li").eq(pg-1).find(".num").addClass("active");
+			    	 $(".page"+pg).fadeOut();
+			    	 $(".page"+(pg+1)).fadeIn();
+			    	 $("#media1").attr("src","audio/P"+pg+".mp3");
+		   			 $("#media1")[0].play();
+		   	     }
+	   		 }
+		 }
+		} 
+	//列表操作
+	$("li").click(function(){
+		var index=$(this).index();
+		pg=index+1;
+			for(var i=1;i<length+1;i++){
+				if(i==(index+2)){
+					$(".page"+(index+2)).fadeIn();
+					}else{
+				      $(".page"+i).fadeOut();
+				 }
+			}
+			if(quite){
+				$("#media1").attr("src","audio/P"+(index+1)+".mp3");
+				$("#media1")[0].play();
+			}
+			  $("#media").attr("src","");
+			  $("li .circle").removeClass("active1");
+		      $("li").eq(index).find(".circle").addClass("active1");
+		      $("li .num").removeClass("active");
+		      $("li").eq(index).find(".num").addClass("active");
+	})
+	
+
 	 }, false); 
 	media.onended = function() {
 		if(list){
