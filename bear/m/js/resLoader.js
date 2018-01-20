@@ -53,7 +53,7 @@
 				var audio = new Audio();
 	             audio.onloadedmetadata = function(){_this.loaded();};
 		         document.addEventListener("WeixinJSBridgeReady", function () {
-	             	_this.loaded();
+	             	 audio.onloadedmetadata = function(){_this.loaded();alert(1)};
 				}, false);
 	             audio.src = url;
 				 audio.preload;
