@@ -58,7 +58,7 @@
 		         document.addEventListener("WeixinJSBridgeReady", function () {
 	             	  audio.addEventListener("loadedmetadata", function(){
                          _this.loaded();
-				  alert(4);
+				 // alert(4);
                         },false);
 				}, false);
 	             audio.src = url;
