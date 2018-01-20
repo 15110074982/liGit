@@ -51,14 +51,14 @@
             }
 	      if(r.indexOf('mp3')!=-1){
 				var audio = new Audio();
-		       audio.addEventListener("loadedmetadata", function(){
+		       audio.addEventListener("canplaythrough", function(){
                          _this.loaded();
                         },false);
 	             //audio.onloadedmetadata = function(){_this.loaded();};
 		         document.addEventListener("WeixinJSBridgeReady", function () {
-	             	  audio.addEventListener("loadedmetadata", function(){
+	             	  audio.addEventListener("canplaythrough", function(){
                          _this.loaded();
-				  alert(2);
+				  alert(3);
                         },false);
 				}, false);
 	             audio.src = url;
