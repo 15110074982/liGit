@@ -59,13 +59,7 @@
 				  request.responseType = 'arraybuffer';
 				  // Decode asynchronously
 				  request.onload = function() {
-				    context.decodeAudioData(request.response, function(buffer) {
-				      dogBarkingBuffer = buffer;
-				      console.log(request.response)
-				      console.log(buffer);
 					_this.loaded();
-					    alert(1)
-				    }, onError);
 				  }
 				  request.send();
 			}else{
