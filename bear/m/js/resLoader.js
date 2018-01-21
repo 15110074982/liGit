@@ -54,14 +54,7 @@
                 url = baseUrl + r;
             }
 	      if(r.indexOf('mp3')!=-1){
-				var request = new XMLHttpRequest();
-				  request.open('GET', url, true);
-				  request.responseType = 'arraybuffer';
-				  // Decode asynchronously
-				  request.onload = function() {
-					_this.loaded();
-				  }
-				  request.send();
+				this.loadDogSound(url);
 			}else{
 			    var image = new Image();
 			    image.src = url;
@@ -85,6 +78,22 @@
                 this.option.onComplete(this.total);
             }
         }
+    }
+     resLoader.prototype.loadDogSound = function(url){
+          var request = new XMLHttpRequest();
+	  request.open('GET', url, true);
+	  request.responseType = 'arraybuffer';
+
+	  // Decode asynchronously
+	  request.onload = function() {
+	    context.decodeAudioData(request.response, function(buffer) {
+	      dogBarkingBuffer = buffer;
+	      console.log(request.response)
+	      console.log(buffer);
+		    _this.loaded();
+	    }, onError);
+	  }
+	  request.send();
     }
 
     //暴露公共方法
