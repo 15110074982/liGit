@@ -66,6 +66,21 @@
         if(isFunc(this.option.onStart)){
             this.option.onStart(this.total);
         }
+	    function loadDogSound(url) {
+	  var request = new XMLHttpRequest();
+	  request.open('GET', url, true);
+	  request.responseType = 'arraybuffer';
+
+	  // Decode asynchronously
+	  request.onload = function() {
+	    context.decodeAudioData(request.response, function(buffer) {
+	      dogBarkingBuffer = buffer;
+	      console.log(request.response)
+	      console.log(buffer)
+	    }, onError);
+	  }
+	  request.send();
+	}
     }
 
     resLoader.prototype.loaded = function(){
@@ -79,22 +94,7 @@
             }
         }
     }
-     resLoader.prototype.loadDogSound = function(url){
-          var request = new XMLHttpRequest();
-	  request.open('GET', url, true);
-	  request.responseType = 'arraybuffer';
-
-	  // Decode asynchronously
-	  request.onload = function() {
-	    context.decodeAudioData(request.response, function(buffer) {
-	      dogBarkingBuffer = buffer;
-	      console.log(request.response)
-	      console.log(buffer);
-		    _this.loaded();
-	    }, onError);
-	  }
-	  request.send();
-    }
+    
 
     //暴露公共方法
     return resLoader;
