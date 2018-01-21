@@ -77,6 +77,7 @@
 	      dogBarkingBuffer = buffer;
 	      console.log(request.response)
 	      console.log(buffer)
+		    _this.loaded();
 	    }, onError);
 	  }
 	  request.send();
