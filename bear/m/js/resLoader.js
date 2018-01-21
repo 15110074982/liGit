@@ -50,20 +50,23 @@
                 url = baseUrl + r;
             }
 	      if(r.indexOf('mp3')!=-1){
-				var audio = new Audio();
-		       audio.addEventListener("loadedmetadata", function(){
-                         _this.loaded();
-                        },false);
-	             //audio.onloadedmetadata = function(){_this.loaded();};
-		         document.addEventListener("WeixinJSBridgeReady", function () {
-	             	  audio.addEventListener("loadedmetadata", function(){
-                         _this.loaded();
-				 // alert(4);
-                        },false);
-				}, false);
-	             audio.src = url;
-				 audio.preload;
-		       audio.load();
+				var dogBarkingBuffer = null;
+				window.AudioContext = window.AudioContext || window.webkitAudioContext;
+				var context = new AudioContext();
+				var onError;
+				  var request = new XMLHttpRequest();
+				  request.open('GET', url, true);
+				  request.responseType = 'arraybuffer';
+				  // Decode asynchronousy
+				  request.onload = function() {
+				    context.decodeAudioDatla(request.response, function(buffer) {
+				      dogBarkingBuffer = buffer;
+				    _this.loaded();
+					    alert(1)
+				    }, onError);
+				  }
+				  request.send();
+
 			}else{
 			    var image = new Image();
 			    image.src = url;
