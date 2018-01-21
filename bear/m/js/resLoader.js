@@ -54,7 +54,7 @@
                 url = baseUrl + r;
             }
 	      if(r.indexOf('mp3')!=-1){
-				this.loadDogSound(url);
+				loadDogSound(url);
 			}else{
 			    var image = new Image();
 			    image.src = url;
