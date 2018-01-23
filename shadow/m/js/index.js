@@ -1,5 +1,8 @@
 	var str="";
 	 var pg;
+	 var source;
+     var source1;
+     var lst=false;
 	var length=$(".pad").length;
 	for(var i=1;i<length;i++){
 		str+='<li><div class="circle1"><div class="circle"></div></div><p class="num">'+i+'</p></li>'
@@ -9,7 +12,7 @@
 	changeOrientation($print);
 	  //按钮点击操作
 	$(".icon").click(function(){
-			 $(".page1").show();
+			$(".page1").show();
 			$(".page1").removeClass("show");
 		    $(".page1").addClass("show");
 		       setTimeout(function(){
@@ -18,7 +21,7 @@
 		    	     $(".page"+i).fadeOut();
 		    	   }
 		    },1400);
-		  $("#media").attr("src","");
+		 // $("#media").attr("src","");
 		  pause();
 		  pg=length;
 	});
@@ -31,25 +34,18 @@
         },1500)
 	});
 	var list;
-	//倾听操作
-	$(".listen").click(function(){
-		$("#media").attr("src","audio/P"+length+".mp3");
-		$("#media")[0].play();
-		$(".start").css("pointer-events","auto");
-		$(".read").css("pointer-events","auto");
-		list=false;
-		 pause();
-		 pg=length;
-	});
+	
 	var quite=true;
 	var currentPage="";
 	//静音操作
 	$(".quite").click(function(){
-		   // pause();
-		    pg=length;
-		    $("#media").attr("src","");
+		    pg=length+1;
+				if(lst){
+					pause1();
+					lst=false;
+				}
 		    $(".start").css("pointer-events","auto");
-		$(".read").css("pointer-events","auto");
+		    $(".read").css("pointer-events","auto");
 		    $(".page1").removeClass("fade");
 		    $(".page1").addClass("fade");
 		     $(".page2").fadeIn();
@@ -70,15 +66,18 @@
 	});
 	//播放操作
      var isPlaying = false; 
-     var source;
+  
      var read;
 	$(".start").click(function(){
-		$("#media").attr("src","");
 		$(".start").css("pointer-events","none");
 		$(".read").css("pointer-events","auto");
 		 pg=0;
-		// $(".left").hide();
-		//$(".right").hide();
+		 if(lst){
+					pause1();
+					lst=false;
+				}
+		 $(".left").hide();
+		$(".right").hide();
 		 $(this).addClass("animate");
 		 var btn=$(this);
         setTimeout(function(){
@@ -88,12 +87,14 @@
         list=true;
         quite=true;
 	    playSound(arr);
-	     read=false;
+	    read=false;
 	});
 	//阅读操作
-	
 	$(".read").click(function(){
-		$("#media").attr("src","");
+		if(lst){
+					pause1();
+					lst=false;
+				}
 		$(".read").css("pointer-events","none");
 		$(".start").css("pointer-events","auto");
 		pg=0;
@@ -113,8 +114,20 @@
 		   
 	});
 	
-	
+	function playSound1(buffer){
+		lst=true;
+		console.log(buffer)
+	    source1 = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source1.buffer = buffer[length];//  告诉音频源 播放哪一段音频
+	    source1.connect(context.destination);// 连接到输出源
+	    source1.start(0);//
+	    source1.onended=function(){
+	    	lst=false;
+	    	//$(".listen").css("pointer-events","auto");
+	    }
+	  }
 	function playSound(buffer){
+		if(pg>=length){return}
 	    source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
 	    source.buffer = buffer[pg];//  告诉音频源 播放哪一段音频
 	    source.connect(context.destination);// 连接到输出源
@@ -178,6 +191,10 @@
  function pause() {
     source.stop();
 }
+  function pause1() {
+    source1.stop();
+}
+	
 	
 	
 	var flag;
@@ -312,3 +329,14 @@
 		      $("li").eq(index).find(".num").addClass("active");
 	})
 	
+
+//倾听操作
+	$(".listen").click(function(){
+		if(lst){
+			pause1();
+		}
+		playSound1(arr);
+		$(".start").css("pointer-events","auto");
+		$(".read").css("pointer-events","auto");
+		list=false;
+	});
