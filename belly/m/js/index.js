@@ -45,7 +45,7 @@
 	var currentPage="";
 	//静音操作
 	$(".quite").click(function(){
-		    pause();
+		    //pause();
 		    pg=length;
 		    $("#media").attr("src","");
 		    $(".start").css("pointer-events","auto");
