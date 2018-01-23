@@ -38,10 +38,6 @@
     };
 
     resLoader.prototype.start = function(){
-    	var dogBarkingBuffer = null;
-		window.AudioContext = window.AudioContext || window.webkitAudioContext;
-		var context = new AudioContext();
-		var onError;
         this.status = 1;
         var _this = this;
         var baseUrl = this.option.baseUrl;
@@ -54,7 +50,7 @@
                 url = baseUrl + r;
             }
 			if(r.indexOf('mp3')!=-1){
-				loadDogSound(url);
+				loadDogSound(url,i);
 			}else{
 			    var image = new Image();
 			    image.src = url;
@@ -66,17 +62,16 @@
         if(isFunc(this.option.onStart)){
             this.option.onStart(this.total);
         }
-         function loadDogSound(url) {
+         function loadDogSound(url,index) {
 		  var request = new XMLHttpRequest();
 		  request.open('GET', url, true);
 		  request.responseType = 'arraybuffer';
 		  request.onload = function() {
 		  	 _this.loaded();
-		  /*  context.decodeAudioData(request.response, function(buffer) {
+		   context.decodeAudioData(request.response, function(buffer) {
 		      dogBarkingBuffer = buffer;
-		      console.log(request.response)
-		      console.log(buffer)
-		    }, onError);*/
+		      arr[index]=dogBarkingBuffer;
+		    }, onError);
 	  }
 	  request.send();
 	}
