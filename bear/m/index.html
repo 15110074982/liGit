@@ -150,6 +150,11 @@ li p{margin: auto;color:#313131;text-align: center;}
 		<ul class="list-group"></ul>
    </div>
 <script type="text/javascript">
+	var dogBarkingBuffer = null;
+	window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	var context = new AudioContext();
+	var onError;
+	var arr=[];
 		var tagLink="";
    	var length1=$(".pad").length;
 	var locate=location.href.split('index.html')[0];
