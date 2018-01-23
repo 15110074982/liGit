@@ -1,4 +1,4 @@
-var str="";
+	var str="";
 	 var pg;
 	var length=$(".pad").length;
 	for(var i=1;i<length;i++){
@@ -9,7 +9,7 @@ var str="";
 	changeOrientation($print);
 	  //按钮点击操作
 	$(".icon").click(function(){
-			  $(".page1").show();
+			 $(".page1").show();
 			$(".page1").removeClass("show");
 		    $(".page1").addClass("show");
 		       setTimeout(function(){
@@ -18,8 +18,9 @@ var str="";
 		    	     $(".page"+i).fadeOut();
 		    	   }
 		    },1400);
-		    $("#media").attr("src","");
-   			$("#media1").attr("src","");
+		  $("#media").attr("src","");
+		  pause();
+		  pg=length;
 	});
 	$(".button").click(function(){
 		$(".button").removeClass("animate");
@@ -32,23 +33,30 @@ var str="";
 	var list;
 	//倾听操作
 	$(".listen").click(function(){
-		$("#media").attr("src","audio/P"+length+".mp3");//改
+		$("#media").attr("src","audio/P"+length+".mp3");
 		$("#media")[0].play();
+		$(".start").css("pointer-events","auto");
+		$(".read").css("pointer-events","auto");
 		list=false;
+		 pause();
+		 pg=length;
 	});
 	var quite=true;
 	var currentPage="";
 	//静音操作
 	$(".quite").click(function(){
+		    pause();
+		    pg=length;
 		    $("#media").attr("src","");
-		    $("#media1").attr("src","");
+		    $(".start").css("pointer-events","auto");
+		$(".read").css("pointer-events","auto");
 		    $(".page1").removeClass("fade");
 		    $(".page1").addClass("fade");
 		     $(".page2").fadeIn();
 		    for(var i=3;i<length+1;i++){
 		       $(".page"+i).fadeOut();
 		    }
-		      $(".left").show();
+		     $(".left").show();
 		    $(".right").show();
 		      $("li .circle").removeClass("active1");
 		      $("li").eq(0).find(".circle").addClass("active1");
@@ -62,13 +70,15 @@ var str="";
 	});
 	//播放操作
      var isPlaying = false; 
+     var source;
+     var read;
 	$(".start").click(function(){
-		pg=1;
-		 $("#media1").attr("src","");
-		$("#media").attr("src","audio/P0.mp3");
-		$("#media")[0].play();
-		 $(".left").hide();
-		  $(".right").hide();
+		$("#media").attr("src","");
+		$(".start").css("pointer-events","none");
+		$(".read").css("pointer-events","auto");
+		 pg=0;
+		// $(".left").hide();
+		//$(".right").hide();
 		 $(this).addClass("animate");
 		 var btn=$(this);
         setTimeout(function(){
@@ -76,14 +86,18 @@ var str="";
         },1500)
         isPlaying=true;
         list=true;
-         quite=true;
+        quite=true;
+	    playSound(arr);
+	     read=false;
 	});
 	//阅读操作
+	
 	$(".read").click(function(){
-		pg=1;
+		$("#media").attr("src","");
+		$(".read").css("pointer-events","none");
+		$(".start").css("pointer-events","auto");
+		pg=0;
 		 list=true;
-		$("#media").attr("src","audio/P0.mp3");
-		$("#media")[0].play();
 		 $(this).addClass("animate");
 		 var btn=$(this);
         setTimeout(function(){
@@ -92,17 +106,87 @@ var str="";
          $(".left").show();
 		 $(".right").show();
 		 currentPage=2;
-		 isPlaying=false;
 		   quite=true;
+		   read=true;
+		   playSound(arr);
+		 isPlaying=false;
+		   
 	});
+	
+	
+	function playSound(buffer){
+	    source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source.buffer = buffer[pg];//  告诉音频源 播放哪一段音频
+	    source.connect(context.destination);// 连接到输出源
+	    source.start(0);//开始播放
+	    console.log(pg)
+	    source.onended=function(){
+	    	if(pg==0){
+	    		if(list){
+					$(".page1").removeClass("fade");
+				    $(".page1").addClass("fade");
+				    $(".page2").fadeIn();
+				    for(var i=3;i<length+1;i++){
+				      $(".page"+i).fadeOut();
+				    }
+				      $("li .circle").removeClass("active1");
+				      $("li").eq(0).find(".circle").addClass("active1");
+				      $("li .num").removeClass("active");
+				      $("li").eq(0).find(".num").addClass("active");
+				    setTimeout(function(){
+				    	$(".start").css("pointer-events","auto");
+				    	$(".read").css("pointer-events","auto");
+				    	$(".page1").removeClass("fade");
+				    	  $(".page1").hide();
+				    	   ++pg;
+				    	  playSound(arr);
+				    },1400);
+				}
+	    	}else if(pg>=length){
+	    		return
+	    	}else{
+	    		console.log(pg)
+		    		 if(isPlaying){
+						  if(pg==(length-1)){
+				   			$(".page1").show();
+							$(".page1").removeClass("show");
+						    $(".page1").addClass("show");
+					       setTimeout(function(){
+					    	  $(".page1").removeClass("show");
+						      $(".page"+(pg+1)).fadeOut();
+					       },1400);
+					       return;
+				   		 }else{
+				   		 	 //if($(".page"+pg).css('display')=="block"){
+						    	  $("li .circle").removeClass("active1");
+							      $("li").eq(pg).find(".circle").addClass("active1");
+							      $("li .num").removeClass("active");
+							      $("li").eq(pg).find(".num").addClass("active");
+						    	 $(".page"+(pg+1)).fadeOut();
+						    	 $(".page"+(pg+2)).fadeIn();
+						    	 ++pg;
+	   		                    playSound(arr);
+					   	    // }
+				   		 }
+					}
+	    	 }
+	    	//++pg;
+	   		//playSound(arr);
+	   	}
+   }
+	
+ function pause() {
+    source.stop();
+}
+	
+	
 	var flag;
-	  var display;
+	var display;
 	  //按钮点击操作
 	$(".left").click(function(){
 		flag=true;
 		for(var i=2;i<length+1;i++){
 			if($(".page"+i).css('display')=="block"){
-				console.log(i)
 				if(i==2){
 					 if(flag){
 							  $(".page1").show();
@@ -114,9 +198,11 @@ var str="";
 						    	     $(".page"+i).fadeOut();
 						    	   }
 						    },1400);
-				   			$("#media1").attr("src","");
 							 flag=false;
+							
 				     }
+					 pause();
+					 pg=length;
 				}else{
 				 if(flag){
 					currentPage=i-1;
@@ -129,8 +215,8 @@ var str="";
 						}
 							
 					if(quite){
-							$("#media1").attr("src","audio/P"+(currentPage-1)+".mp3");
-				   			$("#media1")[0].play();
+							pause();
+				            pg=currentPage-2;
 				   	}
 					  $("li .circle").removeClass("active1");
 				      $("li").eq(currentPage-2).find(".circle").addClass("active1");
@@ -162,7 +248,7 @@ var str="";
 						    	     $(".page"+i).fadeOut();
 						    	   }
 					    },1400);
-						  $("#media1").attr("src","");
+						 pause();
 						  $("li .circle").removeClass("active1");
 					      $("li").eq(0).find(".circle").addClass("active1");
 					      $("li .num").removeClass("active");
@@ -180,8 +266,12 @@ var str="";
 							 }
 						}
 					if(quite){
-						$("#media1").attr("src","audio/P"+(currentPage-1)+".mp3");
-			   			$("#media1")[0].play();
+						    pause();
+				            pg=currentPage-2;
+				            if(read){
+								pg=currentPage-1;
+								playSound(arr);
+							}
 		   			}
 					$("li .circle").removeClass("active1");
 				    $("li").eq(currentPage-2).find(".circle").addClass("active1");
@@ -195,85 +285,20 @@ var str="";
 				};
 		}  
 	});
-	//播放结束操作
-document.addEventListener("WeixinJSBridgeReady", function () {  
-		 $("#media1")[0].play();
-	media.onended = function() {
-		if(list){
-			$(".page1").removeClass("fade");
-		    $(".page1").addClass("fade");
-		    $(".page2").fadeIn();
-		    for(var i=3;i<length+1;i++){
-		      $(".page"+i).fadeOut();
-		    }
-		      $("li .circle").removeClass("active1");
-		      $("li").eq(0).find(".circle").addClass("active1");
-		      $("li .num").removeClass("active");
-		      $("li").eq(0).find(".num").addClass("active");
-		       $("#media").attr("src","");
-		       $("#media1").attr("src","audio/P1.mp3");
-		    setTimeout(function(){
-		    	$(".page1").removeClass("fade");
-		    	  $(".page1").hide();
-		    	  $("#media1")[0].play();
-		    },1400);
-		 }
-	 } 
-	 }, false); 
-	media.onended = function() {
-		if(list){
-			$(".page1").removeClass("fade");
-		    $(".page1").addClass("fade");
-		    $(".page2").fadeIn();
-		    for(var i=3;i<length+1;i++){
-		      $(".page"+i).fadeOut();
-		    }
-		      $("li .circle").removeClass("active1");
-		      $("li").eq(0).find(".circle").addClass("active1");
-		      $("li .num").removeClass("active");
-		      $("li").eq(0).find(".num").addClass("active");
-		       $("#media").attr("src","");
-		       $("#media1").attr("src","audio/P1.mp3");
-		    setTimeout(function(){
-		    	$(".page1").removeClass("fade");
-		    	  $(".page1").hide();
-		    	  $("#media1")[0].play();
-		    },1400);
-		 }
-	 } 
 	
-	 media1.onended = function(){
-	 	++pg;
-	 	 if(isPlaying){
-			  if(pg==length){
-	   			$(".page1").show();
-				$(".page1").removeClass("show");
-			    $(".page1").addClass("show");
-			    $("#media").attr("src","");
-			     $("#media1").attr("src","");
-		       setTimeout(function(){
-		    	  $(".page1").removeClass("show");
-			      $(".page"+pg).fadeOut();
-		       },1400);
-		       return;
-	   		 }else{
-	   		 	 if($(".page"+pg).css('display')=="block"){
-			    	  $("li .circle").removeClass("active1");
-				      $("li").eq(pg-1).find(".circle").addClass("active1");
-				      $("li .num").removeClass("active");
-				      $("li").eq(pg-1).find(".num").addClass("active");
-			    	 $(".page"+pg).fadeOut();
-			    	 $(".page"+(pg+1)).fadeIn();
-			    	 $("#media1").attr("src","audio/P"+pg+".mp3");
-		   			 $("#media1")[0].play();
-		   	     }
-	   		 }
-		 }
-		} 
 	//列表操作
 	$("li").click(function(){
-		var index=$(this).index();
-		pg=index+1;
+		  var index=$(this).index();
+		  if(quite){
+				pause();
+				pg=index;
+				if(read){
+					pg=index+1;
+					playSound(arr);
+				}
+			}else{
+				
+			}
 			for(var i=1;i<length+1;i++){
 				if(i==(index+2)){
 					$(".page"+(index+2)).fadeIn();
@@ -281,11 +306,6 @@ document.addEventListener("WeixinJSBridgeReady", function () {
 				      $(".page"+i).fadeOut();
 				 }
 			}
-			if(quite){
-				$("#media1").attr("src","audio/P"+(index+1)+".mp3");
-				$("#media1")[0].play();
-			}
-			  $("#media").attr("src","");
 			  $("li .circle").removeClass("active1");
 		      $("li").eq(index).find(".circle").addClass("active1");
 		      $("li .num").removeClass("active");

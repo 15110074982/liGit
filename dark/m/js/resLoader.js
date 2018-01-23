@@ -49,14 +49,8 @@
             else{
                 url = baseUrl + r;
             }
-            if(r.indexOf('mp3')!=-1){
-				var audio = new Audio();
-	             audio.onloadedmetadata = function(){_this.loaded();};
-		       document.addEventListener("WeixinJSBridgeReady", function () {
-	             	_this.loaded();
-				}, false);
-	             audio.src = url;
-				 audio.preload;
+			if(r.indexOf('mp3')!=-1){
+				loadDogSound(url,i);
 			}else{
 			    var image = new Image();
 			    image.src = url;
@@ -68,6 +62,19 @@
         if(isFunc(this.option.onStart)){
             this.option.onStart(this.total);
         }
+         function loadDogSound(url,index) {
+		  var request = new XMLHttpRequest();
+		  request.open('GET', url, true);
+		  request.responseType = 'arraybuffer';
+		  request.onload = function() {
+		  	 _this.loaded();
+		   context.decodeAudioData(request.response, function(buffer) {
+		      dogBarkingBuffer = buffer;
+		      arr[index]=dogBarkingBuffer;
+		    }, onError);
+	  }
+	  request.send();
+	}
     }
 
     resLoader.prototype.loaded = function(){
