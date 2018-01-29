@@ -689,8 +689,10 @@
      var hd1;
      var hd3;
 	bird.addEventListener("touchstart",function(e){
+		alert(winW,winH);
 		 startX = e.touches[0].pageX; 
 		 startY = e.touches[0].pageY;
+		alert(startX,startY);
 		 sx=winW*0.86*0.4;
 		 sy=winW*0.86*527/988*0.09;
 		 $(this).addClass("scale");
