@@ -1,0 +1,1579 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="screen-orientation" content="landscape">
+<meta name="headImg" id="headImg" content="" />
+<meta name="description"  id="description" content="">
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<title>猜一猜</title>
+<style>
+	*{margin:0;padding:0}
+	html,body{width:100%;height:100%;overflow: hidden;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+	li{list-style: none;}
+	img{width:100%;display: block;}
+ 	#container{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;
+ 	background: url(images/bg.jpg) no-repeat;background-size: 100% 100%;}
+ 	/*进度条*/
+	.alertbox{position :absolute;top:0;left :0;width:100%;height:100%;background: #000;z-index: 10000;} 
+	.progress{width:40%;height: 10px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin:auto;border-radius:10px;background: #734b06;}
+	.progressbar{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #b3f826;-webkit-transition:width ease-in 500ms;border-radius:10px;}
+	.progresstext{position: absolute;top: 30px;right: 0;color:#fff}
+	
+.page1{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;display:block}
+.title{position:absolute;left:20%;top:5%;width:60%;}
+.title1{position:absolute;left:5%;bottom:5%;width:28%;display: none;}
+.title2{position:absolute;left:33%;bottom:5%;width:28%;display: none;}
+.title3{position:absolute;right:5%;bottom:5%;width:28%;display: none;}
+.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;display: none;}
+.nav{position:relative;width:100%}
+.tishi{position:absolute;width:18px;left:8px;top:12%;}
+.content{position:absolute;width:300px;left:30px;top:20%;display: none;}
+.next{position:absolute;width:26px;right:12px;top:12%;}
+.laba{position:absolute;width:24px;right:55px;top:0px;}
+.reset{position:absolute;width:21px;right:95px;top:12%;}
+.question{position:absolute;width:86%;left:7%;bottom:4%;}
+.succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
+/*第一大题样式*/
+.nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;}
+.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display:none}
+.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display:none}
+.person{width:25%;position:absolute;left:5%;top:8%;}
+.number{width:15%;position:absolute;left:40%;top:26%;}
+.apple{width:25%;position:absolute;left:70%;top:33%;}
+/*第二大题样式*/
+.nub2{width:100%;height: 100%;position:absolute;left:0;top:0;display:none}
+.nub21{width:100%;height: 100%;position:absolute;left:0;top:0;}
+.nub21 .bird1{width:19%;position:absolute;left:7%;top:9%;}
+.nub21 .bird2{width:19%;position:absolute;left:40%;top:9%;}
+.nub21 .bird3{width:19%;position:absolute;left:73%;top:9%;}
+.nub21 .box1{width:28%;position:absolute;left:3%;top:52%;}
+.nub21 .box2{width:28%;position:absolute;left:36%;top:52%;}
+.nub21 .box3{width:28%;position:absolute;left:69%;top:52%;}
+.nub21 .bird4{width:19%;position:absolute;left:7%;top:55%;}
+.nub21 .bird5{width:19%;position:absolute;left:73%;top:55%;}
+.nub21 .bird6{width:19%;position:absolute;left:40%;top:55%;display: none;}
+.hand{width:5%;position:absolute;left:49%;top:26%;display:none}
+.hand1{width:5%;position:absolute;left:17%;top:47%;display:none}
+.hand2{width:5%;position:absolute;left:91%;top:10%;display:none}
+.nub2 img{float:left}
+@keyframes gusture {
+  from {
+    top:26%
+  }
+  to {
+    top:72%
+  }
+}
+.gusture{
+	-webkit-animation: gusture 2s;
+}
+@keyframes gusture1 {
+  from {
+    left:91%;top:10%;
+  }
+  to {
+   left:61%;top:50%;
+  }
+}
+.gusture1{
+	-webkit-animation: gusture1 2s;
+}
+
+.scale{
+	 transform: scale3d(1.05, 1.05, 1.05);;
+}
+
+.nub22{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.nub22 .bird1{width:19%;position:absolute;left:7%;top:9%;}
+.nub22 .bird2{width:19%;position:absolute;left:40%;top:9%;}
+.nub22 .bird3{width:19%;position:absolute;left:73%;top:9%;}
+.nub22 .box1{width:28%;position:absolute;left:3%;top:52%;}
+.nub22 .box2{width:28%;position:absolute;left:36%;top:52%;}
+.nub22 .box3{width:28%;position:absolute;left:69%;top:52%;}
+.nub22 .bird4{width:19%;position:absolute;left:7%;top:55%;display: none;}
+.nub22 .bird5{width:19%;position:absolute;left:73%;top:55%;display: none;}
+.nub22 .bird6{width:19%;position:absolute;left:40%;top:55%;}
+/*第三大题样式*/
+.nub3{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.thing1{width:54%;position:absolute;left:7%;top:8%;}
+.thing2{width:54%;position:absolute;left:7%;top:21%;}
+.thing3{width:60%;position:absolute;left:7%;top:38%;}
+.thing4{width:60%;position:absolute;left:7%;top:53%;}
+.thing5{width:64%;position:absolute;left:7%;top:64%;}
+.thing6{width:64%;position:absolute;left:7%;top:84%;}
+.no1{width:3.5%;position:absolute;left:90%;top:5%;}
+.no2{width:3.5%;position:absolute;left:90%;top:20%;}
+.no3{width:3.5%;position:absolute;left:90%;top:36%;}
+.no4{width:3.5%;position:absolute;left:90%;top:51%;}
+.no5{width:3.5%;position:absolute;left:90%;top:66%;}
+.no6{width:3.5%;position:absolute;left:90%;top:81%;}
+</style>
+<script src="js/resLoader.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/ration.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body >
+  <div id="container">
+  	 <div class="alertbox">
+			<div class="progress">
+				<div class="progressbar"></div>
+				<div class="progresstext">
+					<span class="current"></span> /
+					<span class="total"></span>
+				</div>
+			</div>
+	   </div>
+		<div class="page1">
+			<div class="title"><img src="images/1.png"/></div>
+			<div class="title1"><img src="images/2.png"/></div>
+			<div class="title2"><img src="images/3.png"/></div>
+			<div class="title3"><img src="images/4.png"/></div>
+		</div>
+		<div class="page2">
+			<div class="nav">
+				<img src="images/40.png"/>
+				<div class="tishi"><img src="images/36.png"/></div>
+				<div class="content"><img src="images/5.png" alt="" /></div>
+				<div class="reset"><img src="images/38.png" alt="" /></div>
+				<div class="laba"><img src="images/8.png" alt="" /></div>
+				<div class="next"><img src="images/37.png" alt="" /></div>
+			</div>
+			<div class="question">
+					<img src="images/39.png" alt="" />
+					<div class="succ"><img src="images/35.png"/></div>
+					
+				<div class="nub1">
+					<div class="nub11">
+						<div class="person"><img src="images/9.png" alt="" /></div>
+						<div class="number"><img src="images/10.png" alt="" /></div>
+						<div class="apple"><img src="images/11.png" alt="" /></div>
+					</div>
+					<div class="nub12">
+						<div class="person" style="width:21%"><img src="images/12.png" alt="" /></div>
+						<div class="number"><img src="images/13.png" alt="" /></div>
+						<div class="apple"><img src="images/14.png" alt="" /></div>
+					</div>
+					<div class="nub13">
+						<div class="person" style="top:11%;width:27%"><img src="images/15.png" alt="" /></div>
+						<div class="number"><img src="images/16.png" alt="" /></div>
+						<div class="apple"><img src="images/17.png" alt="" /></div>
+					</div>
+				</div>
+				<div class="nub2">
+					<div class="nub21">
+						<div class="box1"><img src="images/21.png" alt="" /></div>
+						<div class="box2"><img src="images/21.png" alt="" /></div>
+						<div class="box3"><img src="images/21.png" alt="" /></div>
+						<div class="bird4"><img src="images/18.png" alt="" /></div>
+						<div class="bird5"><img src="images/20.png" alt="" /></div>
+						<div class="bird6"><img src="images/19.png" alt="" /></div>
+						<div class="bird1" id="bird1"><img src="images/18.png" alt="" /></div>
+						<div class="bird2" id="bird"><img src="images/19.png" alt="" /></div>
+						<div class="bird3" id="bird3"><img src="images/20.png" alt="" /></div>
+					</div>
+					<div class="nub22">
+						<div class="box1"><img src="images/21.png" alt="" /></div>
+						<div class="box2"><img src="images/21.png" alt="" /></div>
+						<div class="box3"><img src="images/21.png" alt="" /></div>
+						<div class="bird4"><img src="images/18.png" alt="" /></div>
+						<div class="bird5"><img src="images/20.png" alt="" /></div>
+						<div class="bird6"><img src="images/19.png" alt="" /></div>
+						<div class="bird1" id="bird11"><img src="images/18.png" alt="" /></div>
+						<div class="bird2" id="bird12"><img src="images/19.png" alt="" /></div>
+						<div class="bird3" id="bird13"><img src="images/20.png" alt="" /></div>
+					</div>
+				</div>
+				<div class="nub3">
+					   <div class="thing1"><img src="images/22.png" alt="" /></div>
+					   <div class="thing2"><img src="images/23.png" alt="" /></div>
+					   <div class="thing3"><img src="images/24.png" alt="" /></div>
+					   <div class="thing4"><img src="images/25.png" alt="" /></div>
+					   <div class="thing5"><img src="images/26.png" alt="" /></div>
+					   <div class="thing6"><img src="images/27.png" alt="" /></div>
+					   <div class="no1" id="no1"><img src="images/28.png" alt="" /></div>
+					   <div class="no2" id="no2"><img src="images/29.png" alt="" /></div>
+					   <div class="no3" id="no3"><img src="images/30.png" alt="" /></div>
+					   <div class="no4" id="no4"><img src="images/31.png" alt="" /></div>
+					   <div class="no5" id="no5"><img src="images/32.png" alt="" /></div>
+					   <div class="no6" id="no6"><img src="images/33.png" alt="" /></div>
+					   <div class="bg" style="position:absolute"></div>
+				</div>
+				<div class="hand"><img src="images/34.png" alt="" /></div>
+				<div class="hand1"><img src="images/34.png" alt="" /></div>
+				<div class="hand2"><img src="images/34.png" alt="" /></div>
+			</div>
+		</div>
+   </div>
+   <script type="text/javascript">
+   	var dogBarkingBuffer = null;
+	window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	var context = new AudioContext();
+	var onError;
+	var arr=[];
+   	var tagLink="";
+   	var length1=$(".pad").length;
+	var locate=location.href.split('index.html')[0];
+   	var loader = new resLoader({
+	   	resourceType : 'image,mpeg,script',
+		resources : [
+		    locate+'audio/P0.mp3',
+		    locate+'audio/P1.mp3',
+		    locate+'audio/P2.mp3',
+		    locate+'audio/P3.mp3',
+		    locate+'audio/P4.mp3',
+		    locate+'audio/P5.mp3',
+		    locate+'audio/P6.mp3',
+		    locate+'audio/P7.mp3',
+		    locate+'audio/P8.mp3',
+			locate+'images/1.png',
+			locate+'images/2.png',
+			locate+'images/3.png',
+			locate+'images/4.png',
+			locate+'images/5.png',
+			locate+'images/6.png',
+			locate+'images/7.png',
+			locate+'images/8.png',
+			locate+'images/9.png',
+			locate+'images/10.png',
+			locate+'images/11.png',
+			locate+'images/12.png',
+			locate+'images/13.png',
+			locate+'images/14.png',
+			locate+'images/15.png',
+			locate+'images/16.png',
+			locate+'images/17.png',
+			locate+'images/18.png',
+			locate+'images/19.png',
+			locate+'images/20.png',
+			locate+'images/21.png',
+			locate+'images/22.png',
+			locate+'images/23.png',
+			locate+'images/24.png',
+			locate+'images/25.png',
+			locate+'images/26.png',
+			locate+'images/27.png',
+			locate+'images/28.png',
+			locate+'images/29.png',
+			locate+'images/30.png',
+			locate+'images/31.png',
+			locate+'images/32.png',
+			locate+'images/33.png',
+			locate+'images/34.png',
+			locate+'images/35.png',
+			locate+'images/36.png',
+			locate+'images/37.png',
+			locate+'images/38.png',
+			locate+'images/39.png',
+			locate+'images/40.png',
+			locate+'images/bg.jpg'
+		
+		],
+		onStart : function(total){
+			//console.log('start:'+total);
+		},
+		onProgress : function(current, total){
+			//console.log(current+'/'+total);
+			var percent = current/total*100;
+			$('.progressbar').css('width', percent+'%');
+			$('.progresstext .current').text(current);
+			$('.progresstext .total').text(total);
+		},
+		onComplete : function(total){
+			for(var i=0;i<9;i++){
+				tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
+			}
+			for(var i=1;i<41;i++){
+					tagLink+='<link rel="prefetch" href="images/'+i+'.png" />';
+			}
+			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>';
+			$($('head')[0]).append(tagLink);
+			$('.progresstext').html('已加载完,精彩即将呈现...');
+			setTimeout(function(){
+				$(".alertbox").hide();
+				$(".title").addClass("animated flip");
+			    playSound(arr[0]);
+				setTimeout(function(){
+				    $(".title1").addClass("animated rubberBand").fadeIn();
+				    setTimeout(function(){
+					  $(".title2").addClass("animated rubberBand").fadeIn();
+					  setTimeout(function(){
+						$(".title3").addClass("animated rubberBand").fadeIn();
+					   },800)
+				   },800)
+					
+				},800)
+				
+			},1000)
+			
+			
+		}
+	});
+    loader.start();
+</script>
+<!--<script src="js/index.js" type="text/javascript" charset="utf-8"></script>-->
+<script type="text/javascript">
+	var $print=$("#container");
+	changeOrientation($print);
+	$(".title1").click(function(){
+		$(this).removeClass("rubberBand").addClass("bounceIn");
+		$(".nub1").show();
+		$(".nub11").show();
+		$(".nub12").hide();
+		$(".nub13").hide();
+		$(".nub2").hide();
+		$(".nub3").hide();
+		$(".content img").attr("src","images/5.png");
+		setTimeout(function(){
+			$(".page1").addClass("animated rotateOut").fadeOut();
+			$(".page2").addClass("animated rotateIn").fadeIn();
+			setTimeout(function(){
+				$(".hand1").addClass("animated pulse").show();
+				$(".nub11 .person").addClass("animated pulse");
+			    $(".nub11 .number").addClass("animated pulse");
+			    $(".nub11 .apple").addClass("animated pulse");
+				setTimeout(function(){
+					$(".hand1").removeClass("animated pulse").fadeOut();
+					$(".nub11 .person").removeClass("animated pulse");
+					$(".nub11 .number").removeClass("animated pulse");
+					$(".nub11 .apple").removeClass("animated pulse");
+				},800);
+			},1000)
+		},800)
+	})
+	$(".title2").click(function(){
+		$(this).removeClass("rubberBand").addClass("bounceIn");
+		pause();
+		playSound(arr[3]);
+		$(".nub1").hide();
+		$(".nub2").show();
+		$(".nub21").show();
+		$(".nub22").hide();
+		$(".nub3").hide();
+		$(".content img").attr("src","images/6.png");
+		setTimeout(function(){
+			$(".page1").addClass("animated rotateOut").fadeOut();
+			$(".page2").addClass("animated rotateIn").fadeIn();
+			setTimeout(function(){
+				$(".hand").addClass("gusture").show();
+					setTimeout(function(){
+					$(".hand").hide();
+					$(".hand").removeClass("gusture");
+				},1000)
+			},1000)
+			
+		},800)
+	})
+	$(".title3").click(function(){
+			pause();
+		playSound(arr[4]);
+		$(".nub1").hide();
+		$(".nub2").hide();
+		$(".nub3").show();
+		$(".content img").attr("src","images/7.png");
+		$(this).removeClass("rubberBand").addClass("bounceIn")
+		setTimeout(function(){
+			$(".page1").addClass("animated rotateOut").fadeOut()
+			$(".page2").addClass("animated rotateIn").fadeIn();
+			 setTimeout(function(){
+				$(".hand").addClass("gusture1").show();
+					setTimeout(function(){
+					$(".hand").hide();
+					$(".hand").removeClass("gusture1");
+				},1000)
+			},1000)
+		},800)
+	})
+	$(".tishi").click(function(){
+		$(this).addClass("animated tada");
+		setTimeout(function(){
+			$(".tishi").removeClass("animated tada")
+		},800)
+		$(".content").fadeToggle();
+	})
+	var source;
+	function playSound(buffer){
+	    source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source.buffer = buffer;//  告诉音频源 播放哪一段音频
+	    source.connect(context.destination);// 连接到输出源
+	    source.start(0);//开始播放
+	   }
+	function pause() {
+       source.stop();
+    }
+	$(".laba").click(function(){
+		$(this).addClass("animated pulse");
+		setTimeout(function(){
+			$(".laba").removeClass("animated pulse")
+		},800);
+		if($(".nub1").css("display")=="block"){
+			
+		}else if($(".nub2").css("display")=="block"){
+			pause();
+			playSound(arr[3]);
+		}else if($(".nub3").css("display")=="block"){
+			pause(); 
+			playSound(arr[4])
+		}
+	});
+	$(".next").click(function(){
+		pause();
+		$(this).addClass("animated pulse");
+		setTimeout(function(){
+			$(".next").removeClass("animated pulse")
+		},800);
+		if($(".nub1").css("display")=="block"){
+			pause();
+			playSound(arr[3]);
+			$(".nub1").fadeOut();
+			$(".nub2").fadeIn();
+			$(".nub21").show();
+			$(".nub22").hide();
+			setTimeout(function(){
+				$(".hand").addClass("gusture").show();
+					setTimeout(function(){
+					$(".hand").hide();
+					$(".hand").removeClass("gusture");
+				},1000)
+			},1000)
+		}else if($(".nub2").css("display")=="block"){
+				pause();
+			playSound(arr[4]);
+			$(".nub2").fadeOut();
+			$(".nub3").fadeIn();
+			setTimeout(function(){
+				$("#bird11").css({
+                "left":"7%",
+                "top":"9%", 
+                "pointer-events":"auto",
+	    		});
+	    		$("#bird13").css({
+	                "left":"73%",
+	                "top":"9%", 
+	                "pointer-events":"auto",
+	    		});
+			},1500)
+		}else if($(".nub3").css("display")=="block"){
+			$(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			               $("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+			                		
+			
+		}
+	});
+	$(".reset").click(function(){
+		pause();
+		$(this).addClass("animated pulse");
+		setTimeout(function(){
+			$(".next").removeClass("animated pulse")
+		},800);
+		if($(".nub1").css("display")=="block"){
+			$(".nub11").show();
+			$(".nub12").hide();
+			$(".nub13").hide();
+			$(".nub2").hide();
+			$(".nub3").hide();
+		    $(".content img").attr("src","images/5.png");
+			setTimeout(function(){
+				$(".page1").addClass("animated rotateOut").fadeOut();
+				$(".page2").addClass("animated rotateIn").fadeIn();
+				setTimeout(function(){
+					$(".hand1").addClass("animated pulse").show();
+					$(".nub11 .person").addClass("animated pulse");
+				    $(".nub11 .number").addClass("animated pulse");
+				    $(".nub11 .apple").addClass("animated pulse");
+					setTimeout(function(){
+						$(".hand1").removeClass("animated pulse").fadeOut();
+						$(".nub11 .person").removeClass("animated pulse");
+						$(".nub11 .number").removeClass("animated pulse");
+						$(".nub11 .apple").removeClass("animated pulse");
+					},800);
+				},1000)
+			},800)
+		}else if($(".nub2").css("display")=="block"){
+			$(".nub1").hide();
+			$(".nub2").show();
+			$(".nub21").show();
+			$(".nub22").hide();
+			$(".nub3").hide();
+			$(".content img").attr("src","images/6.png");
+        	$("#bird11").css({
+                "left":"7%",
+                "top":"9%", 
+                "pointer-events":"auto",
+    		});
+    		$("#bird13").css({
+                "left":"73%",
+                "top":"9%", 
+                "pointer-events":"auto",
+    		});
+			//setTimeout(function(){
+				//$(".page1").addClass("animated rotateOut").fadeOut();
+				//$(".page2").addClass("animated rotateIn").fadeIn();
+				setTimeout(function(){
+					$(".hand").addClass("gusture").show();
+						setTimeout(function(){
+						$(".hand").hide();
+						$(".hand").removeClass("gusture");
+					},1000)
+				},1000)
+				
+			//},800)
+		}else if($(".nub3").css("display")=="block"){
+						$(".nub1").hide();
+						$(".nub2").hide();
+						$(".nub21").show();
+						$(".nub22").hide();
+						$(".nub3").show();
+			                      $("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+			                		setTimeout(function(){
+										$(".hand").addClass("gusture1").show();
+											setTimeout(function(){
+											$(".hand").hide();
+											$(".hand").removeClass("gusture1");
+										},1000)
+									},1000)
+		}
+	});
+	$(".nub11 .person").click(function(){
+		$(".nub11 .person").addClass("animated pulse");
+		$(".nub11 .number").addClass("animated pulse");
+		$(".nub11 .apple").addClass("animated pulse");
+		pause(); 
+		playSound(arr[6]);
+	    playSound(arr[1]);
+		setTimeout(function(){
+			$(".nub11 .person").removeClass("animated pulse");
+			$(".nub11 .number").removeClass("animated pulse");
+			$(".nub11 .apple").removeClass("animated pulse");
+		},800);
+		source.onended=function(){
+			$(".nub11").fadeOut();
+			$(".nub12").fadeIn();
+			$(".nub13").fadeOut();
+		}
+	});
+	$(".number").click(function(){
+		pause();
+		playSound(arr[7]);
+	})
+	$(".apple").click(function(){
+		pause();
+		playSound(arr[7]);
+	});
+	$(".nub12 .person").click(function(){
+		$(".nub12 .person").addClass("animated pulse");
+		$(".nub12 .number").addClass("animated pulse");
+		$(".nub12 .apple").addClass("animated pulse");
+		pause(); 
+		playSound(arr[6]);
+	    playSound(arr[2]);
+		setTimeout(function(){
+			$(".nub12 .person").removeClass("animated pulse");
+			$(".nub12 .number").removeClass("animated pulse");
+			$(".nub12 .apple").removeClass("animated pulse");
+		},800);
+		source.onended=function(){
+			$(".nub11").fadeOut();
+			$(".nub12").fadeOut();
+			$(".nub13").fadeIn();
+		}
+	})
+	$(".nub13 .person").click(function(){
+		$(".nub13 .person").addClass("animated pulse");
+		$(".nub13 .number").addClass("animated pulse");
+		$(".nub13 .apple").addClass("animated pulse");
+		pause();
+		playSound(arr[6]);
+	    playSound(arr[5]);
+	    $(".succ").fadeIn();
+		setTimeout(function(){
+			$(".nub13 .person").removeClass("animated pulse");
+			$(".nub13 .number").removeClass("animated pulse");
+			$(".nub13 .apple").removeClass("animated pulse");
+		},800);
+		source.onended=function(){
+			$(".nub1").fadeOut();
+			$(".nub11").fadeOut();
+			$(".nub12").fadeOut();
+			$(".nub13").fadeOut();
+			 $(".succ").fadeOut();
+			$(".nub2").fadeIn();
+			$(".content img").attr("src","images/6.png");
+			setTimeout(function(){
+				$(".hand").addClass("gusture").show();
+					setTimeout(function(){
+					$(".hand").hide();
+					$(".hand").removeClass("gusture");
+				},1000)
+			},1000)
+		}
+	})
+	 var winW=$(window).width();    
+     var winH=$(window).height();
+     var startX;
+     var startY;
+     var sx;
+     var sy;
+     var moveX;
+     var moveY;
+     var px;
+     var py;
+     var boxy;
+     var hd;
+     var hd1;
+     var hd3;
+	bird.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.4;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 boxy=winW*0.86*0.28*232/284;
+		$(this).removeClass("scale");
+		 if(px>=winW*0.86*0.36&&px<=winW*0.86*0.64 && py>=winW*0.86*527/988*0.52 && py<=(winW*0.86*527/988*0.52+boxy)){
+		 	 $(this).css({
+                "left":"40%",
+                "top":"55%",                    
+                }).css("pointer-events","none");
+                 playSound(arr[8])
+                playSound(arr[6]);
+                $(".succ").fadeIn();
+                setTimeout(function(){
+                	 $(".succ").hide();
+                   $(".nub21").fadeOut();
+                   $(".nub22").fadeIn();
+	                  setTimeout(function(){
+	                	$("#bird").css({
+			                "left":"40%",
+			                "top":"9%", 
+			                "pointer-events":"auto",
+                		});
+	                },600);
+                },1200)
+             
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"40%",
+                "top":"9%",                    
+                })
+		 }
+	},false);
+	
+	bird1.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.07;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		$(this).removeClass("scale");
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"7%",
+                "top":"9%",                    
+                })
+		
+	},false);
+	
+	bird3.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.73;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		$(this).removeClass("scale");
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"73%",
+                "top":"9%",                    
+                })
+		
+	},false);
+	
+   
+   bird11.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.07;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird11.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird11.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 boxy=winW*0.86*0.28*232/284;
+		$(this).removeClass("scale");
+		 if(px>=winW*0.86*0.03&&px<=winW*0.86*0.31 && py>=winW*0.86*527/988*0.52 && py<=(winW*0.86*527/988*0.52+boxy)){
+		 	 $(this).css({
+                "left":"7%",
+                "top":"55%",                    
+                }).css("pointer-events","none");
+                playSound(arr[8]);
+                hd=winW*0.86*527/988*0.09+20;
+               hd1=$("#bird11").css("top").split("px")[0];
+               hd3=$("#bird13").css("top").split("px")[0];
+               if(hd1>=hd&&hd3>=hd){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                   $(".nub2").fadeOut();
+			                   $(".nub3").fadeIn();
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#bird11").css({
+						                "left":"7%",
+						                "top":"9%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#bird13").css({
+						                "left":"73%",
+						                "top":"9%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             }
+             
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"7%",
+                "top":"9%",                    
+                })
+		 }
+	},false);
+	
+	 bird13.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.73;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird13.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird13.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 boxy=winW*0.86*0.28*232/284;
+		$(this).removeClass("scale");
+		 if(px>=winW*0.86*0.69&&px<=winW*0.86*0.97 && py>=winW*0.86*527/988*0.52 && py<=(winW*0.86*527/988*0.52+boxy)){
+		 	 $(this).css({
+                "left":"73%",
+                "top":"55%",                    
+                }).css("pointer-events","none");
+                playSound(arr[8]);
+               hd=winW*0.86*527/988*0.09+20;
+               hd1=$("#bird11").css("top").split("px")[0];
+               hd3=$("#bird13").css("top").split("px")[0];
+               if(hd1>=hd&&hd3>=hd){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                   $(".nub2").fadeOut();
+			                   $(".nub3").fadeIn();
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#bird11").css({
+						                "left":"7%",
+						                "top":"9%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#bird13").css({
+						                "left":"73%",
+						                "top":"9%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             }
+             
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"73%",
+                "top":"9%",                    
+                })
+		 }
+	},false);
+	
+   bird12.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.4;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird12.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird12.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		$(this).removeClass("scale");
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"40%",
+                "top":"9%",                    
+                })
+		
+	},false);
+	
+	
+	
+	//第三页答题
+	 no1.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 sx=winW*0.86*0.9;
+		 sy=winW*0.86*527/988*0.05;
+		 $(this).addClass("scale");
+	},false);
+	no1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	no1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.86*0.60*49/572; 
+		  console.log(boxy)//目标div的高度;
+		$(this).removeClass("scale");
+		console.log(px,py)
+		 
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.67 && py>=winW*0.86*527/988*0.53-8&& py<=(winW*0.86*527/988*0.53+boxy)){
+			/*$(".bg").css({
+            "left":winW*0.86*0.07,
+            "top":winW*0.86*527/988*0.53-8, 
+            "width":winW*0.86*0.67-winW*0.86*0.07,   
+            "height":(winW*0.86*527/988*0.53+boxy)-winW*0.86*527/988*0.53+8, 
+            "background":"#f00"
+            })*/
+		$(this).css({
+            "left":"61%",
+            "top":"50%",                    
+            }).css("pointer-events","none");
+            playSound(arr[8]);
+			 lf=parseInt(winW*0.86*0.9)-10;
+	          lf1=parseInt($("#no1").css("left").split("px")[0]);
+	          lf2=parseInt($("#no2").css("left").split("px")[0]);
+	          lf3=parseInt($("#no3").css("left").split("px")[0]);
+	          lf4=parseInt($("#no4").css("left").split("px")[0]);
+	          lf5=parseInt($("#no5").css("left").split("px")[0]);
+	          lf6=parseInt($("#no6").css("left").split("px")[0]);
+	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			               $(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             
+	          }
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"90",
+                "top":"5%",                    
+                })
+		 }
+		
+		
+	},false);
+	
+	 no2.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 //源的left 0.9;top 0.2;
+		 sx=winW*0.86*0.9;
+		 sy=winW*0.86*527/988*0.2;
+		 $(this).addClass("scale");
+	},false);
+	no2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	no2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.86*0.60*51/572; 
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		$(this).removeClass("scale");
+		console.log(px,py)
+		/* lf=parseInt(winW*0.86*527/988*0.19);
+		 lf1=parseInt(winW*0.86*527/988*0.5);
+		 lf2=parseInt(winW*0.86*527/988*0.66);
+         lf3=parseInt($("#no5").css("top").split("px")[0]);
+         console.log(lf2,lf3);*/
+        //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.67 && py>=winW*0.86*527/988*0.38-8&& py<=(winW*0.86*527/988*0.38+boxy)){
+			/*$(".bg").css({
+            "left":winW*0.86*0.07,
+            "top":winW*0.86*527/988*0.38-8, 
+            "width":winW*0.86*0.67-winW*0.86*0.07,   
+            "height":(winW*0.86*527/988*0.38+boxy)-winW*0.86*527/988*0.38+8, 
+            "background":"#f00"
+            })*/
+		$(this).css({
+            "left":"61%",
+            "top":"36%",                    
+            }).css("pointer-events","none");
+            playSound(arr[8]);
+			 lf=parseInt(winW*0.86*0.9)-10;
+	          lf1=parseInt($("#no1").css("left").split("px")[0]);
+	          lf2=parseInt($("#no2").css("left").split("px")[0]);
+	          lf3=parseInt($("#no3").css("left").split("px")[0]);
+	          lf4=parseInt($("#no4").css("left").split("px")[0]);
+	          lf5=parseInt($("#no5").css("left").split("px")[0]);
+	          lf6=parseInt($("#no6").css("left").split("px")[0]);
+	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                 $(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             
+	          }	
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"90",
+                "top":"20%",                    
+                })
+		 }
+		
+		
+	},false);
+	
+	 no3.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 //源的left 0.9;top 0.2;
+		 sx=winW*0.86*0.9;
+		 sy=winW*0.86*527/988*0.36;
+		 $(this).addClass("scale");
+	},false);
+	no3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	no3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.86*0.64*61/600; 
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		$(this).removeClass("scale");
+		console.log(px,py)
+		/* lf=parseInt(winW*0.86*527/988*0.19);
+		 lf1=parseInt(winW*0.86*527/988*0.5);
+		 lf2=parseInt(winW*0.86*527/988*0.66);
+         lf3=parseInt($("#no5").css("top").split("px")[0]);
+         console.log(lf2,lf3);*/
+        //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.71 && py>=winW*0.86*527/988*0.84-8&& py<=(winW*0.86*527/988*0.84+boxy)){
+			/*$(".bg").css({
+            "left":winW*0.86*0.07,
+            "top":winW*0.86*527/988*0.84-8, 
+            "width":winW*0.86*0.71-winW*0.86*0.07,   
+            "height":(winW*0.86*527/988*0.84+boxy)-winW*0.86*527/988*0.84+8, 
+            "background":"#f00"
+            })*/
+		$(this).css({
+            "left":"65%",
+            "top":"84%",                    
+            }).css("pointer-events","none");
+            playSound(arr[8]);
+			 lf=parseInt(winW*0.86*0.9)-10;
+	          lf1=parseInt($("#no1").css("left").split("px")[0]);
+	          lf2=parseInt($("#no2").css("left").split("px")[0]);
+	          lf3=parseInt($("#no3").css("left").split("px")[0]);
+	          lf4=parseInt($("#no4").css("left").split("px")[0]);
+	          lf5=parseInt($("#no5").css("left").split("px")[0]);
+	          lf6=parseInt($("#no6").css("left").split("px")[0]);
+	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                  $(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             
+	          }	
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"90",
+                "top":"36%",                    
+                })
+		 }
+		
+		
+	},false);
+	
+	 no4.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 //源的left 0.9;top 0.2;
+		 sx=winW*0.86*0.9;
+		 sy=winW*0.86*527/988*0.51;
+		 $(this).addClass("scale");
+	},false);
+	no4.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	no4.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.86*0.54*57/504; 
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		$(this).removeClass("scale");
+		console.log(px,py)
+		/* lf=parseInt(winW*0.86*527/988*0.19);
+		 lf1=parseInt(winW*0.86*527/988*0.5);
+		 lf2=parseInt(winW*0.86*527/988*0.66);
+         lf3=parseInt($("#no5").css("top").split("px")[0]);
+         console.log(lf2,lf3);*/
+        //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.61 && py>=winW*0.86*527/988*0.21-8&& py<=(winW*0.86*527/988*0.21+boxy)){
+			/*$(".bg").css({
+            "left":winW*0.86*0.07,
+            "top":winW*0.86*527/988*0.21-8, 
+            "width":winW*0.86*0.61-winW*0.86*0.07,   
+            "height":(winW*0.86*527/988*0.21+boxy)-winW*0.86*527/988*0.21+8, 
+            "background":"#f00"
+            })*/
+		$(this).css({
+            "left":"55%",
+            "top":"19%",                    
+            }).css("pointer-events","none");
+            playSound(arr[8]);
+			 lf=parseInt(winW*0.86*0.9)-10;
+	          lf1=parseInt($("#no1").css("left").split("px")[0]);
+	          lf2=parseInt($("#no2").css("left").split("px")[0]);
+	          lf3=parseInt($("#no3").css("left").split("px")[0]);
+	          lf4=parseInt($("#no4").css("left").split("px")[0]);
+	          lf5=parseInt($("#no5").css("left").split("px")[0]);
+	          lf6=parseInt($("#no6").css("left").split("px")[0]);
+	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                  $(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             
+	          }	
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"90",
+                "top":"51%",                    
+                })
+		 }
+		
+		
+	},false);
+	
+	 no5.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 //源的left 0.9;top 0.2;
+		 sx=winW*0.86*0.9;
+		 sy=winW*0.86*527/988*0.66;
+		 $(this).addClass("scale");
+	},false);
+	no5.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	no5.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.86*0.54*40/500; 
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		$(this).removeClass("scale");
+		console.log(px,py)
+		/* lf=parseInt(winW*0.86*527/988*0.19);
+		 lf1=parseInt(winW*0.86*527/988*0.5);
+		 lf2=parseInt(winW*0.86*527/988*0.66);
+         lf3=parseInt($("#no5").css("top").split("px")[0]);
+         console.log(lf2,lf3);*/
+        //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.61 && py>=winW*0.86*527/988*0.08-8&& py<=(winW*0.86*527/988*0.08+boxy)){
+		$(this).css({
+            "left":"55%",
+            "top":"4%",                    
+            }).css("pointer-events","none");
+            playSound(arr[8]);
+			 lf=parseInt(winW*0.86*0.9)-10;
+	          lf1=parseInt($("#no1").css("left").split("px")[0]);
+	          lf2=parseInt($("#no2").css("left").split("px")[0]);
+	          lf3=parseInt($("#no3").css("left").split("px")[0]);
+	          lf4=parseInt($("#no4").css("left").split("px")[0]);
+	          lf5=parseInt($("#no5").css("left").split("px")[0]);
+	          lf6=parseInt($("#no6").css("left").split("px")[0]);
+	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                  $(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			                   $(".page1").fadeIn();
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             
+	          }	
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"90",
+                "top":"66%",                    
+                })
+		 }
+		
+		
+	},false);
+	
+	 no6.addEventListener("touchstart",function(e){
+		 startX = e.touches[0].pageX; 
+		 startY = e.touches[0].pageY;
+		 //源的left 0.9;top 0.2;
+		 sx=winW*0.86*0.9;
+		 sy=winW*0.86*527/988*0.81;
+		 $(this).addClass("scale");
+	},false);
+	no6.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveX = e.touches[0].pageX; 
+		 moveY = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=moveY-startY+sy;
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	no6.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.86*0.64*81/600; 
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		$(this).removeClass("scale");
+		console.log(px,py)
+		/* lf=parseInt(winW*0.86*527/988*0.19);
+		 lf1=parseInt(winW*0.86*527/988*0.5);
+		 lf2=parseInt(winW*0.86*527/988*0.66);
+         lf3=parseInt($("#no5").css("top").split("px")[0]);
+         console.log(lf2,lf3);*/
+        //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.71 && py>=winW*0.86*527/988*0.64-8&& py<=(winW*0.86*527/988*0.64+boxy)){
+		$(this).css({
+            "left":"65%",
+            "top":"66%",                    
+            }).css("pointer-events","none");
+            playSound(arr[8]);
+			 lf=parseInt(winW*0.86*0.9)-10;
+	          lf1=parseInt($("#no1").css("left").split("px")[0]);
+	          lf2=parseInt($("#no2").css("left").split("px")[0]);
+	          lf3=parseInt($("#no3").css("left").split("px")[0]);
+	          lf4=parseInt($("#no4").css("left").split("px")[0]);
+	          lf5=parseInt($("#no5").css("left").split("px")[0]);
+	          lf6=parseInt($("#no6").css("left").split("px")[0]);
+	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+               	$(".succ").fadeIn();
+                 	playSound(arr[6]);
+					setTimeout(function(){
+			                	 $(".succ").hide();
+			                 $(".nub3").fadeOut();
+			$(".page1").removeClass("animated rotateOut").fadeIn()
+			$(".page2").removeClass("animated rotateOut").fadeOut()
+			                   $(".content img").attr("src","images/7.png");
+			                    setTimeout(function(){
+				                	$("#no1").css({
+						                "left":"90%",
+						                "top":"5%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no2").css({
+						                "left":"90%",
+						                "top":"20%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no3").css({
+						                "left":"90%",
+						                "top":"36%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no4").css({
+						                "left":"90%",
+						                "top":"51%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no5").css({
+						                "left":"90%",
+						                "top":"66%", 
+						                "pointer-events":"auto",
+			                		});
+			                		$("#no6").css({
+						                "left":"90%",
+						                "top":"81%", 
+						                "pointer-events":"auto",
+			                		});
+	                          },600);
+			          },1200)
+	             
+	          }	
+		 }else{
+		 	playSound(arr[7])
+		 	 $(this).css({
+                "left":"90",
+                "top":"81%",                    
+                })
+		 }
+		
+		
+	},false);
+	
+</script>
+</body>
+</html>
