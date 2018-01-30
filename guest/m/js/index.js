@@ -124,7 +124,7 @@ var $print=$("#container");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	   $(".nub22").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
-			pause();
+			//pause();
 			playSound(arr[3]);
 			$(".nub1").fadeOut();
 			$(".nub2").fadeIn();
@@ -140,7 +140,7 @@ var $print=$("#container");
 				},1000)
 			},1000)
 		}else if($(".nub2").css("display")=="block"){
-				pause();
+				//pause();
 			playSound(arr[4]);
 			$(".nub2").fadeOut();
 			$(".nub3").fadeIn();
@@ -166,7 +166,7 @@ var $print=$("#container");
 	    		});
 			},1500)
 		}else if($(".nub3").css("display")=="block"){
-			pause();
+			//pause();
 			$(".nub3").fadeOut();
 			$(".page1").removeClass("animated rotateOut").fadeIn()
 			$(".page2").removeClass("animated rotateOut").fadeOut()
@@ -215,7 +215,7 @@ var $print=$("#container");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	   $(".nub22").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
-			pause();
+			//pause();
 			if($(".nub11").css("display")=="block"){
 				$(".nub11").show();
 				$(".nub12").hide();
@@ -254,7 +254,7 @@ var $print=$("#container");
 				},1000)
 			},800)
 		}else if($(".nub2").css("display")=="block"){
-			pause();
+			//pause();
 			if($(".nub21").css("display")=="block"){
 				$(".nub1").hide();
 			    $(".nub2").show();
@@ -269,7 +269,7 @@ var $print=$("#container");
 					},1000)
 				},1000)
 			}else if($(".nub22").css("display")=="block"){
-				pause();
+				//pause();
 				$(".nub1").hide();
 			    $(".nub2").show();
 			   $(".nub21").hide();
@@ -748,6 +748,7 @@ var $print=$("#container");
 	          lf5=parseInt($("#no5").css("left").split("px")[0]);
 	          lf6=parseInt($("#no6").css("left").split("px")[0]);
 	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+	          	alert(lf1);
                	$(".succ").fadeIn();
                  	playSound(arr[6]);
 					/*setTimeout(function(){
