@@ -1,5 +1,14 @@
 var $print=$("#container");
 	changeOrientation($print);
+	var b1=false;
+	var b2=false;
+	var c1=false;
+	var c2=false;
+	var c3=false;
+	var c4=false;
+	var c5=false;
+	var c6=false;
+	
 	$(".title1").click(function(){
 		$(this).removeClass("rubberBand").addClass("bounceIn");
 		playSound(arr[3]);
@@ -78,7 +87,12 @@ var $print=$("#container");
 		setTimeout(function(){
 			$(".tishi").removeClass("animated tada")
 		},800)
-		$(".content").fadeToggle();
+		if($(".content").css("display")=="block"){
+			$(".content").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideOutLeft").fadeOut();
+		}else{
+			$(".content").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideInLeft").fadeIn();
+		}
+		
 	})
 	var playing;
 	function playSound(buffer){
@@ -92,6 +106,7 @@ var $print=$("#container");
 	    }
 	   }
 	function pause() {
+		console.log(playing)
 		if(playing){
          source.stop();
       }
@@ -99,11 +114,10 @@ var $print=$("#container");
 	$(".laba").click(function(){
 		$(this).addClass("animated pulse");
 		setTimeout(function(){
-			playSound(arr[3]);
 			$(".laba").removeClass("animated pulse")
 		},800);
 		if($(".nub1").css("display")=="block"){
-			
+			playSound(arr[3]);
 		}else if($(".nub2").css("display")=="block"){
 			pause();
 			playSound(arr[3]);
@@ -113,12 +127,19 @@ var $print=$("#container");
 		}
 	});
 	$(".next").click(function(){
-		//pause();
+		pause();
 		$(this).addClass("animated pulse");
 		setTimeout(function(){
 			$(".next").removeClass("animated pulse")
 		},800);
-		
+		b1=false;
+		b2=false;
+		c1=false;
+		c2=false;
+		c3=false;
+		c4=false;
+		c5=false;
+		c6=false;
 		 $(".next").removeClass("animated pulse infinite");
 		$(".nub13").removeClass("animated pulse infinite").fadeOut();
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
@@ -205,11 +226,19 @@ var $print=$("#container");
 		}
 	});
 	$(".reset").click(function(){
-		//pause();
+		pause();
 		$(this).addClass("animated pulse");
 		setTimeout(function(){
 			$(".next").removeClass("animated pulse")
 		},800);
+		b1=false;
+		b2=false;
+		c1=false;
+		c2=false;
+		c3=false;
+		c4=false;
+		c5=false;
+		c6=false;
 		 $(".next").removeClass("animated pulse infinite");
 		$(".nub13").removeClass("animated pulse infinite");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
@@ -415,8 +444,19 @@ var $print=$("#container");
 			
 		}
 	})
-	 var winH=$(window).width();    
-     var winW=$(window).height();
+	 var winH;  
+     var winW;
+     var a=Number($(window).width());//320
+     var b=Number($(window).height());//504
+     if(a>b){
+         winW=a;   
+     	 winH=b; 
+     	
+     }else if(a<b){
+     	 winW=b;
+     	 winH=a;
+     	 
+     }
      var startX;
      var startY;
      var sx;
@@ -568,32 +608,13 @@ var $print=$("#container");
                 "top":"55%",                    
                 }).css("pointer-events","none");
                 playSound(arr[8]);
-                hd=winW*0.86*527/988*0.09+20;
-               hd1=$("#bird11").css("top").split("px")[0];
-               hd3=$("#bird13").css("top").split("px")[0];
-               if(hd1>=hd&&hd3>=hd){
+                b1=true;
+                if(b1==true&&b2==true){
                	$(".succ").addClass("animated pulse infinite").fadeIn();
 			   $(".nub22").addClass("animated pulse infinite");
 			  $(".next").addClass("animated pulse infinite");
                  	playSound(arr[6]);
-				/*	setTimeout(function(){
-			                	 $(".succ").hide();
-			                   $(".nub2").fadeOut();
-			                   $(".nub3").fadeIn();
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#bird11").css({
-						                "left":"7%",
-						                "top":"9%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#bird13").css({
-						                "left":"73%",
-						                "top":"9%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
+			
 	             }
              
 		 }else{
@@ -632,33 +653,13 @@ var $print=$("#container");
                 "left":"73%",
                 "top":"55%",                    
                 }).css("pointer-events","none");
-                playSound(arr[8]);
-               hd=winW*0.86*527/988*0.09+20;
-               hd1=$("#bird11").css("top").split("px")[0];
-               hd3=$("#bird13").css("top").split("px")[0];
-               if(hd1>=hd&&hd3>=hd){
+               b2=true;
+                if(b1==true&&b2==true){
                	$(".succ").addClass("animated pulse infinite").fadeIn();
 			   $(".nub22").addClass("animated pulse infinite");
 			  $(".next").addClass("animated pulse infinite");
                  	playSound(arr[6]);
-				/*	setTimeout(function(){
-			                	 $(".succ").hide();
-			                   $(".nub2").fadeOut();
-			                   $(".nub3").fadeIn();
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#bird11").css({
-						                "left":"7%",
-						                "top":"9%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#bird13").css({
-						                "left":"73%",
-						                "top":"9%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
+			
 	             }
              
 		 }else{
@@ -700,7 +701,6 @@ var $print=$("#container");
 	},false);
 	
 	
-	
 	//第三页答题
 	 no1.addEventListener("touchstart",function(e){
 		 startY = e.touches[0].pageX; 
@@ -740,15 +740,9 @@ var $print=$("#container");
             "top":"50%",                    
             }).css("pointer-events","none");
             playSound(arr[8]);
-			 lf=parseInt(winW*0.86*0.9)-10;
-	          lf1=parseInt($("#no1").css("left").split("px")[0]);
-	          lf2=parseInt($("#no2").css("left").split("px")[0]);
-	          lf3=parseInt($("#no3").css("left").split("px")[0]);
-	          lf4=parseInt($("#no4").css("left").split("px")[0]);
-	          lf5=parseInt($("#no5").css("left").split("px")[0]);
-	          lf6=parseInt($("#no6").css("left").split("px")[0]);
-	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
-	          	alert(lf1);
+			 c1=true;
+              if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
+	          	//alert(lf1);
                	$(".succ").fadeIn();
                  	playSound(arr[6]);
 					/*setTimeout(function(){
@@ -828,75 +822,18 @@ var $print=$("#container");
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
 		$(this).removeClass("scale");
 		console.log(px,py)
-		/* lf=parseInt(winW*0.86*527/988*0.19);
-		 lf1=parseInt(winW*0.86*527/988*0.5);
-		 lf2=parseInt(winW*0.86*527/988*0.66);
-         lf3=parseInt($("#no5").css("top").split("px")[0]);
-         console.log(lf2,lf3);*/
+		
         //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.67 && py>=winW*0.86*527/988*0.38-8&& py<=(winW*0.86*527/988*0.38+boxy)){
-			/*$(".bg").css({
-            "left":winW*0.86*0.07,
-            "top":winW*0.86*527/988*0.38-8, 
-            "width":winW*0.86*0.67-winW*0.86*0.07,   
-            "height":(winW*0.86*527/988*0.38+boxy)-winW*0.86*527/988*0.38+8, 
-            "background":"#f00"
-            })*/
 		$(this).css({
             "left":"61%",
             "top":"36%",                    
             }).css("pointer-events","none");
             playSound(arr[8]);
-			 lf=parseInt(winW*0.86*0.9)-10;
-	          lf1=parseInt($("#no1").css("left").split("px")[0]);
-	          lf2=parseInt($("#no2").css("left").split("px")[0]);
-	          lf3=parseInt($("#no3").css("left").split("px")[0]);
-	          lf4=parseInt($("#no4").css("left").split("px")[0]);
-	          lf5=parseInt($("#no5").css("left").split("px")[0]);
-	          lf6=parseInt($("#no6").css("left").split("px")[0]);
-	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+			 c2=true;
+              if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
                  	playSound(arr[6]);
-					/*setTimeout(function(){
-			                	 $(".succ").hide();
-			                 $(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#no1").css({
-						                "left":"90%",
-						                "top":"5%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no2").css({
-						                "left":"90%",
-						                "top":"20%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no3").css({
-						                "left":"90%",
-						                "top":"36%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no4").css({
-						                "left":"90%",
-						                "top":"51%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no5").css({
-						                "left":"90%",
-						                "top":"66%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no6").css({
-						                "left":"90%",
-						                "top":"81%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
-	             
 	          }	
 		 }else{
 		 	playSound(arr[7])
@@ -933,76 +870,19 @@ var $print=$("#container");
 		  boxy=winW*0.86*0.64*61/600; 
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
 		$(this).removeClass("scale");
-		console.log(px,py)
-		/* lf=parseInt(winW*0.86*527/988*0.19);
-		 lf1=parseInt(winW*0.86*527/988*0.5);
-		 lf2=parseInt(winW*0.86*527/988*0.66);
-         lf3=parseInt($("#no5").css("top").split("px")[0]);
-         console.log(lf2,lf3);*/
+		
+		
         //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.71 && py>=winW*0.86*527/988*0.84-8&& py<=(winW*0.86*527/988*0.84+boxy)){
-			/*$(".bg").css({
-            "left":winW*0.86*0.07,
-            "top":winW*0.86*527/988*0.84-8, 
-            "width":winW*0.86*0.71-winW*0.86*0.07,   
-            "height":(winW*0.86*527/988*0.84+boxy)-winW*0.86*527/988*0.84+8, 
-            "background":"#f00"
-            })*/
 		$(this).css({
             "left":"65%",
             "top":"84%",                    
             }).css("pointer-events","none");
             playSound(arr[8]);
-			 lf=parseInt(winW*0.86*0.9)-10;
-	          lf1=parseInt($("#no1").css("left").split("px")[0]);
-	          lf2=parseInt($("#no2").css("left").split("px")[0]);
-	          lf3=parseInt($("#no3").css("left").split("px")[0]);
-	          lf4=parseInt($("#no4").css("left").split("px")[0]);
-	          lf5=parseInt($("#no5").css("left").split("px")[0]);
-	          lf6=parseInt($("#no6").css("left").split("px")[0]);
-	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+			 c3=true;
+              if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
                  	playSound(arr[6]);
-					/*setTimeout(function(){
-			                	 $(".succ").hide();
-			                  $(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#no1").css({
-						                "left":"90%",
-						                "top":"5%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no2").css({
-						                "left":"90%",
-						                "top":"20%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no3").css({
-						                "left":"90%",
-						                "top":"36%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no4").css({
-						                "left":"90%",
-						                "top":"51%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no5").css({
-						                "left":"90%",
-						                "top":"66%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no6").css({
-						                "left":"90%",
-						                "top":"81%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
-	             
 	          }	
 		 }else{
 		 	playSound(arr[7])
@@ -1039,76 +919,19 @@ var $print=$("#container");
 		  boxy=winW*0.86*0.54*57/504; 
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
 		$(this).removeClass("scale");
-		console.log(px,py)
-		/* lf=parseInt(winW*0.86*527/988*0.19);
-		 lf1=parseInt(winW*0.86*527/988*0.5);
-		 lf2=parseInt(winW*0.86*527/988*0.66);
-         lf3=parseInt($("#no5").css("top").split("px")[0]);
-         console.log(lf2,lf3);*/
+	
         //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.61 && py>=winW*0.86*527/988*0.21-8&& py<=(winW*0.86*527/988*0.21+boxy)){
-			/*$(".bg").css({
-            "left":winW*0.86*0.07,
-            "top":winW*0.86*527/988*0.21-8, 
-            "width":winW*0.86*0.61-winW*0.86*0.07,   
-            "height":(winW*0.86*527/988*0.21+boxy)-winW*0.86*527/988*0.21+8, 
-            "background":"#f00"
-            })*/
+			
 		$(this).css({
             "left":"55%",
             "top":"19%",                    
             }).css("pointer-events","none");
             playSound(arr[8]);
-			 lf=parseInt(winW*0.86*0.9)-10;
-	          lf1=parseInt($("#no1").css("left").split("px")[0]);
-	          lf2=parseInt($("#no2").css("left").split("px")[0]);
-	          lf3=parseInt($("#no3").css("left").split("px")[0]);
-	          lf4=parseInt($("#no4").css("left").split("px")[0]);
-	          lf5=parseInt($("#no5").css("left").split("px")[0]);
-	          lf6=parseInt($("#no6").css("left").split("px")[0]);
-	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+		 c4=true;
+              if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
                  	playSound(arr[6]);
-					/*setTimeout(function(){
-			                	 $(".succ").hide();
-			                  $(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#no1").css({
-						                "left":"90%",
-						                "top":"5%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no2").css({
-						                "left":"90%",
-						                "top":"20%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no3").css({
-						                "left":"90%",
-						                "top":"36%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no4").css({
-						                "left":"90%",
-						                "top":"51%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no5").css({
-						                "left":"90%",
-						                "top":"66%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no6").css({
-						                "left":"90%",
-						                "top":"81%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
-	             
 	          }	
 		 }else{
 		 	playSound(arr[7])
@@ -1145,12 +968,6 @@ var $print=$("#container");
 		  boxy=winW*0.86*0.54*40/500; 
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
 		$(this).removeClass("scale");
-		console.log(px,py)
-		/* lf=parseInt(winW*0.86*527/988*0.19);
-		 lf1=parseInt(winW*0.86*527/988*0.5);
-		 lf2=parseInt(winW*0.86*527/988*0.66);
-         lf3=parseInt($("#no5").css("top").split("px")[0]);
-         console.log(lf2,lf3);*/
         //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.61 && py>=winW*0.86*527/988*0.08-8&& py<=(winW*0.86*527/988*0.08+boxy)){
 		$(this).css({
@@ -1158,57 +975,10 @@ var $print=$("#container");
             "top":"4%",                    
             }).css("pointer-events","none");
             playSound(arr[8]);
-			 lf=parseInt(winW*0.86*0.9)-10;
-	          lf1=parseInt($("#no1").css("left").split("px")[0]);
-	          lf2=parseInt($("#no2").css("left").split("px")[0]);
-	          lf3=parseInt($("#no3").css("left").split("px")[0]);
-	          lf4=parseInt($("#no4").css("left").split("px")[0]);
-	          lf5=parseInt($("#no5").css("left").split("px")[0]);
-	          lf6=parseInt($("#no6").css("left").split("px")[0]);
-	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
+			 c5=true;
+              if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
                  	playSound(arr[6]);
-					/*setTimeout(function(){
-			                	 $(".succ").hide();
-			                  $(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
-			                   $(".page1").fadeIn();
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#no1").css({
-						                "left":"90%",
-						                "top":"5%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no2").css({
-						                "left":"90%",
-						                "top":"20%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no3").css({
-						                "left":"90%",
-						                "top":"36%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no4").css({
-						                "left":"90%",
-						                "top":"51%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no5").css({
-						                "left":"90%",
-						                "top":"66%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no6").css({
-						                "left":"90%",
-						                "top":"81%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
-	             
 	          }	
 		 }else{
 		 	playSound(arr[7])
@@ -1246,11 +1016,6 @@ var $print=$("#container");
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
 		$(this).removeClass("scale");
 		console.log(px,py)
-		/* lf=parseInt(winW*0.86*527/988*0.19);
-		 lf1=parseInt(winW*0.86*527/988*0.5);
-		 lf2=parseInt(winW*0.86*527/988*0.66);
-         lf3=parseInt($("#no5").css("top").split("px")[0]);
-         console.log(lf2,lf3);*/
         //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.71 && py>=winW*0.86*527/988*0.64-8&& py<=(winW*0.86*527/988*0.64+boxy)){
 		$(this).css({
@@ -1258,56 +1023,10 @@ var $print=$("#container");
             "top":"66%",                    
             }).css("pointer-events","none");
             playSound(arr[8]);
-			 lf=parseInt(winW*0.86*0.9)-10;
-	          lf1=parseInt($("#no1").css("left").split("px")[0]);
-	          lf2=parseInt($("#no2").css("left").split("px")[0]);
-	          lf3=parseInt($("#no3").css("left").split("px")[0]);
-	          lf4=parseInt($("#no4").css("left").split("px")[0]);
-	          lf5=parseInt($("#no5").css("left").split("px")[0]);
-	          lf6=parseInt($("#no6").css("left").split("px")[0]);
-	          if(lf1<lf&&lf2<lf&&lf3<lf&&lf4<lf&&lf5<lf&&lf6<lf){
-               	$(".succ").fadeIn();
+			 c6=true;
+              if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
+               	  $(".succ").fadeIn();
                  	playSound(arr[6]);
-					/*setTimeout(function(){
-			                	 $(".succ").hide();
-			                 $(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#no1").css({
-						                "left":"90%",
-						                "top":"5%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no2").css({
-						                "left":"90%",
-						                "top":"20%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no3").css({
-						                "left":"90%",
-						                "top":"36%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no4").css({
-						                "left":"90%",
-						                "top":"51%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no5").css({
-						                "left":"90%",
-						                "top":"66%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no6").css({
-						                "left":"90%",
-						                "top":"81%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
-	             
 	          }	
 		 }else{
 		 	playSound(arr[7])
