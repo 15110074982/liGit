@@ -11,7 +11,8 @@ var $print=$("#container");
 	
 	$(".title1").click(function(){
 		$(this).removeClass("rubberBand").addClass("bounceIn");
-		playSound(arr[3]);
+		//pause();
+		//playSound(arr[3]);
 		$(".nub1").show();
 		$(".nub11").show();
 		$(".nub12").hide();
@@ -26,21 +27,19 @@ var $print=$("#container");
 			setTimeout(function(){
 				$(".hand1").addClass("animated pulse").show();
 				$(".nub11 .person").addClass("animated pulse");
-			    $(".nub11 .number").addClass("animated pulse");
-			    $(".nub11 .apple").addClass("animated pulse");
 				setTimeout(function(){
 					$(".hand1").removeClass("animated pulse").fadeOut();
 					$(".nub11 .person").removeClass("animated pulse");
-					$(".nub11 .number").removeClass("animated pulse");
-					$(".nub11 .apple").removeClass("animated pulse");
 				},800);
 			},1000)
 		},800)
 	})
 	$(".title2").click(function(){
 		$(this).removeClass("rubberBand").addClass("bounceIn");
-		//pause();
-		playSound(arr[3]);
+		pause();
+		setTimeout(function(){
+			playSound(arr[3]);
+		},500)
 		$(".nub1").hide();
 		$(".nub2").show();
 		$(".nub21").show();
@@ -62,8 +61,10 @@ var $print=$("#container");
 		},800)
 	})
 	$(".title3").click(function(){
-			//pause();
-		playSound(arr[4]);
+			pause();
+		setTimeout(function(){
+			playSound(arr[4]);
+		},500)
 		$(".nub1").hide();
 		$(".nub2").hide();
 		$(".nub3").show();
@@ -96,34 +97,42 @@ var $print=$("#container");
 	})
 	var playing;
 	function playSound(buffer){
-	    source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+		source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
 	    source.buffer = buffer;//  告诉音频源 播放哪一段音频
 	    source.connect(context.destination);// 连接到输出源
 	    source.start(0);//开始播放
 	    playing=true;
-	    source.onended=function(){
-	    	playing=false;
-	    }
 	   }
 	function pause() {
-		console.log(playing)
 		if(playing){
          source.stop();
+         playing=false;
       }
     }
+	var source1;
+	function playSound1(buffer){
+		source1 = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source1.buffer = buffer;//  告诉音频源 播放哪一段音频
+	    source1.connect(context.destination);// 连接到输出源
+	    source1.start(0);//开始播放
+	   }
 	$(".laba").click(function(){
 		$(this).addClass("animated pulse");
 		setTimeout(function(){
 			$(".laba").removeClass("animated pulse")
 		},800);
 		if($(".nub1").css("display")=="block"){
-			playSound(arr[3]);
+			//playSound(arr[3]);
 		}else if($(".nub2").css("display")=="block"){
 			pause();
-			playSound(arr[3]);
+			setTimeout(function(){
+				playSound(arr[3]);
+			},500)
 		}else if($(".nub3").css("display")=="block"){
 			pause(); 
-			playSound(arr[4])
+			setTimeout(function(){
+				playSound(arr[4]);
+			},500)
 		}
 	});
 	$(".next").click(function(){
@@ -146,7 +155,9 @@ var $print=$("#container");
 	 	   $(".nub22").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
 			//pause();
-			playSound(arr[3]);
+			setTimeout(function(){
+				playSound(arr[3]);
+			},500)
 			$(".nub1").fadeOut();
 			$(".nub2").fadeIn();
 			$(".nub21").show();
@@ -161,8 +172,9 @@ var $print=$("#container");
 				},1000)
 			},1000)
 		}else if($(".nub2").css("display")=="block"){
-				//pause();
-			playSound(arr[4]);
+			setTimeout(function(){
+			   playSound(arr[4]);
+		   },500)
 			$(".nub2").fadeOut();
 			$(".nub3").fadeIn();
 			$(".content img").attr("src","images/7.png");
@@ -244,7 +256,6 @@ var $print=$("#container");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	   $(".nub22").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
-			//pause();
 			if($(".nub11").css("display")=="block"){
 				$(".nub11").show();
 				$(".nub12").hide();
@@ -283,7 +294,6 @@ var $print=$("#container");
 				},1000)
 			},800)
 		}else if($(".nub2").css("display")=="block"){
-			//pause();
 			if($(".nub21").css("display")=="block"){
 				$(".nub1").hide();
 			    $(".nub2").show();
@@ -298,7 +308,6 @@ var $print=$("#container");
 					},1000)
 				},1000)
 			}else if($(".nub22").css("display")=="block"){
-				//pause();
 				$(".nub1").hide();
 			    $(".nub2").show();
 			   $(".nub21").hide();
@@ -384,40 +393,37 @@ var $print=$("#container");
 		$(".nub11 .person").addClass("animated pulse");
 		$(".nub11 .number").addClass("animated pulse");
 		$(".nub11 .apple").addClass("animated pulse");
-		pause(); 
-		//source="";
-	    playSound(arr[1]);
+		//pause(); 
+		//setTimeout(function(){
+			playSound(arr[1]);
+		//},500)
 		setTimeout(function(){
 			$(".nub11 .person").removeClass("animated pulse");
 			$(".nub11 .number").removeClass("animated pulse");
 			$(".nub11 .apple").removeClass("animated pulse");
 		},800);
 		source.onended=function(){
+			playing=false;
 			$(".nub11").fadeOut();
 			$(".nub12").fadeIn();
 			$(".nub13").fadeOut();
 		}
 	});
-	$(".number").click(function(){
-		pause();
-		playSound(arr[7]);
-	})
-	$(".apple").click(function(){
-		pause();
-		playSound(arr[7]);
-	});
 	$(".nub12 .person").click(function(){
 		$(".nub12 .person").addClass("animated pulse");
 		$(".nub12 .number").addClass("animated pulse");
 		$(".nub12 .apple").addClass("animated pulse");
-		pause(); 
-	    playSound(arr[2]);
+		//pause(); 
+		//setTimeout(function(){
+			playSound(arr[2]);
+		//},500)
 		setTimeout(function(){
 			$(".nub12 .person").removeClass("animated pulse");
 			$(".nub12 .number").removeClass("animated pulse");
 			$(".nub12 .apple").removeClass("animated pulse");
 		},800);
 		source.onended=function(){
+			playing=false;
 			$(".nub11").fadeOut();
 			$(".nub12").fadeOut();
 			$(".nub13").fadeIn();
@@ -427,16 +433,19 @@ var $print=$("#container");
 		$(".nub13 .person").addClass("animated pulse");
 		$(".nub13 .number").addClass("animated pulse");
 		$(".nub13 .apple").addClass("animated pulse");
-		pause();
-	    playSound(arr[5]);
-	    
+		//pause();
+		//setTimeout(function(){
+			playSound(arr[5]);
+		//},500)
 		setTimeout(function(){
 			$(".nub13 .person").removeClass("animated pulse");
 			$(".nub13 .number").removeClass("animated pulse");
 			$(".nub13 .apple").removeClass("animated pulse");
 		},800);
 		source.onended=function(){
-			playSound(arr[6]);
+			//setTimeout(function(){
+			 playSound(arr[6]);
+		   //},500)
 			$(".succ").addClass("animated pulse infinite").fadeIn();
 			$(".nub13").addClass("animated pulse infinite");
 			 $(".next").addClass("animated pulse infinite");
@@ -496,8 +505,8 @@ var $print=$("#container");
                 "left":"40%",
                 "top":"55%",                    
                 }).css("pointer-events","none");
-                 playSound(arr[8])
-                playSound(arr[6]);
+                 playSound1(arr[8])
+                playSound1(arr[6]);
                 $(".succ").fadeIn();
                 setTimeout(function(){
                 	 $(".succ").hide();
@@ -513,7 +522,7 @@ var $print=$("#container");
                 },1200)
              
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"40%",
                 "top":"9%",                    
@@ -542,7 +551,7 @@ var $print=$("#container");
 	bird1.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		$(this).removeClass("scale");
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"7%",
                 "top":"9%",                    
@@ -571,7 +580,7 @@ var $print=$("#container");
 	bird3.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		$(this).removeClass("scale");
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"73%",
                 "top":"9%",                    
@@ -607,18 +616,18 @@ var $print=$("#container");
                 "left":"7%",
                 "top":"55%",                    
                 }).css("pointer-events","none");
-                playSound(arr[8]);
+                playSound1(arr[8]);
                 b1=true;
                 if(b1==true&&b2==true){
                	$(".succ").addClass("animated pulse infinite").fadeIn();
 			   $(".nub22").addClass("animated pulse infinite");
 			  $(".next").addClass("animated pulse infinite");
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 			
 	             }
              
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"7%",
                 "top":"9%",                    
@@ -658,12 +667,12 @@ var $print=$("#container");
                	$(".succ").addClass("animated pulse infinite").fadeIn();
 			   $(".nub22").addClass("animated pulse infinite");
 			  $(".next").addClass("animated pulse infinite");
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 			
 	             }
              
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"73%",
                 "top":"9%",                    
@@ -692,7 +701,7 @@ var $print=$("#container");
 	bird12.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		$(this).removeClass("scale");
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"40%",
                 "top":"9%",                    
@@ -739,12 +748,12 @@ var $print=$("#container");
             "left":"61%",
             "top":"50%",                    
             }).css("pointer-events","none");
-            playSound(arr[8]);
+            playSound1(arr[8]);
 			 c1=true;
               if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
 	          	//alert(lf1);
                	$(".succ").fadeIn();
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 					/*setTimeout(function(){
 			                	 $(".succ").hide();
 			               $(".nub3").fadeOut();
@@ -787,7 +796,7 @@ var $print=$("#container");
 	             
 	          }
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"90",
                 "top":"5%",                    
@@ -829,14 +838,14 @@ var $print=$("#container");
             "left":"61%",
             "top":"36%",                    
             }).css("pointer-events","none");
-            playSound(arr[8]);
+            playSound1(arr[8]);
 			 c2=true;
               if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 	          }	
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"90",
                 "top":"20%",                    
@@ -878,14 +887,14 @@ var $print=$("#container");
             "left":"65%",
             "top":"84%",                    
             }).css("pointer-events","none");
-            playSound(arr[8]);
+            playSound1(arr[8]);
 			 c3=true;
               if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 	          }	
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"90",
                 "top":"36%",                    
@@ -927,14 +936,14 @@ var $print=$("#container");
             "left":"55%",
             "top":"19%",                    
             }).css("pointer-events","none");
-            playSound(arr[8]);
+            playSound1(arr[8]);
 		 c4=true;
               if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 	          }	
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"90",
                 "top":"51%",                    
@@ -969,19 +978,19 @@ var $print=$("#container");
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
 		$(this).removeClass("scale");
         //目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.61 && py>=winW*0.86*527/988*0.08-8&& py<=(winW*0.86*527/988*0.08+boxy)){
+		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.63 && py>=winW*0.86*527/988*0.08-15&& py<=(winW*0.86*527/988*0.08+boxy)){
 		$(this).css({
             "left":"55%",
             "top":"4%",                    
             }).css("pointer-events","none");
-            playSound(arr[8]);
+            playSound1(arr[8]);
 			 c5=true;
               if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	$(".succ").fadeIn();
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 	          }	
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"90",
                 "top":"66%",                    
@@ -1022,14 +1031,14 @@ var $print=$("#container");
             "left":"65%",
             "top":"66%",                    
             }).css("pointer-events","none");
-            playSound(arr[8]);
+            playSound1(arr[8]);
 			 c6=true;
               if(c1==true&&c2==true&&c3==true&&c4==true&&c5==true&&c6==true){
                	  $(".succ").fadeIn();
-                 	playSound(arr[6]);
+                 	playSound1(arr[6]);
 	          }	
 		 }else{
-		 	playSound(arr[7])
+		 	playSound1(arr[7])
 		 	 $(this).css({
                 "left":"90",
                 "top":"81%",                    
