@@ -69,7 +69,7 @@ var $print=$("#container");
 		$(".nub2").hide();
 		$(".nub3").show();
 		$(".content img").attr("src","images/7.png");
-	   $(".next img").attr("src","images/41.png");
+	   $(".next img").attr("src","images/37.png");
 		$(this).removeClass("rubberBand").addClass("bounceIn")
 		setTimeout(function(){
 			$(".page1").addClass("animated rotateOut").fadeOut()
@@ -88,10 +88,15 @@ var $print=$("#container");
 		setTimeout(function(){
 			$(".tishi").removeClass("animated tada")
 		},800)
-		if($(".content").css("display")=="block"){
-			$(".content").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideOutLeft").fadeOut();
+		if($(".content img").css("display")=="block"){
+			//$(".content").slideUp().slow();
+			$(".content img").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideOutLeft");
+			setTimeout(function(){
+				$(".content img").hide();
+			},1400);
 		}else{
-			$(".content").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideInLeft").fadeIn();
+			$(".content img").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideInLeft").show();;
+		//$(".content").slideDown().slow();
 		}
 		
 	})
@@ -178,7 +183,7 @@ var $print=$("#container");
 			$(".nub2").fadeOut();
 			$(".nub3").fadeIn();
 			$(".content img").attr("src","images/7.png");
-			 $(".next img").attr("src","images/41.png");
+			 $(".next img").attr("src","images/37.png");
 			setTimeout(function(){
 					$(".hand").addClass("gusture1").show();
 						setTimeout(function(){
@@ -239,10 +244,6 @@ var $print=$("#container");
 	});
 	$(".reset").click(function(){
 		pause();
-		$(this).addClass("animated pulse");
-		setTimeout(function(){
-			$(".next").removeClass("animated pulse")
-		},800);
 		b1=false;
 		b2=false;
 		c1=false;
