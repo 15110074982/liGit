@@ -144,7 +144,7 @@ var $print=$("#container");
 			$(".nub2").fadeOut();
 			$(".nub3").fadeIn();
 			$(".content img").attr("src","images/6.png");
-			 $(".next img").attr("src","images/24.png");
+			 $(".next img").attr("src","images/26.png");
 			/*setTimeout(function(){
 					$(".hand2").addClass("animated pulse").fadeIn();
 				    $(".nub3 .box2 .mouse2").addClass("animated pulse");

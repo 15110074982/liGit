@@ -26,10 +26,9 @@ var $print=$("#container");
 			$(".page2").addClass("animated rotateIn").fadeIn();
 			setTimeout(function(){
 				$(".hand1").addClass("animated pulse").show();
-				$(".nub11 .person").addClass("animated pulse");
+				$(".nub11 .person").addClass("animated pulse infinite");
 				setTimeout(function(){
 					$(".hand1").removeClass("animated pulse").fadeOut();
-					$(".nub11 .person").removeClass("animated pulse");
 				},800);
 			},1000)
 		},800)
@@ -69,7 +68,7 @@ var $print=$("#container");
 		$(".nub2").hide();
 		$(".nub3").show();
 		$(".content img").attr("src","images/7.png");
-	   $(".next img").attr("src","images/37.png");
+	   $(".next img").attr("src","images/41.png");
 		$(this).removeClass("rubberBand").addClass("bounceIn")
 		setTimeout(function(){
 			$(".page1").addClass("animated rotateOut").fadeOut()
@@ -183,7 +182,7 @@ var $print=$("#container");
 			$(".nub2").fadeOut();
 			$(".nub3").fadeIn();
 			$(".content img").attr("src","images/7.png");
-			 $(".next img").attr("src","images/37.png");
+			 $(".next img").attr("src","images/41.png");
 			setTimeout(function(){
 					$(".hand").addClass("gusture1").show();
 						setTimeout(function(){
