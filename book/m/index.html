@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="screen-orientation" content="landscape">
+<meta name="headImg" id="headImg" content="" />
+<meta name="description"  id="description" content="">
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<title>哪条路更长</title>
+<style>
+	*{margin:0;padding:0}
+	html,body{width:100%;height:100%;overflow: hidden;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+	li{list-style: none;}
+	img{width:100%;display: block;}
+ 	#container{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;
+ 	background: url(images/bg.jpg) no-repeat;background-size: 100% 100%;}
+ 	/*进度条*/
+	.alertbox{position :absolute;top:0;left :0;width:100%;height:100%;background: #000;z-index: 10000;} 
+	.progress{width:40%;height: 10px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin:auto;border-radius:10px;background: #734b06;}
+	.progressbar{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #b3f826;-webkit-transition:width ease-in 500ms;border-radius:10px;}
+	.progresstext{position: absolute;top: 30px;right: 0;color:#fff}
+	#btn{position: absolute;background:#b3f826;left:0;right:0;margin:auto;color:#734b06;border-radius: 5px;outline: none;padding:3px 10px;bottom:15%;width:80px;text-align: center;display: none;}
+	
+.page1{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;display:block}
+.title{position:absolute;left:30%;top:15%;width:60%;}
+.title1{position:absolute;left:13%;bottom:10%;width:28%;display: none;}
+.title2{position:absolute;right:13%;bottom:10%;width:28%;display: none;}
+.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;display: none;}
+.nav{position:relative;width:100%;height:10%}
+.nav1{width:100%;height: 100%;}
+.tishi{position:absolute;width:18px;left:8px;top:10%;}
+.content{position:absolute;width:266px;left:30px;top:20%;display: block;height: 19px;}
+.content img{display: none;height: 100%;}
+.next{position:absolute;width:26px;right:12px;top:10%;}
+.laba{position:absolute;width:22px;right:55px;top:5%;}
+.reset{position:absolute;width:21px;right:95px;top:10%;}
+.question{position:relative;width:100%;height:90%}
+.question1{width:100%;height:100%}
+.succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
+/*第一大题样式*/
+.nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
+.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;}
+.red{width:34%;position:absolute;left:10%;top:25%;}
+.yellow{width:34%;position:absolute;right:10%;top:21%;}
+.blue{width:30%;position:absolute;left:12%;bottom:5%;}
+.green{width:10%;position:absolute;right:23%;bottom:5%;}
+/*第二大题样式*/
+.nub2{width:100%;height: 100%;position:absolute;left:0;top:0;display:none}
+.nub21{width:100%;height: 100%;position:absolute;left:0;top:0;}
+.nub2 .box1 .person{width:15%;position:absolute;left:5%;top:8%;}
+.nub2 .box1 .road{width:53%;position:absolute;left:22%;top:20%;}
+.nub2 .box2 .person{width:11%;position:absolute;left:8%;top:55%;}
+.nub2 .box2 .road{width:53%;position:absolute;left:22%;top:60%;}
+.sale{width:13%;position:absolute;right:7%;bottom:5%;}
+/*第三大题样式*/
+.nub3{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.nub31{width:100%;height: 100%;position:absolute;left:0;top:0;}
+.nub3 .box1 .mouse1{width:78%;position:absolute;left:8%;top:8%;}
+.nub3 .box2 .mouse2{width:70%;position:absolute;left:8%;top:43%;}
+.nub3 .box3 .mouse3{width:78%;position:absolute;left:8%;bottom:3%;}
+.cook{width:13%;position:absolute;right:8%;top:42%;}
+.hand{width:5%;position:absolute;left:34%;top:65%;display:none}
+.hand1{width:5%;position:absolute;left:30%;top:68%;display:none}
+.hand2{width:5%;position:absolute;left:49%;top:54%;display:none}
+.nub2 img{float:left}
+@keyframes go {
+  0% {
+    left:21%;top:54%;
+  }
+  20%{
+   left:21%;top:31%;
+  }
+   40%{
+     left:37%;top:31%;
+  }
+   50%{
+       left:37%;top:40%;
+  }
+   100%{
+      left:81%;top:40%;
+  }
+}
+.go{
+	-webkit-animation: go 5s;
+}
+.scale{
+	 transform: scale3d(1.05, 1.05, 1.05);;
+}
+</style>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/resLoader.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/ration.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body >
+  <div id="container">
+  	 <div class="alertbox">
+			<div class="progress">
+				<div class="progressbar"></div>
+				<div class="progresstext">
+					<span class="current"></span> /
+					<span class="total"></span>
+				</div>
+			</div>
+			<div id="btn">请点击确定</div>
+	   </div>
+		<div class="page1">
+			<div class="title"><img src="images/1.png"/></div>
+			<div class="title1"><img src="images/2.png"/></div>
+			<div class="title2"><img src="images/3.png"/></div>
+		</div>
+		<div class="page2">
+			<div class="nav">
+				<img src="images/4.png" class="nav1"/>
+				<div class="tishi"><img src="images/23.png"/></div>
+				<div class="content"><img src="images/5.png" alt="" /></div>
+				<div class="reset"><img src="images/25.png" alt="" /></div>
+				<div class="laba"><img src="images/27.png" alt="" /></div>
+				<div class="next"><img src="images/24.png" alt="" /></div>
+			</div>
+			<div class="question">
+					<img src="images/7.png" alt="" class="question1"/>
+				<div class="nub1">
+					<div class="nub11">
+						<div class="red"><img src="images/9.png" alt="" /></div>
+						<div class="yellow"><img src="images/8.png" alt="" /></div>
+						<div class="blue"><img src="images/10.png" alt="" /></div>
+						<div class="green"><img src="images/11.png" alt="" /></div>
+					</div>
+				</div>
+				<div class="nub2">
+					<div class="nub21">
+						<div class="box1">
+							<div class="road"><img src="images/14.png" alt="" /></div>
+							<div class="person"><img src="images/12.png" alt="" /></div>
+						</div>
+						<div class="box2">
+							<div class="road"><img src="images/15.png" alt="" /></div>
+							<div class="person"><img src="images/13.png" alt="" /></div>
+						</div>
+						<div class="sale"><img src="images/16.png"/></div>
+					</div>
+				</div>
+				<div class="nub3">
+					  <div class="nub31">
+						<div class="box1">
+							<div class="mouse1"><img src="images/17.png" alt="" /></div>
+						</div>
+						<div class="box2">
+							<div class="mouse2"><img src="images/18.png" alt="" /></div>
+						</div>
+						<div class="box3">
+							<div class="mouse3"><img src="images/19.png" alt="" /></div>
+						</div>
+						<div class="cook"><img src="images/20.png"/></div>
+					</div>
+				</div>
+				<div class="hand"><img src="images/21.png" alt="" /></div>
+				<div class="hand1"><img src="images/21.png" alt="" /></div>
+				<div class="hand2"><img src="images/21.png" alt="" /></div>
+				<div class="succ"><img src="images/22.png"/></div>
+			</div>
+		</div>
+   </div>
+   <script type="text/javascript">
+   	var dogBarkingBuffer = null;
+	window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	var context = new AudioContext();
+	var source;
+	var onError;
+	var arr=[];
+   	var tagLink="";
+   	var length1=$(".pad").length;
+	var locate=location.href.split('index.html')[0];
+   	var loader = new resLoader({
+	   	resourceType : 'image,mpeg,script',
+		resources : [
+		    locate+'audio/P0.mp3',
+		    locate+'audio/P1.mp3',
+		    locate+'audio/P2.mp3',
+		    locate+'audio/P3.mp3',
+		    locate+'audio/P4.mp3',
+		    locate+'audio/P5.mp3',
+		    locate+'audio/P6.mp3',
+			locate+'images/1.png',
+			locate+'images/2.png',
+			locate+'images/3.png',
+			locate+'images/4.png',
+			locate+'images/5.png',
+			locate+'images/6.png',
+			locate+'images/7.png',
+			locate+'images/8.png',
+			locate+'images/9.png',
+			locate+'images/10.png',
+			locate+'images/11.png',
+			locate+'images/12.png',
+			locate+'images/13.png',
+			locate+'images/14.png',
+			locate+'images/15.png',
+			locate+'images/16.png',
+			locate+'images/17.png',
+			locate+'images/18.png',
+			locate+'images/19.png',
+			locate+'images/20.png',
+			locate+'images/21.png',
+			locate+'images/22.png',
+			locate+'images/23.png',
+			locate+'images/24.png',
+			locate+'images/25.png',
+			locate+'images/26.png',
+			locate+'images/27.png',
+			locate+'images/bg.jpg'
+		
+		],
+		onStart : function(total){
+			//console.log('start:'+total);
+		},
+		onProgress : function(current, total){
+			//console.log(current+'/'+total);
+			var percent = current/total*100;
+			$('.progressbar').css('width', percent+'%');
+			$('.progresstext .current').text(current);
+			$('.progresstext .total').text(total);
+		},
+		onComplete : function(total){
+			for(var i=0;i<7;i++){
+				tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
+			}
+			for(var i=1;i<27;i++){
+					tagLink+='<link rel="prefetch" href="images/'+i+'.png" />';
+			}
+			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>';
+			$($('head')[0]).append(tagLink);
+			$('.progresstext').html('已加载完');
+			$("#btn").show();
+			$("#btn").click(function(){
+				$(".alertbox").hide();
+				$(".title").addClass("animated fadeInDown");
+			    playSound(arr[0]);
+				setTimeout(function(){
+				    $(".title1").addClass("animated fadeInDown").fadeIn();
+				    setTimeout(function(){
+					  $(".title2").addClass("animated fadeInDown").fadeIn();
+					  setTimeout(function(){
+						$(".title3").addClass("animated fadeInDown").fadeIn();
+					   },800)
+				   },800)
+					
+				},800)
+			})
+		}
+	});
+    loader.start();
+</script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
