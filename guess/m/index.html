@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="screen-orientation" content="landscape">
+<meta name="headImg" id="headImg" content="" />
+<meta name="description"  id="description" content="">
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<title>哪条路更长</title>
+<style>
+	*{margin:0;padding:0}
+	html,body{width:100%;height:100%;overflow: hidden;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+	li{list-style: none;}
+	img{width:100%;display: block;}
+ 	#container{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;
+ 	}
+ 	/*进度条*/
+	.alertbox{position :absolute;top:0;left :0;width:100%;height:100%;background: #000;z-index: 10000;} 
+	.progress{width:40%;height: 10px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin:auto;border-radius:10px;background: #734b06;}
+	.progressbar{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #b3f826;-webkit-transition:width ease-in 500ms;border-radius:10px;}
+	.progresstext{position: absolute;top: 30px;right: 0;color:#fff}
+	#btn{position: absolute;background:#b3f826;left:0;right:0;margin:auto;color:#734b06;border-radius: 5px;outline: none;padding:3px 10px;bottom:15%;width:80px;text-align: center;display: none;}
+/*首页	*/
+.page1{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;display:block;background: url(images/bg.jpg) no-repeat;background-size: 100% 100%;}
+.title{position:absolute;left:20%;top:15%;width:60%;}
+/*第二页*/
+.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;background:#54575a;display: none;}
+/*导航条*/
+.nav{position:relative;width:100%;}
+.nav1{width:100%;}
+.tishi{position:absolute;width:18px;left:8px;top:16%;}
+.content{position:absolute;width:266px;left:30px;top:20%;display: block;height: 19px;}
+.content img{display: none;height: 100%;}
+.next{position:absolute;width:26px;right:12px;top:16%;}
+.laba{position:absolute;width:24px;right:55px;top:6%;}
+.reset{position:absolute;width:21px;right:95px;top:16%;}
+
+.question{position:relative;width:100%;height:90%}
+.question1{width:100%;height:100%}
+.succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
+/*第一大题样式*/
+.nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
+.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
+.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.ma{width:40%;position:relative;left:30%;right:0;top:2%;}
+.qu{width:140%;position:absolute;left:-25%;bottom:-17%;}
+.nub11 .nuber4{position:absolute;width:8%;bottom:-14%;left:-15%;}
+.nub11 .nuber5{position:absolute;width:8%;bottom:-14%;left:-4%;}
+.nub11 .nuber6{position:absolute;width:8%;bottom:-14%;left:7%;}
+.nub11 .nuber7{position:absolute;width:8%;bottom:-14%;left:18%;}
+.nub11 .nuber8{position:absolute;width:8%;bottom:-14%;left:29%;}
+.nub11 .nuber9{position:absolute;width:8%;bottom:-14%;left:40%;}
+.nub11 .nuber10{position:absolute;width:8%;bottom:-14%;left:51%;}
+.nub11 .nuber11{position:absolute;width:8%;bottom:-14%;left:62%;}
+.nub11 .nuber12{position:absolute;width:8%;bottom:-14%;left:73%;}
+.nub11 .nuber13{position:absolute;width:8%;bottom:-14%;left:84%;}
+.nub11 .nuber14{position:absolute;width:8%;bottom:-14%;left:95%;}
+
+.nub12 .nuber4{position:absolute;width:8%;bottom:-14%;left:-15%;}
+.nub12 .nuber5{position:absolute;width:8%;bottom:-14%;left:-4%;}
+.nub12 .nuber6{position:absolute;width:8%;bottom:-14%;left:7%;}
+.nub12 .nuber7{position:absolute;width:8%;bottom:-14%;left:18%;}
+.nub12 .nuber8{position:absolute;width:8%;bottom:-14%;left:29%;}
+.nub12 .nuber9{position:absolute;width:8%;bottom:-14%;left:40%;}
+.nub12 .nuber10{position:absolute;width:8%;bottom:-14%;left:51%;}
+.nub12 .nuber11{position:absolute;width:8%;bottom:-14%;left:62%;}
+.nub12 .nuber12{position:absolute;width:8%;bottom:-14%;left:73%;}
+.nub12 .nuber13{position:absolute;width:8%;bottom:-14%;left:84%;}
+.nub12 .nuber14{position:absolute;width:8%;bottom:-14%;left:95%;}
+
+.nub13 .nuber4{position:absolute;width:8%;bottom:-14%;left:-15%;}
+.nub13 .nuber5{position:absolute;width:8%;bottom:-14%;left:-4%;}
+.nub13 .nuber6{position:absolute;width:8%;bottom:-14%;left:7%;}
+.nub13 .nuber7{position:absolute;width:8%;bottom:-14%;left:18%;}
+.nub13 .nuber8{position:absolute;width:8%;bottom:-14%;left:29%;}
+.nub13 .nuber9{position:absolute;width:8%;bottom:-14%;left:40%;}
+.nub13 .nuber10{position:absolute;width:8%;bottom:-14%;left:51%;}
+.nub13 .nuber11{position:absolute;width:8%;bottom:-14%;left:62%;}
+.nub13 .nuber12{position:absolute;width:8%;bottom:-14%;left:73%;}
+.nub13 .nuber13{position:absolute;width:8%;bottom:-14%;left:84%;}
+.nub13 .nuber14{position:absolute;width:8%;bottom:-14%;left:95%;}
+
+.hand{width:5%;position:absolute;left:34%;top:65%;display:none}
+.hand1{width:5%;position:absolute;left:30%;top:68%;display:none}
+.hand2{width:5%;position:absolute;left:49%;top:54%;display:none}
+.nub2 img{float:left}
+@keyframes go {
+  0% {
+    left:21%;top:54%;
+  }
+  20%{
+   left:21%;top:31%;
+  }
+   40%{
+     left:37%;top:31%;
+  }
+   50%{
+       left:37%;top:40%;
+  }
+   100%{
+      left:81%;top:40%;
+  }
+}
+.go{
+	-webkit-animation: go 5s;
+}
+.scale{
+	 transform: scale3d(1.05, 1.05, 1.05);;
+}
+</style>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/resLoader.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/ration.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body >
+  <div id="container">
+  	 <div class="alertbox">
+			<div class="progress">
+				<div class="progressbar"></div>
+				<div class="progresstext">
+					<span class="current"></span> /
+					<span class="total"></span>
+				</div>
+			</div>
+	   </div>
+		<div class="page1">
+			<div class="title"><img src="images/39.png"/></div>
+		</div>
+		<div class="page2">
+			<div class="nav">
+				<img src="images/40.png" class="nav1"/>
+				<div class="tishi"><img src="images/45.png"/></div>
+				<div class="content"><img src="images/41.png" alt="" /></div>
+				<div class="reset"><img src="images/47.png" alt="" /></div>
+				<div class="laba"><img src="images/49.png" alt="" /></div>
+				<div class="next"><img src="images/46.png" alt="" /></div>
+			</div>
+			<div class="question">
+				<div class="nub1">
+					<div class="nub11">
+						<div class="ma">
+							<img src="images/1.png" alt="" />
+							<div class="qu">
+						      <img src="images/42.png" alt="" />
+						    </div>
+						  <div class="nuber4"><img src="images/4.png" alt="" /></div>
+					     <div class="nuber5"><img src="images/5.png" alt="" /></div>
+					      <div class="nuber6"><img src="images/6.png" alt="" /></div>
+					      <div class="nuber7"><img src="images/7.png" alt="" /></div>
+					      <div class="nuber8"><img src="images/8.png" alt="" /></div>
+					      <div class="nuber9"><img src="images/9.png" alt="" /></div>
+					      <div class="nuber10"><img src="images/10.png" alt="" /></div>
+					      <div class="nuber11"><img src="images/11.png" alt="" /></div>
+					      <div class="nuber12"><img src="images/12.png" alt="" /></div>
+					      <div class="nuber13"><img src="images/13.png" alt="" /></div>
+					      <div class="nuber14"><img src="images/14.png" alt="" /></div>
+						</div>
+					</div>
+					<div class="nub12">
+						<div class="ma">
+							<img src="images/2.png" alt="" />
+							<div class="qu">
+						      <img src="images/42.png" alt="" />
+						    </div>
+						  <div class="nuber4"><img src="images/15.png" alt="" /></div>
+					      <div class="nuber5"><img src="images/16.png" alt="" /></div>
+					      <div class="nuber6"><img src="images/17.png" alt="" /></div>
+					      <div class="nuber7"><img src="images/18.png" alt="" /></div>
+					      <div class="nuber8"><img src="images/19.png" alt="" /></div>
+					      <div class="nuber9"><img src="images/20.png" alt="" /></div>
+					      <div class="nuber10"><img src="images/21.png" alt="" /></div>
+					      <div class="nuber11"><img src="images/22.png" alt="" /></div>
+					      <div class="nuber12"><img src="images/23.png" alt="" /></div>
+					      <div class="nuber13"><img src="images/24.png" alt="" /></div>
+					      <div class="nuber14"><img src="images/25.png" alt="" /></div>
+						</div>
+					</div>
+					<div class="nub13">
+						<div class="ma">
+							<img src="images/3.png" alt="" />
+							<div class="qu">
+						      <img src="images/42.png" alt="" />
+						    </div>
+						  <div class="nuber4"><img src="images/26.png" alt="" /></div>
+					      <div class="nuber5"><img src="images/27.png" alt="" /></div>
+					      <div class="nuber6"><img src="images/28.png" alt="" /></div>
+					      <div class="nuber7"><img src="images/29.png" alt="" /></div>
+					      <div class="nuber8"><img src="images/30.png" alt="" /></div>
+					      <div class="nuber9"><img src="images/31.png" alt="" /></div>
+					      <div class="nuber10"><img src="images/32.png" alt="" /></div>
+					      <div class="nuber11"><img src="images/33.png" alt="" /></div>
+					      <div class="nuber12"><img src="images/34.png" alt="" /></div>
+					      <div class="nuber13"><img src="images/35.png" alt="" /></div>
+					      <div class="nuber14"><img src="images/36.png" alt="" /></div>
+					      <div class="nuber15"><img src="images/37.png" alt="" /></div>
+					      <div class="nuber16"><img src="images/38.png" alt="" /></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="hand"><img src="images/21.png" alt="" /></div>
+				<div class="hand1"><img src="images/21.png" alt="" /></div>
+				<div class="hand2"><img src="images/21.png" alt="" /></div>
+				<div class="succ"><img src="images/22.png"/></div>
+			</div>
+		</div>
+   </div>
+   <script type="text/javascript">
+   	var dogBarkingBuffer = null;
+	window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	var context = new AudioContext();
+	var source;
+	var onError;
+	var arr=[];
+   	var tagLink="";
+   	var length1=$(".pad").length;
+	var locate=location.href.split('index.html')[0];
+   	var loader = new resLoader({
+	   	resourceType : 'image',
+		resources : [
+		    locate+'audio/P0.mp3',
+		    locate+'audio/P1.mp3',
+		    locate+'audio/P2.mp3',
+		    locate+'audio/P3.mp3',
+		    locate+'audio/P4.mp3',
+			locate+'images/1.png',
+			locate+'images/2.png',
+			locate+'images/3.png',
+			locate+'images/4.png',
+			locate+'images/5.png',
+			locate+'images/6.png',
+			locate+'images/7.png',
+			locate+'images/8.png',
+			locate+'images/9.png',
+			locate+'images/10.png',
+			locate+'images/11.png',
+			locate+'images/12.png',
+			locate+'images/13.png',
+			locate+'images/14.png',
+			locate+'images/15.png',
+			locate+'images/16.png',
+			locate+'images/17.png',
+			locate+'images/18.png',
+			locate+'images/19.png',
+			locate+'images/20.png',
+			locate+'images/21.png',
+			locate+'images/22.png',
+			locate+'images/23.png',
+			locate+'images/24.png',
+			locate+'images/25.png',
+			locate+'images/26.png',
+			locate+'images/27.png',
+			locate+'images/28.png',
+			locate+'images/29.png',
+			locate+'images/30.png',
+			locate+'images/31.png',
+			locate+'images/32.png',
+			locate+'images/33.png',
+			locate+'images/34.png',
+			locate+'images/35.png',
+			locate+'images/36.png',
+			locate+'images/37.png',
+			locate+'images/38.png',
+			locate+'images/39.png',
+			locate+'images/40.png',
+			locate+'images/41.png',
+			locate+'images/42.png',
+			locate+'images/43.png',
+			locate+'images/44.png',
+			locate+'images/45.png',
+			locate+'images/46.png',
+			locate+'images/47.png',
+			locate+'images/48.png',
+			locate+'images/49.png',
+			locate+'images/bg.jpg'
+		
+		],
+		onStart : function(total){
+			//console.log('start:'+total);
+		},
+		onProgress : function(current, total){
+			//console.log(current+'/'+total);
+			var percent = current/total*100;
+			$('.progressbar').css('width', percent+'%');
+			$('.progresstext .current').text(current);
+			$('.progresstext .total').text(total);
+		},
+		onComplete : function(total){
+			for(var i=0;i<7;i++){
+				tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
+			}
+			for(var i=1;i<27;i++){
+					tagLink+='<link rel="prefetch" href="images/'+i+'.png" />';
+			}
+			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>';
+			$($('head')[0]).append(tagLink);
+			$('.progresstext').html('已加载完毕,精彩即将呈现...');
+			setTimeout(function(){
+				$(".alertbox").hide();
+				$(".title").addClass("animated zoomInDown");
+			    playSound(arr[0]);
+				setTimeout(function(){
+				    $(".title1").addClass("animated zoomInDown").fadeIn();
+				},800)
+			},1000)
+		}
+	});
+    loader.start();
+</script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
