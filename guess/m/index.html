@@ -45,9 +45,9 @@
 .succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
 /*第一大题样式*/
 .nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
-.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;z-index: 100;}
-.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;z-index: 90;}
-.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;z-index: 80;}
+.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
+.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
 .ma{width:40%;position:relative;left:30%;right:0;top:2%;}
 .qu{width:140%;position:absolute;left:-25%;bottom:-17%;}
 .nub13 .qu{width:170%;position:absolute;left:-35%;bottom:-17%;}
@@ -62,6 +62,9 @@
 .nub11 .nuber12{position:absolute;width:8%;top:108%;left:73%;}
 .nub11 .nuber13{position:absolute;width:8%;top:108%;left:84%;}
 .nub11 .nuber14{position:absolute;width:8%;top:108%;left:95%;}
+.bg1{position:absolute;background:#eb6100;width:10%;height:10%;}
+.bg2{position:absolute;background:#7ecef4;width:10%;height:10%;}
+.bg3{position:absolute;background:#009944;width:10%;height:10%;}
 
 .nub12 .nuber4{position:absolute;width:8%;top:108%;left:-15%;}
 .nub12 .nuber5{position:absolute;width:8%;top:108%;left:-4%;}
@@ -74,6 +77,7 @@
 .nub12 .nuber12{position:absolute;width:8%;top:108%;left:73%;}
 .nub12 .nuber13{position:absolute;width:8%;top:108%;left:84%;}
 .nub12 .nuber14{position:absolute;width:8%;top:108%;left:95%;}
+
 
 .nub13 .nuber4{position:absolute;width:8%;top:107%;left:-28%;}
 .nub13 .nuber5{position:absolute;width:8%;top:107%;left:-15%;}
@@ -89,28 +93,19 @@
 .nub13 .nuber15{position:absolute;width:8%;top:107%;left:107%;}
 .nub13 .nuber16{position:absolute;width:8%;top:107%;left:119%;}
 /*手势操作*/
-.hand{width:5%;position:absolute;left:34%;top:65%;display:none}
+.hand{width:10%;position:absolute;left:10%;top:110%;display:none}
 
 
 @keyframes go {
   0% {
-    left:21%;top:54%;
-  }
-  20%{
-   left:21%;top:31%;
-  }
-   40%{
-     left:37%;top:31%;
-  }
-   50%{
-       left:37%;top:40%;
+    left:10%;top:110%;
   }
    100%{
-      left:81%;top:40%;
+      left:45%;top:35%;
   }
 }
 .go{
-	-webkit-animation: go 5s;
+	-webkit-animation: go 1.5s;
 }
 .scale{
 	 transform: scale3d(1.05, 1.05, 1.05);;
@@ -148,21 +143,26 @@
 				<div class="nub1">
 					<div class="nub11">
 						<div class="ma">
-							<img src="images/1.png" alt="" />
+							<img src="images/2.png" alt="" />
 							<div class="qu">
 						      <img src="images/42.png" alt="" />
 						    </div>
-						  <div class="nuber4"><img src="images/4.png" alt="" /></div>
-					      <div class="nuber5"><img src="images/5.png" alt="" /></div>
-					      <div class="nuber6" id="nuber6"><img src="images/6.png" alt="" /></div>
-					      <div class="nuber7"><img src="images/7.png" alt="" /></div>
-					      <div class="nuber8"><img src="images/8.png" alt="" /></div>
-					      <div class="nuber9"><img src="images/9.png" alt="" /></div>
-					      <div class="nuber10"><img src="images/10.png" alt="" /></div>
-					      <div class="nuber11"><img src="images/11.png" alt="" /></div>
-					      <div class="nuber12"><img src="images/12.png" alt="" /></div>
-					      <div class="nuber13"><img src="images/13.png" alt="" /></div>
-					      <div class="nuber14"><img src="images/14.png" alt="" /></div>
+						    <div class="bg" style="position:absolute"></div>
+						    <div class="bg1 bg11" style="left:40%;top:30%"></div>
+							<div class="bg1 bg12" style="left:40%;top:40%"></div>
+							<div class="bg1 bg13" style="left:50%;top:40%"></div>
+						  <div class="nuber4 num" id="nuber4"><img src="images/4.png" alt="" /></div>
+					      <div class="nuber5 num" id="nuber5"><img src="images/5.png" alt="" /></div>
+					      <div class="nuber6 num" id="nuber6"><img src="images/6.png" alt="" /></div>
+					      <div class="nuber7 num" id="nuber7"><img src="images/7.png" alt="" /></div>
+					      <div class="nuber8 num" id="nuber8"><img src="images/8.png" alt="" /></div>
+					      <div class="nuber9 num" id="nuber9"><img src="images/9.png" alt="" /></div>
+					      <div class="nuber10 num" id="nuber10"><img src="images/10.png" alt="" /></div>
+					      <div class="nuber11 num" id="nuber11"><img src="images/11.png" alt="" /></div>
+					      <div class="nuber12 num" id="nuber12"><img src="images/12.png" alt="" /></div>
+					      <div class="nuber13 num" id="nuber13"><img src="images/13.png" alt="" /></div>
+					      <div class="nuber14 num" id="nuber14"><img src="images/14.png" alt="" /></div>
+					      <div class="hand"><img src="images/43.png" alt="" /></div>
 						</div>
 					</div>
 					<div class="nub12">
@@ -171,46 +171,56 @@
 							<div class="qu">
 						      <img src="images/42.png" alt="" />
 						    </div>
-						  <div class="nuber4"><img src="images/15.png" alt="" /></div>
-					      <div class="nuber5"><img src="images/16.png" alt="" /></div>
-					      <div class="nuber6"><img src="images/17.png" alt="" /></div>
-					      <div class="nuber7"><img src="images/18.png" alt="" /></div>
-					      <div class="nuber8"><img src="images/19.png" alt="" /></div>
-					      <div class="nuber9"><img src="images/20.png" alt="" /></div>
-					      <div class="nuber10" ><img src="images/21.png" alt="" /></div>
-					      <div class="nuber11"><img src="images/22.png" alt="" /></div>
-					      <div class="nuber12"><img src="images/23.png" alt="" /></div>
-					      <div class="nuber13"><img src="images/24.png" alt="" /></div>
-					      <div class="nuber14"><img src="images/25.png" alt="" /></div>
+						    <div class="bg2 bg21" style="left:89%;top:20%"></div>
+							<div class="bg2 bg22" style="left:89%;top:30%"></div>
+							<div class="bg2 bg23" style="left:79%;top:30%"></div>
+							<div class="bg2 bg24" style="left:69%;top:30%"></div>
+						  <div class="nuber4 num" id="nuber24"><img src="images/15.png" alt="" /></div>
+					      <div class="nuber5 num" id="nuber25"><img src="images/16.png" alt="" /></div>
+					      <div class="nuber6 num" id="nuber26"><img src="images/17.png" alt="" /></div>
+					      <div class="nuber7 num" id="nuber27"><img src="images/18.png" alt="" /></div>
+					      <div class="nuber8 num" id="nuber28"><img src="images/19.png" alt="" /></div>
+					      <div class="nuber9 num" id="nuber29"><img src="images/20.png" alt="" /></div>
+					      <div class="nuber10 num" id="nuber30"><img src="images/21.png" alt="" /></div>
+					      <div class="nuber11 num" id="nuber31"><img src="images/22.png" alt="" /></div>
+					      <div class="nuber12 num" id="nuber32"><img src="images/23.png" alt="" /></div>
+					      <div class="nuber13 num" id="nuber33"><img src="images/24.png" alt="" /></div>
+					      <div class="nuber14 num" id="nuber34"><img src="images/25.png" alt="" /></div>
 						</div>
 					</div>
 					<div class="nub13">
 						<div class="ma">
-							<img src="images/3.png" alt="" />
+							<img src="images/2.png" alt="" />
 							<div class="qu">
 						      <img src="images/42.png" alt="" />
 						    </div>
-						  <div class="nuber4"><img src="images/26.png" alt="" /></div>
-					      <div class="nuber5"><img src="images/27.png" alt="" /></div>
-					      <div class="nuber6"><img src="images/28.png" alt="" /></div>
-					      <div class="nuber7"><img src="images/29.png" alt="" /></div>
-					      <div class="nuber8"><img src="images/30.png" alt="" /></div>
-					      <div class="nuber9"><img src="images/31.png" alt="" /></div>
-					      <div class="nuber10"><img src="images/32.png" alt="" /></div>
-					      <div class="nuber11"><img src="images/33.png" alt="" /></div>
-					      <div class="nuber12"><img src="images/34.png" alt="" /></div>
-					      <div class="nuber13"><img src="images/35.png" alt="" /></div>
-					      <div class="nuber14"><img src="images/36.png" alt="" /></div>
-					      <div class="nuber15"><img src="images/37.png" alt="" /></div>
-					      <div class="nuber16"><img src="images/38.png" alt="" /></div>
+						    <div class="bg3 bg31" style="left:30%;top:20%"></div>
+							<div class="bg3 bg32" style="left:20%;top:30%"></div>
+							<div class="bg3 bg33" style="left:40%;top:30%"></div>
+							<div class="bg3 bg34" style="left:30%;top:40%"></div>
+							<div class="bg3 bg35" style="left:89%;top:50%"></div>
+							<div class="bg3 bg36" style="left:69%;top:59%"></div>
+							<div class="bg3 bg37" style="left:79%;top:69%"></div>
+							<div class="bg3 bg38" style="left:89%;top:79%"></div>
+						  <div class="nuber4 num" id="nuber44"><img src="images/26.png" alt="" /></div>
+					      <div class="nuber5 num" id="nuber45"><img src="images/27.png" alt="" /></div>
+					      <div class="nuber6 num" id="nuber46"><img src="images/28.png" alt="" /></div>
+					      <div class="nuber7 num" id="nuber47"><img src="images/29.png" alt="" /></div>
+					      <div class="nuber8 num" id="nuber48"><img src="images/30.png" alt="" /></div>
+					      <div class="nuber9 num" id="nuber49"><img src="images/31.png" alt="" /></div>
+					      <div class="nuber10 num" id="nuber50"><img src="images/32.png" alt="" /></div>
+					      <div class="nuber11 num" id="nuber51"><img src="images/33.png" alt="" /></div>
+					      <div class="nuber12 num" id="nuber52"><img src="images/34.png" alt="" /></div>
+					      <div class="nuber13 num" id="nuber53"><img src="images/35.png" alt="" /></div>
+					      <div class="nuber14 num" id="nuber54"><img src="images/36.png" alt="" /></div>
+					      <div class="nuber15 num" id="nuber55"><img src="images/37.png" alt="" /></div>
+					      <div class="nuber16 num" id="nuber56"><img src="images/38.png" alt="" /></div>
 						</div>
 					</div>
 				</div>
 				
-				<div class="hand"><img src="images/21.png" alt="" /></div>
-				<div class="hand1"><img src="images/21.png" alt="" /></div>
-				<div class="hand2"><img src="images/21.png" alt="" /></div>
-				<div class="succ"><img src="images/22.png"/></div>
+				
+				<div class="succ"><img src="images/44.png"/></div>
 			</div>
 		</div>
    </div>
@@ -315,6 +325,7 @@
 		}
 	});
     loader.start();
+ 
 </script>
 <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 </body>
