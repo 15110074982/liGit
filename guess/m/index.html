@@ -11,7 +11,7 @@
 <meta name="description"  id="description" content="">
 <link rel="stylesheet" type="text/css" href="css/animate.css"/>
 <meta http-equiv='x-dns-prefetch-control' content='on'>
-<title>哪条路更长</title>
+<title>猜猜是几</title>
 <style>
 	*{margin:0;padding:0}
 	html,body{width:100%;height:100%;overflow: hidden;-webkit-tap-highlight-color:rgba(0,0,0,0);}
@@ -45,51 +45,53 @@
 .succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
 /*第一大题样式*/
 .nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
-.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
-.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
-.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;z-index: 100;}
+.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;z-index: 90;}
+.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;z-index: 80;}
 .ma{width:40%;position:relative;left:30%;right:0;top:2%;}
 .qu{width:140%;position:absolute;left:-25%;bottom:-17%;}
-.nub11 .nuber4{position:absolute;width:8%;bottom:-14%;left:-15%;}
-.nub11 .nuber5{position:absolute;width:8%;bottom:-14%;left:-4%;}
-.nub11 .nuber6{position:absolute;width:8%;bottom:-14%;left:7%;}
-.nub11 .nuber7{position:absolute;width:8%;bottom:-14%;left:18%;}
-.nub11 .nuber8{position:absolute;width:8%;bottom:-14%;left:29%;}
-.nub11 .nuber9{position:absolute;width:8%;bottom:-14%;left:40%;}
-.nub11 .nuber10{position:absolute;width:8%;bottom:-14%;left:51%;}
-.nub11 .nuber11{position:absolute;width:8%;bottom:-14%;left:62%;}
-.nub11 .nuber12{position:absolute;width:8%;bottom:-14%;left:73%;}
-.nub11 .nuber13{position:absolute;width:8%;bottom:-14%;left:84%;}
-.nub11 .nuber14{position:absolute;width:8%;bottom:-14%;left:95%;}
+.nub13 .qu{width:170%;position:absolute;left:-35%;bottom:-17%;}
+.nub11 .nuber4{position:absolute;width:8%;top:108%;left:-15%;}
+.nub11 .nuber5{position:absolute;width:8%;top:108%;left:-4%;}
+.nub11 .nuber6{position:absolute;width:8%;top:108%;left:7%;}
+.nub11 .nuber7{position:absolute;width:8%;top:108%;left:18%;}
+.nub11 .nuber8{position:absolute;width:8%;top:108%;left:29%;}
+.nub11 .nuber9{position:absolute;width:8%;top:108%;left:40%;}
+.nub11 .nuber10{position:absolute;width:8%;top:108%;left:51%;}
+.nub11 .nuber11{position:absolute;width:8%;top:108%;left:62%;}
+.nub11 .nuber12{position:absolute;width:8%;top:108%;left:73%;}
+.nub11 .nuber13{position:absolute;width:8%;top:108%;left:84%;}
+.nub11 .nuber14{position:absolute;width:8%;top:108%;left:95%;}
 
-.nub12 .nuber4{position:absolute;width:8%;bottom:-14%;left:-15%;}
-.nub12 .nuber5{position:absolute;width:8%;bottom:-14%;left:-4%;}
-.nub12 .nuber6{position:absolute;width:8%;bottom:-14%;left:7%;}
-.nub12 .nuber7{position:absolute;width:8%;bottom:-14%;left:18%;}
-.nub12 .nuber8{position:absolute;width:8%;bottom:-14%;left:29%;}
-.nub12 .nuber9{position:absolute;width:8%;bottom:-14%;left:40%;}
-.nub12 .nuber10{position:absolute;width:8%;bottom:-14%;left:51%;}
-.nub12 .nuber11{position:absolute;width:8%;bottom:-14%;left:62%;}
-.nub12 .nuber12{position:absolute;width:8%;bottom:-14%;left:73%;}
-.nub12 .nuber13{position:absolute;width:8%;bottom:-14%;left:84%;}
-.nub12 .nuber14{position:absolute;width:8%;bottom:-14%;left:95%;}
+.nub12 .nuber4{position:absolute;width:8%;top:108%;left:-15%;}
+.nub12 .nuber5{position:absolute;width:8%;top:108%;left:-4%;}
+.nub12 .nuber6{position:absolute;width:8%;top:108%;left:7%;}
+.nub12 .nuber7{position:absolute;width:8%;top:108%;left:18%;}
+.nub12 .nuber8{position:absolute;width:8%;top:108%;left:29%;}
+.nub12 .nuber9{position:absolute;width:8%;top:108%;left:40%;}
+.nub12 .nuber10{position:absolute;width:8%;top:108%;left:51%;}
+.nub12 .nuber11{position:absolute;width:8%;top:108%;left:62%;}
+.nub12 .nuber12{position:absolute;width:8%;top:108%;left:73%;}
+.nub12 .nuber13{position:absolute;width:8%;top:108%;left:84%;}
+.nub12 .nuber14{position:absolute;width:8%;top:108%;left:95%;}
 
-.nub13 .nuber4{position:absolute;width:8%;bottom:-14%;left:-15%;}
-.nub13 .nuber5{position:absolute;width:8%;bottom:-14%;left:-4%;}
-.nub13 .nuber6{position:absolute;width:8%;bottom:-14%;left:7%;}
-.nub13 .nuber7{position:absolute;width:8%;bottom:-14%;left:18%;}
-.nub13 .nuber8{position:absolute;width:8%;bottom:-14%;left:29%;}
-.nub13 .nuber9{position:absolute;width:8%;bottom:-14%;left:40%;}
-.nub13 .nuber10{position:absolute;width:8%;bottom:-14%;left:51%;}
-.nub13 .nuber11{position:absolute;width:8%;bottom:-14%;left:62%;}
-.nub13 .nuber12{position:absolute;width:8%;bottom:-14%;left:73%;}
-.nub13 .nuber13{position:absolute;width:8%;bottom:-14%;left:84%;}
-.nub13 .nuber14{position:absolute;width:8%;bottom:-14%;left:95%;}
-
+.nub13 .nuber4{position:absolute;width:8%;top:107%;left:-28%;}
+.nub13 .nuber5{position:absolute;width:8%;top:107%;left:-15%;}
+.nub13 .nuber6{position:absolute;width:8%;top:107%;left:-2%;}
+.nub13 .nuber7{position:absolute;width:8%;top:107%;left:11%;}
+.nub13 .nuber8{position:absolute;width:8%;top:107%;left:23%;}
+.nub13 .nuber9{position:absolute;width:8%;top:107%;left:35%;}
+.nub13 .nuber10{position:absolute;width:8%;top:107%;left:47%;}
+.nub13 .nuber11{position:absolute;width:8%;top:107%;left:59%;}
+.nub13 .nuber12{position:absolute;width:8%;top:107%;left:71%;}
+.nub13 .nuber13{position:absolute;width:8%;top:107%;left:83%;}
+.nub13 .nuber14{position:absolute;width:8%;top:107%;left:95%;}
+.nub13 .nuber15{position:absolute;width:8%;top:107%;left:107%;}
+.nub13 .nuber16{position:absolute;width:8%;top:107%;left:119%;}
+/*手势操作*/
 .hand{width:5%;position:absolute;left:34%;top:65%;display:none}
-.hand1{width:5%;position:absolute;left:30%;top:68%;display:none}
-.hand2{width:5%;position:absolute;left:49%;top:54%;display:none}
-.nub2 img{float:left}
+
+
 @keyframes go {
   0% {
     left:21%;top:54%;
@@ -151,8 +153,8 @@
 						      <img src="images/42.png" alt="" />
 						    </div>
 						  <div class="nuber4"><img src="images/4.png" alt="" /></div>
-					     <div class="nuber5"><img src="images/5.png" alt="" /></div>
-					      <div class="nuber6"><img src="images/6.png" alt="" /></div>
+					      <div class="nuber5"><img src="images/5.png" alt="" /></div>
+					      <div class="nuber6" id="nuber6"><img src="images/6.png" alt="" /></div>
 					      <div class="nuber7"><img src="images/7.png" alt="" /></div>
 					      <div class="nuber8"><img src="images/8.png" alt="" /></div>
 					      <div class="nuber9"><img src="images/9.png" alt="" /></div>
@@ -175,7 +177,7 @@
 					      <div class="nuber7"><img src="images/18.png" alt="" /></div>
 					      <div class="nuber8"><img src="images/19.png" alt="" /></div>
 					      <div class="nuber9"><img src="images/20.png" alt="" /></div>
-					      <div class="nuber10"><img src="images/21.png" alt="" /></div>
+					      <div class="nuber10" ><img src="images/21.png" alt="" /></div>
 					      <div class="nuber11"><img src="images/22.png" alt="" /></div>
 					      <div class="nuber12"><img src="images/23.png" alt="" /></div>
 					      <div class="nuber13"><img src="images/24.png" alt="" /></div>
@@ -293,10 +295,10 @@
 			$('.progresstext .total').text(total);
 		},
 		onComplete : function(total){
-			for(var i=0;i<7;i++){
+			for(var i=0;i<5;i++){
 				tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
 			}
-			for(var i=1;i<27;i++){
+			for(var i=1;i<50;i++){
 					tagLink+='<link rel="prefetch" href="images/'+i+'.png" />';
 			}
 			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>';

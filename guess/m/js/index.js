@@ -1,5 +1,5 @@
-   changeOrientation($print);
      var $print=$("#container");
+     changeOrientation($print);
      var imageH;//图片相对高;
      var halfH;
 	 var winH;//屏幕宽高  
@@ -14,19 +14,56 @@
      	 winW=b;
      	 winH=a;
      }
+     //获取图片相对高度方法;
    function getImageH(url){
 		var img=new Image();
-		img.src="images/40.png"
-		var imgW=img.width;//图片真实宽高
-		var imgH=img.height;
-		//图片相对高度
-		imageH=parseInt(winW*imgH/imgW);
-		halfH=winH-imageH;
-		console.log(imageH,halfH);
+		img.src=url;
+		console.log(url)
+		//img.onload=function(){
+			var imgW=img.width;//图片真实宽高
+			var imgH=img.height;
+			//图片相对高度
+			imageH=parseInt(winW*imgH/imgW);
+			halfH=winH-imageH;
+		//}
+		
 	}
-    getImageH($(".nav").attr("src"));
+    getImageH($(".nav1").attr("src"));
+    /* 导航宽高*/
+   console.log(imageH,halfH);
 	$(".nav").height(imageH);
 	$(".question").height(halfH);
+	
+	
+	//提示操作
+	$(".tishi").click(function(){
+		$(this).addClass("animated tada");
+		setTimeout(function(){
+			$(".tishi").removeClass("animated tada")
+		},800)
+		if($(".content img").css("display")=="block"){
+			$(".content img").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideOutLeft");
+			setTimeout(function(){
+				$(".content img").hide();
+			},1400);
+		}else{
+			$(".content img").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideInLeft").show();;
+		}
+		
+	})
+	//喇叭操作
+	$(".laba").click(function(){
+		$(this).addClass("animated pulse");
+		setTimeout(function(){
+			$(".laba").removeClass("animated pulse")
+		},800);
+		if($(".nub1").css("display")=="block"){
+			pause();
+			setTimeout(function(){
+				playSound(arr[1]);
+			},300)
+		}
+	});
 	$(".page1").click(function(){
 		pause();
 		setTimeout(function(){
@@ -48,47 +85,6 @@
 			},1000)*/
 		},800)
 	})
-	
-	
-	$(".tishi").click(function(){
-		$(this).addClass("animated tada");
-		setTimeout(function(){
-			$(".tishi").removeClass("animated tada")
-		},800)
-		if($(".content img").css("display")=="block"){
-			//$(".content").slideUp().slow();
-			$(".content img").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideOutLeft");
-			setTimeout(function(){
-				$(".content img").hide();
-			},1400);
-		}else{
-			$(".content img").removeClass("animated slideInLeft slideOutLeft").addClass("animated slideInLeft").show();;
-		//$(".content").slideDown().slow();
-		}
-		
-	})
-	$(".laba").click(function(){
-		$(this).addClass("animated pulse");
-		setTimeout(function(){
-			$(".laba").removeClass("animated pulse")
-		},800);
-		if($(".nub1").css("display")=="block"){
-			pause();
-			setTimeout(function(){
-				playSound(arr[1]);
-			},300)
-		}else if($(".nub2").css("display")=="block"){
-			pause();
-			setTimeout(function(){
-				playSound(arr[2]);
-			},300)
-		}else if($(".nub3").css("display")=="block"){
-			pause();
-			setTimeout(function(){
-				playSound(arr[3]);
-			},300)
-		}
-	});
 	$(".next").click(function(){
 		pause();
 		$(".nub2 .box2 .person").removeClass("go").show();
@@ -220,3 +216,147 @@
 	    source1.connect(context.destination);// 连接到输出源
 	    source1.start(0);//开始播放
 	   }
+	
+
+
+
+
+
+
+
+     var startX;
+     var startY;
+     var sx;
+     var sy;
+     var moveX;
+     var moveY;
+     var px;
+     var py;
+     var boxy;
+     var hd;
+     var hd1;
+     var hd3;
+     
+    var a1=false;
+	var a2=false;
+	var a3=false;
+     
+    var b1=false;
+	var b2=false;
+	var b3=false;
+	var b4=false;
+	var c1=false;
+	var c2=false;
+	var c3=false;
+	var c4=false;
+	var c5=false;
+	var c6=false;
+	nuber6.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.4*0.07;
+		 sy=winW*0.4*478/478*1.08;
+		 $(this).addClass("scale");
+	},false);
+	nuber6.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	nuber6.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 boxy=winW*0.4*0.08;
+		$(this).removeClass("scale");
+		 if(px>=winW*0.86*0.36&&px<=winW*0.86*0.64 && py>=winW*0.86*527/988*0.52 && py<=(winW*0.86*527/988*0.52+boxy)){
+		 	 $(this).css({
+                "left":"40%",
+                "top":"55%",                    
+                }).css("pointer-events","none");
+                 playSound1(arr[8])
+                playSound1(arr[6]);
+                $(".succ").fadeIn();
+                setTimeout(function(){
+                	 $(".succ").hide();
+                   $(".nub21").fadeOut();
+                   $(".nub22").fadeIn();
+	                  setTimeout(function(){
+	                	$("#bird").css({
+			                "left":"41%",
+			                "top":"33%", 
+			                "pointer-events":"auto",
+                		});
+	                },600);
+                },1200)
+             
+		 }else{
+		 	playSound1(arr[7])
+		 	 $(this).css({
+                "left":"7%",
+                "top":"108%",                    
+                })
+		 }
+	},false);
+	
+	bird1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.86*0.07;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		$(this).removeClass("scale");
+		 	playSound1(arr[7])
+		 	 $(this).css({
+                "left":"51%",
+                "top":"9%",                    
+                })
+		
+	},false);
+	
+	bird3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.86*0.73;
+		 sy=winW*0.86*527/988*0.09;
+		 $(this).addClass("scale");
+	},false);
+	bird3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	bird3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		$(this).removeClass("scale");
+		 	playSound1(arr[7])
+		 	 $(this).css({
+                "left":"73%",
+                "top":"9%",                    
+                })
+		
+	},false);
