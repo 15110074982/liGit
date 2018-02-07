@@ -1,0 +1,61 @@
+{
+	"groups":[
+	{
+		"keys":"bg,gbg1,gbg2,beas,pass1,pass2,tit,bea1,bea2,bea3,bea4,bea5,box,b1,b2,b3,b4,b5,n1,n2,n3,n4,n5,sbox,mark,next,tit1,tit2,trumpet,titArea,winpic,retry,home,p0,p1,p2,p3,click1,click2,win,sb1,sb2,sb3,sb4,sb5,tt",
+		"name":"preload"
+	}],
+	"resources":[
+		{"name":"bg","type":"image","url":"assets/page0/bg.png"},
+		{"name":"gbg1","type":"image","url":"assets/page0/gbg1.png"},
+		{"name":"gbg2","type":"image","url":"assets/page0/gbg2.png"},
+		{"name":"beas","type":"image","url":"assets/page0/beas.png"},
+		{"name":"pass1","type":"image","url":"assets/page0/pass1.png"},
+		{"name":"pass2","type":"image","url":"assets/page0/pass2.png"},
+		{"name":"tit","type":"image","url":"assets/page0/tit.png"},
+
+		{"name":"bea1","type":"image","url":"assets/page1/bea1.png"},
+		{"name":"bea2","type":"image","url":"assets/page1/bea2.png"},
+		{"name":"bea3","type":"image","url":"assets/page1/bea3.png"},
+		{"name":"bea4","type":"image","url":"assets/page1/bea4.png"},
+		{"name":"bea5","type":"image","url":"assets/page1/bea5.png"},
+		{"name":"box","type":"image","url":"assets/page1/box.png"},
+
+		{"name":"b1","type":"image","url":"assets/page2/b1.png"},
+		{"name":"b2","type":"image","url":"assets/page2/b2.png"},
+		{"name":"b3","type":"image","url":"assets/page2/b3.png"},
+		{"name":"b4","type":"image","url":"assets/page2/b4.png"},
+		{"name":"b5","type":"image","url":"assets/page2/b5.png"},
+		{"name":"n1","type":"image","url":"assets/page2/n1.png"},
+		{"name":"n2","type":"image","url":"assets/page2/n2.png"},
+		{"name":"n3","type":"image","url":"assets/page2/n3.png"},
+		{"name":"n4","type":"image","url":"assets/page2/n4.png"},
+		{"name":"n5","type":"image","url":"assets/page2/n5.png"},
+
+		{"name":"sbox","type":"image","url":"assets/page3/sbox.png"},
+		{"name":"sb1","type":"image","url":"assets/page3/sb1.png"},
+		{"name":"sb2","type":"image","url":"assets/page3/sb2.png"},
+		{"name":"sb3","type":"image","url":"assets/page3/sb3.png"},
+		{"name":"sb4","type":"image","url":"assets/page3/sb4.png"},
+		{"name":"sb5","type":"image","url":"assets/page3/sb5.png"},
+		{"name":"tt","type":"image","url":"assets/page3/tt.png"},
+
+		{"name":"mark","type":"image","url":"assets/tit/mark.png"},
+		{"name":"next","type":"image","url":"assets/tit/next.png"},
+		{"name":"tit1","type":"image","url":"assets/tit/tit1.png"},
+		{"name":"tit2","type":"image","url":"assets/tit/tit2.png"},
+		{"name":"trumpet","type":"image","url":"assets/tit/trumpet.png"},
+		{"name":"titArea","type":"image","url":"assets/tit/titarea.png"},
+		{"name":"winpic","type":"image","url":"assets/tit/winpic.png"},
+		{"name":"retry","type":"image","url":"assets/tit/retry.png"},
+		{"name":"home","type":"image","url":"assets/tit/home.png"},
+
+		{"name":"p0","type":"sound","url":"assets/music/p0.mp3"},
+		{"name":"p1","type":"sound","url":"assets/music/p1.mp3"},
+		{"name":"p2","type":"sound","url":"assets/music/p2.mp3"},
+		{"name":"p3","type":"sound","url":"assets/music/p3.mp3"},
+		{"name":"click1","type":"sound","url":"assets/music/click1.mp3"},
+		{"name":"click2","type":"sound","url":"assets/music/click2.mp3"},
+		{"name":"win","type":"sound","url":"assets/music/win.mp3"}
+
+	]
+}
