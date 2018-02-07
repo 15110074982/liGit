@@ -1,27 +1,59 @@
-var $print=$("#container");
-	changeOrientation($print);
+  var $print=$("#container");
+     changeOrientation($print);
+     var imageH;//图片相对高;
+     var halfH;
+	 var winH;//屏幕宽高  
+     var winW;
+     var a=Number($(window).width());//320
+     var b=Number($(window).height());//504
+     if(a>b){
+         winW=a;   
+     	 winH=b; 
+     	
+     }else if(a<b){
+     	 winW=b;
+     	 winH=a;
+     }
+     //获取图片相对高度方法;
+   function getImageH(url){
+		var img=new Image();
+		img.src=url;
+		console.log(url)
+		//img.onload=function(){
+			var imgW=img.width;//图片真实宽高
+			var imgH=img.height;
+			//图片相对高度
+			imageH=parseInt(winW*imgH/imgW);
+			halfH=winH-imageH;
+		//}
+		
+	}
+    getImageH($(".nav1").attr("src"));
+    /* 导航内容高度*/
+   console.log(imageH,halfH);
+	$(".nav").height(imageH);
+	$(".question").height(halfH);
+	
 	$(".title1").click(function(){
-		$(this).removeClass("fadeInDown").addClass("bounceIn");
-		pause();
-		setTimeout(function(){
-			playSound(arr[1]);
-		},300)
-		$(".nub1").show();
-		$(".nub11").show();
-		$(".content img").attr("src","images/5.png");
-		$(".next img").attr("src","images/24.png");
-		setTimeout(function(){
-			$(".page1").addClass("animated rotateOut").fadeOut();
-			$(".page2").addClass("animated rotateIn").fadeIn();
-			/*setTimeout(function(){
-				$(".hand1").addClass("animated pulse").show();
-				$(".nub11 .blue").addClass("animated pulse");
+			$(this).removeClass("fadeInDown").addClass("bounceIn");
+			pause();
+			setTimeout(function(){
+				playSound(arr[1]);
+			},300)
+			$(".nub1").show();
+			//$(".nub11").show();
+			$(".content img").attr("src","images/5.png");
+			$(".next img").attr("src","images/50.png");
+			setTimeout(function(){
+				$(".page1").addClass("animated rotateOut").fadeOut();
+				$(".page2").addClass("animated rotateIn").fadeIn();
 				setTimeout(function(){
-					$(".hand1").removeClass("animated pulse").fadeOut();
-					$(".nub11 .blue").removeClass("animated pulse");
-				},800);
-			},1000)*/
-		},800)
+					$(".hand").addClass("go").show();
+					setTimeout(function(){
+						$(".hand").removeClass("go").hide();
+					},1500);
+				},1000)
+			},800)
 	})
 	$(".title2").click(function(){
 		$(this).removeClass("rubberBand").addClass("bounceIn");
@@ -224,6 +256,8 @@ var $print=$("#container");
 	$(".green").click(function(){
 		playSound1(arr[5]);
 	})
+	
+	/*声音播放区*/
 	var playing;
 	function playSound(buffer){
 		source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器

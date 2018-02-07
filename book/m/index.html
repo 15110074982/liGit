@@ -11,82 +11,112 @@
 <meta name="description"  id="description" content="">
 <link rel="stylesheet" type="text/css" href="css/animate.css"/>
 <meta http-equiv='x-dns-prefetch-control' content='on'>
-<title>哪条路更长</title>
+<title>各种各样的本子</title>
 <style>
 	*{margin:0;padding:0}
 	html,body{width:100%;height:100%;overflow: hidden;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 	li{list-style: none;}
 	img{width:100%;display: block;}
  	#container{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;
- 	background: url(images/bg.jpg) no-repeat;background-size: 100% 100%;}
+ 	}
  	/*进度条*/
 	.alertbox{position :absolute;top:0;left :0;width:100%;height:100%;background: #000;z-index: 10000;} 
 	.progress{width:40%;height: 10px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin:auto;border-radius:10px;background: #734b06;}
 	.progressbar{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #b3f826;-webkit-transition:width ease-in 500ms;border-radius:10px;}
 	.progresstext{position: absolute;top: 30px;right: 0;color:#fff}
-	#btn{position: absolute;background:#b3f826;left:0;right:0;margin:auto;color:#734b06;border-radius: 5px;outline: none;padding:3px 10px;bottom:15%;width:80px;text-align: center;display: none;}
-	
-.page1{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;display:block}
-.title{position:absolute;left:30%;top:15%;width:60%;}
-.title1{position:absolute;left:13%;bottom:10%;width:28%;display: none;}
-.title2{position:absolute;right:13%;bottom:10%;width:28%;display: none;}
-.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;display: none;}
-.nav{position:relative;width:100%;height:10%}
-.nav1{width:100%;height: 100%;}
-.tishi{position:absolute;width:18px;left:8px;top:10%;}
+/*	#btn{position: absolute;background:#b3f826;left:0;right:0;margin:auto;color:#734b06;border-radius: 5px;outline: none;padding:3px 10px;bottom:15%;width:80px;text-align: center;display: none;}*/
+
+/*首页	*/
+.page1{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;display:block;background: url(images/bg.jpg) no-repeat;background-size: 100% 100%;}
+.title{position:absolute;left:10%;top:15%;width:80%;}
+.title1{position:absolute;left:13%;bottom:10%;width:26%;display: none;}
+.title2{position:absolute;right:13%;bottom:10%;width:26%;display: none;}
+
+/*第二页*/
+.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;display: none;background: url(images/54.png) no-repeat;background-size: 100% 100%;}
+/*导航条*/
+.nav{position:relative;width:100%;}
+.nav1{width:100%;}
+.tishi{position:absolute;width:18px;left:8px;top:16%;}
 .content{position:absolute;width:266px;left:30px;top:20%;display: block;height: 19px;}
 .content img{display: none;height: 100%;}
-.next{position:absolute;width:26px;right:12px;top:10%;}
-.laba{position:absolute;width:22px;right:55px;top:5%;}
-.reset{position:absolute;width:21px;right:95px;top:10%;}
-.question{position:relative;width:100%;height:90%}
-.question1{width:100%;height:100%}
+.next{position:absolute;width:26px;right:12px;top:16%;}
+.laba{position:absolute;width:24px;right:55px;top:6%;}
+.reset{position:absolute;width:21px;right:95px;top:16%;}
+
+.question{position:relative;width:100%;}
 .succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
 /*第一大题样式*/
 .nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
-.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;}
-.red{width:34%;position:absolute;left:10%;top:25%;}
-.yellow{width:34%;position:absolute;right:10%;top:21%;}
-.blue{width:30%;position:absolute;left:12%;bottom:5%;}
-.green{width:10%;position:absolute;right:23%;bottom:5%;}
+.sheep{width:12%;position:absolute;}
+.sheep1{left:20%;top:5%;}
+.sheep2{width:14%;left:35%;top:4%;}
+.sheep3{left:52%;top:2%;}
+.sheep4{left:68%;top:5%;}
+.sheep5{left:10%;top:40%;}
+.sheep6{width:13%;left:27%;top:40%;}
+.sheep7{width:10%;left:44%;top:40%;}
+.sheep8{width:13%;left:61%;top:40%;}
+.sheep9{left:78%;top:40%;}
+.ban1{width:43%;position:absolute;left:4%;top:88%;}
+.ban2{width:43%;position:absolute;left:53%;top:88%;}
 /*第二大题样式*/
 .nub2{width:100%;height: 100%;position:absolute;left:0;top:0;display:none}
-.nub21{width:100%;height: 100%;position:absolute;left:0;top:0;}
-.nub2 .box1 .person{width:15%;position:absolute;left:5%;top:8%;}
-.nub2 .box1 .road{width:53%;position:absolute;left:22%;top:20%;}
-.nub2 .box2 .person{width:11%;position:absolute;left:8%;top:55%;}
-.nub2 .box2 .road{width:53%;position:absolute;left:22%;top:60%;}
-.sale{width:13%;position:absolute;right:7%;bottom:5%;}
+.num9{width:16%;position:absolute;left:42%;top:5%}
+.num1{width:10%;position:absolute;left:3%;top:60%}
+.num2{width:10%;position:absolute;left:15%;top:60%}
+.num3{width:10%;position:absolute;left:27%;top:60%}
+.num4{width:10%;position:absolute;left:39%;top:60%}
+.num5{width:10%;position:absolute;left:51%;top:60%}
+.num6{width:10%;position:absolute;left:63%;top:60%}
+.num7{width:10%;position:absolute;left:75%;top:60%}
+.num8{width:10%;position:absolute;left:87%;top:60%}
 /*第三大题样式*/
 .nub3{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
-.nub31{width:100%;height: 100%;position:absolute;left:0;top:0;}
-.nub3 .box1 .mouse1{width:78%;position:absolute;left:8%;top:8%;}
-.nub3 .box2 .mouse2{width:70%;position:absolute;left:8%;top:43%;}
-.nub3 .box3 .mouse3{width:78%;position:absolute;left:8%;bottom:3%;}
-.cook{width:13%;position:absolute;right:8%;top:42%;}
+.boxTop{width:20%;position:absolute;left:40%;top:5%}
+.boxLeft{width:20%;position:absolute;left:20%;top:45%}
+.boxRight{width:20%;position:absolute;left:60%;top:45%}
+.leftArrow{width:5%;position:absolute;left:36%;top:31%}
+.rightArrow{width:5%;position:absolute;left:59%;top:31%}
+/*第三大题1小题样式*/
+.nub31{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
+.rabit{width:16%;position:absolute;left:42%;top:9%}
+.rabit1{width:16%;position:absolute;left:5%;top:80%}
+.rabit2{width:16%;position:absolute;left:42%;top:75%}
+.rabit3{width:16%;position:absolute;left:79%;top:80%}
+/*第三大题2小题样式*/
+.nub32{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.cat{width:14%;position:absolute;left:43%;top:7%}
+.cat1{width:10%;position:absolute;left:5%;top:82%}
+.cat2{width:14%;position:absolute;left:43%;top:78%}
+.cat3{width:18%;position:absolute;left:77%;top:78%}
+/*第三大题3小题样式*/
+.nub33{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.melon{width:16%;position:absolute;left:42%;top:10%}
+.melon1{width:4%;position:absolute;left:5%;top:84%}
+.melon2{width:9%;position:absolute;left:45%;top:80%}
+.melon3{width:16%;position:absolute;left:79%;top:80%}
+/*第三大题4小题样式*/
+.nub34{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.mlon{width:10%;position:absolute;left:45%;top:7%}
+.mlon1{width:8%;position:absolute;left:5%;top:84%}
+.mlon2{width:13%;position:absolute;left:43%;top:84%}
+.mlon3{width:12%;position:absolute;left:83%;top:80%}
+
 .hand{width:5%;position:absolute;left:34%;top:65%;display:none}
 .hand1{width:5%;position:absolute;left:30%;top:68%;display:none}
 .hand2{width:5%;position:absolute;left:49%;top:54%;display:none}
 .nub2 img{float:left}
 @keyframes go {
   0% {
-    left:21%;top:54%;
-  }
-  20%{
-   left:21%;top:31%;
-  }
-   40%{
-     left:37%;top:31%;
-  }
-   50%{
-       left:37%;top:40%;
+    left:10%;top:110%;
   }
    100%{
-      left:81%;top:40%;
+      left:45%;top:35%;
   }
 }
 .go{
-	-webkit-animation: go 5s;
+	-webkit-animation: go 1.5s;
 }
 .scale{
 	 transform: scale3d(1.05, 1.05, 1.05);;
@@ -107,7 +137,6 @@
 					<span class="total"></span>
 				</div>
 			</div>
-			<div id="btn">请点击确定</div>
 	   </div>
 		<div class="page1">
 			<div class="title"><img src="images/1.png"/></div>
@@ -117,53 +146,74 @@
 		<div class="page2">
 			<div class="nav">
 				<img src="images/4.png" class="nav1"/>
-				<div class="tishi"><img src="images/23.png"/></div>
+				<div class="tishi"><img src="images/49.png"/></div>
 				<div class="content"><img src="images/5.png" alt="" /></div>
-				<div class="reset"><img src="images/25.png" alt="" /></div>
-				<div class="laba"><img src="images/27.png" alt="" /></div>
-				<div class="next"><img src="images/24.png" alt="" /></div>
+				<div class="reset"><img src="images/51.png" alt="" /></div>
+				<div class="laba"><img src="images/53.png" alt="" /></div>
+				<div class="next"><img src="images/50.png" alt="" /></div>
 			</div>
 			<div class="question">
-					<img src="images/7.png" alt="" class="question1"/>
 				<div class="nub1">
 					<div class="nub11">
-						<div class="red"><img src="images/9.png" alt="" /></div>
-						<div class="yellow"><img src="images/8.png" alt="" /></div>
-						<div class="blue"><img src="images/10.png" alt="" /></div>
-						<div class="green"><img src="images/11.png" alt="" /></div>
+						<div class="sheep1 sheep" id="sheep1"><img src="images/9.png" alt="" /></div>
+						<div class="sheep2 sheep" id="sheep2"><img src="images/10.png" alt="" /></div>
+						<div class="sheep3 sheep" id="sheep3"><img src="images/11.png" alt="" /></div>
+						<div class="sheep4 sheep" id="sheep4"><img src="images/12.png" alt="" /></div>
+						<div class="sheep5 sheep" id="sheep5"><img src="images/13.png" alt="" /></div>
+						<div class="sheep6 sheep" id="sheep6"><img src="images/14.png" alt="" /></div>
+						<div class="sheep7 sheep" id="sheep7"><img src="images/15.png" alt="" /></div>
+						<div class="sheep8 sheep" id="sheep8"><img src="images/16.png" alt="" /></div>
+						<div class="sheep9 sheep" id="sheep9"><img src="images/17.png" alt="" /></div>
+						<div class="ban1"><img src="images/7.png"/></div>
+						<div class="ban2"><img src="images/8.png"/></div>
 					</div>
 				</div>
 				<div class="nub2">
-					<div class="nub21">
-						<div class="box1">
-							<div class="road"><img src="images/14.png" alt="" /></div>
-							<div class="person"><img src="images/12.png" alt="" /></div>
-						</div>
-						<div class="box2">
-							<div class="road"><img src="images/15.png" alt="" /></div>
-							<div class="person"><img src="images/13.png" alt="" /></div>
-						</div>
-						<div class="sale"><img src="images/16.png"/></div>
-					</div>
+						<div class="num9"><img src="images/18.png"/></div>
+						<div class="num1"><img src="images/19.png"/></div>
+						<div class="num2"><img src="images/20.png"/></div>
+						<div class="num3"><img src="images/21.png"/></div>
+						<div class="num4"><img src="images/22.png"/></div>
+						<div class="num5"><img src="images/23.png"/></div>
+						<div class="num6"><img src="images/24.png"/></div>
+						<div class="num7"><img src="images/25.png"/></div>
+						<div class="num8"><img src="images/26.png"/></div>
 				</div>
 				<div class="nub3">
+					 <div class="boxTop"><img src="images/27.png" alt="" /></div>
+					 <div class="boxLeft"><img src="images/30.png" alt="" /></div>
+					 <div class="boxRight"><img src="images/30.png" alt="" /></div>
+					 <div class="leftArrow"><img src="images/28.png" alt="" /></div>
+					 <div class="rightArrow"><img src="images/29.png" alt="" /></div>
 					  <div class="nub31">
-						<div class="box1">
-							<div class="mouse1"><img src="images/17.png" alt="" /></div>
-						</div>
-						<div class="box2">
-							<div class="mouse2"><img src="images/18.png" alt="" /></div>
-						</div>
-						<div class="box3">
-							<div class="mouse3"><img src="images/19.png" alt="" /></div>
-						</div>
-						<div class="cook"><img src="images/20.png"/></div>
+						<div class="rabit"><img src="images/31.png" alt="" /></div>
+						<div class="rabit1" id="rabit1"><img src="images/33.png" alt="" /></div>
+						<div class="rabit2" id="rabit2"><img src="images/32.png" alt="" /></div>
+						<div class="rabit3" id="rabit3"><img src="images/34.png" alt="" /></div>
+					</div>
+					 <div class="nub32">
+						<div class="cat"><img src="images/35.png" alt="" /></div>
+						<div class="cat1" id="cat1"><img src="images/38.png" alt="" /></div>
+						<div class="cat2" id="cat2"><img src="images/37.png" alt="" /></div>
+						<div class="cat3" id="cat3"><img src="images/36.png" alt="" /></div>
+					</div>
+					 <div class="nub33">
+						<div class="melon" ><img src="images/39.png" alt="" /></div>
+						<div class="melon1" id="melon1"><img src="images/42.png" alt="" /></div>
+						<div class="melon2" id="melon2"><img src="images/41.png" alt="" /></div>
+						<div class="melon3" id="melon3"><img src="images/40.png" alt="" /></div>
+					</div>
+					<div class="nub34">
+						<div class="mlon"><img src="images/43.png" alt="" /></div>
+						<div class="mlon1" id="mlon1"><img src="images/45.png" alt="" /></div>
+						<div class="mlon2" id="mlon2"><img src="images/46.png" alt="" /></div>
+						<div class="mlon3" id="mlon3"><img src="images/44.png" alt="" /></div>
 					</div>
 				</div>
-				<div class="hand"><img src="images/21.png" alt="" /></div>
-				<div class="hand1"><img src="images/21.png" alt="" /></div>
-				<div class="hand2"><img src="images/21.png" alt="" /></div>
-				<div class="succ"><img src="images/22.png"/></div>
+				<div class="hand"><img src="images/47.png" alt="" /></div>
+				<div class="hand1"><img src="images/47.png" alt="" /></div>
+				<div class="hand2"><img src="images/47.png" alt="" /></div>
+				<div class="succ"><img src="images/48.png"/></div>
 			</div>
 		</div>
    </div>
@@ -187,6 +237,15 @@
 		    locate+'audio/P4.mp3',
 		    locate+'audio/P5.mp3',
 		    locate+'audio/P6.mp3',
+		    locate+'audio/P7.mp3',
+		    locate+'audio/P8.mp3',
+		    locate+'audio/P9.mp3',
+		    locate+'audio/P10.mp3',
+		    locate+'audio/P11.mp3',
+		    locate+'audio/P12.mp3',
+		    locate+'audio/P13.mp3',
+		    locate+'audio/P14.mp3',
+		    locate+'audio/P15.mp3',
 			locate+'images/1.png',
 			locate+'images/2.png',
 			locate+'images/3.png',
@@ -214,6 +273,33 @@
 			locate+'images/25.png',
 			locate+'images/26.png',
 			locate+'images/27.png',
+			locate+'images/28.png',
+			locate+'images/29.png',
+			locate+'images/30.png',
+			locate+'images/31.png',
+			locate+'images/32.png',
+			locate+'images/33.png',
+			locate+'images/34.png',
+			locate+'images/35.png',
+			locate+'images/36.png',
+			locate+'images/37.png',
+			locate+'images/38.png',
+			locate+'images/39.png',
+			locate+'images/40.png',
+			locate+'images/41.png',
+			locate+'images/42.png',
+			locate+'images/43.png',
+			locate+'images/44.png',
+			locate+'images/45.png',
+			locate+'images/46.png',
+			locate+'images/47.png',
+			locate+'images/48.png',
+			locate+'images/49.png',
+			locate+'images/50.png',
+			locate+'images/51.png',
+			locate+'images/52.png',
+			locate+'images/53.png',
+			locate+'images/54.png',
 			locate+'images/bg.jpg'
 		
 		],
@@ -228,17 +314,16 @@
 			$('.progresstext .total').text(total);
 		},
 		onComplete : function(total){
-			for(var i=0;i<7;i++){
+			for(var i=0;i<16;i++){
 				tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
 			}
-			for(var i=1;i<27;i++){
+			for(var i=1;i<55;i++){
 					tagLink+='<link rel="prefetch" href="images/'+i+'.png" />';
 			}
 			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>';
 			$($('head')[0]).append(tagLink);
-			$('.progresstext').html('已加载完');
-			$("#btn").show();
-			$("#btn").click(function(){
+			$('.progresstext').html('已加载完毕,精彩即将呈现...');
+			setTimeout(function(){
 				$(".alertbox").hide();
 				$(".title").addClass("animated fadeInDown");
 			    playSound(arr[0]);
@@ -246,13 +331,9 @@
 				    $(".title1").addClass("animated fadeInDown").fadeIn();
 				    setTimeout(function(){
 					  $(".title2").addClass("animated fadeInDown").fadeIn();
-					  setTimeout(function(){
-						$(".title3").addClass("animated fadeInDown").fadeIn();
-					   },800)
 				   },800)
-					
-				},800)
-			})
+				},800)    
+			},1000)
 		}
 	});
     loader.start();

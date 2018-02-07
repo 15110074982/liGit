@@ -24,7 +24,7 @@
 	.progress{width:40%;height: 10px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin:auto;border-radius:10px;background: #734b06;}
 	.progressbar{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #b3f826;-webkit-transition:width ease-in 500ms;border-radius:10px;}
 	.progresstext{position: absolute;top: 30px;right: 0;color:#fff}
-	#btn{position: absolute;background:#b3f826;left:0;right:0;margin:auto;color:#734b06;border-radius: 5px;outline: none;padding:3px 10px;bottom:15%;width:80px;text-align: center;display: none;}
+	/*#btn{position: absolute;background:#b3f826;left:0;right:0;margin:auto;color:#734b06;border-radius: 5px;outline: none;padding:3px 10px;bottom:15%;width:80px;text-align: center;display: none;}*/
 /*首页	*/
 .page1{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 1000;display:block;background: url(images/bg.jpg) no-repeat;background-size: 100% 100%;}
 .title{position:absolute;left:20%;top:15%;width:60%;}
@@ -41,7 +41,6 @@
 .reset{position:absolute;width:21px;right:95px;top:16%;}
 
 .question{position:relative;width:100%;height:90%}
-.question1{width:100%;height:100%}
 .succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
 /*第一大题样式*/
 .nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
@@ -318,9 +317,9 @@
 				$(".alertbox").hide();
 				$(".title").addClass("animated zoomInDown");
 			    playSound(arr[0]);
-				setTimeout(function(){
+				/*setTimeout(function(){
 				    $(".title1").addClass("animated zoomInDown").fadeIn();
-				},800)
+				},800)*/
 			},1000)
 		}
 	});
