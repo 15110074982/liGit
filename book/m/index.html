@@ -33,7 +33,7 @@
 .title2{position:absolute;right:13%;bottom:10%;width:26%;display: none;}
 
 /*第二页*/
-.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;display: none;background: url(images/54.png) no-repeat;background-size: 100% 100%;}
+.page2{position :absolute;top:0;left :0;width:100%;height:100%;overflow: hidden;z-index: 900;display: none;background: url(images/17.png) no-repeat;background-size: 100% 100%;}
 /*导航条*/
 .nav{position:relative;width:100%;}
 .nav1{width:100%;}
@@ -48,16 +48,54 @@
 .succ{width:60%;position:absolute;left:20%;top:15%;display: none;}
 /*第一大题样式*/
 .nub1{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
-.sheep{width:12%;position:absolute;}
+/*第一大题1小题样式*/
+.nub11{width:100%;height: 100%;position:absolute;left:0;top:0;display: block;}
+.book{width:10%;position:absolute;}
+.red1{left:20%;top:5%;}
+.red2{left:36%;top:5%;}
+.red3{left:52%;top:5%;}
+.red4{left:68%;top:5%;}
+.red5{left:10%;top:40%;}
+.red6{left:27%;top:40%;}
+.blue7{left:44%;top:40%;}
+.red8{left:61%;top:40%;}
+.red9{left:78%;top:40%;}
+/*第一大题2小题样式*/
+.nub12{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.big1{left:20%;top:5%;}
+.small2{left:37%;top:11%;width:8%}
+.small3{left:51%;top:11%;width:8%}
+.big4{left:68%;top:5%;}
+.big5{left:10%;top:40%;}
+.big6{left:27%;top:40%;}
+.big7{left:44%;top:40%;}
+.big8{left:61%;top:40%;}
+.big9{left:78%;top:40%;}
+/*第一大题3小题样式*/
+.nub13{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
+.circle1{left:20%;top:5%;}
+.square2{left:35%;top:6%;width:12%}
+.circle3{left:52%;top:5%;}
+.circle4{left:68%;top:5%;}
+.circle5{left:10%;top:40%;}
+.square6{left:26%;top:41%; width:12%}
+.circle7{left:44%;top:40%;}
+.square8{left:60%;top:41%; width:12%}
+.circle9{left:78%;top:40%;}
+/*第一大题4小题样式*/
+.nub14{width:100%;height: 100%;position:absolute;left:0;top:0;display: none;}
 .sheep1{left:20%;top:5%;}
-.sheep2{width:14%;left:35%;top:4%;}
-.sheep3{left:52%;top:2%;}
+.sheep2{left:36%;top:5%;}
+.sheep3{left:52%;top:5%;}
 .sheep4{left:68%;top:5%;}
 .sheep5{left:10%;top:40%;}
-.sheep6{width:13%;left:27%;top:40%;}
-.sheep7{width:10%;left:44%;top:40%;}
-.sheep8{width:13%;left:61%;top:40%;}
+.sheep6{left:27%;top:40%;}
+.sheep7{left:44%;top:40%;}
+.sheep8{left:61%;top:40%;}
 .sheep9{left:78%;top:40%;}
+
+
+
 .ban1{width:43%;position:absolute;left:4%;top:88%;}
 .ban2{width:43%;position:absolute;left:53%;top:88%;}
 /*第二大题样式*/
@@ -103,16 +141,16 @@
 .mlon2{width:13%;position:absolute;left:43%;top:84%}
 .mlon3{width:12%;position:absolute;left:83%;top:80%}
 
-.hand{width:5%;position:absolute;left:34%;top:65%;display:none}
+.hand{width:5%;position:absolute;left:31%;top:48%;display:none}
 .hand1{width:5%;position:absolute;left:30%;top:68%;display:none}
 .hand2{width:5%;position:absolute;left:49%;top:54%;display:none}
 .nub2 img{float:left}
 @keyframes go {
   0% {
-    left:10%;top:110%;
+    left:31%;top:48%;
   }
    100%{
-      left:45%;top:35%;
+      left:25%;top:89%;
   }
 }
 .go{
@@ -154,19 +192,53 @@
 			</div>
 			<div class="question">
 				<div class="nub1">
+					<div class="ban1"><img src="images/7.png"/></div>
+					<div class="ban2"><img src="images/8.png"/></div>
 					<div class="nub11">
-						<div class="sheep1 sheep" id="sheep1"><img src="images/9.png" alt="" /></div>
-						<div class="sheep2 sheep" id="sheep2"><img src="images/10.png" alt="" /></div>
-						<div class="sheep3 sheep" id="sheep3"><img src="images/11.png" alt="" /></div>
-						<div class="sheep4 sheep" id="sheep4"><img src="images/12.png" alt="" /></div>
-						<div class="sheep5 sheep" id="sheep5"><img src="images/13.png" alt="" /></div>
-						<div class="sheep6 sheep" id="sheep6"><img src="images/14.png" alt="" /></div>
-						<div class="sheep7 sheep" id="sheep7"><img src="images/15.png" alt="" /></div>
-						<div class="sheep8 sheep" id="sheep8"><img src="images/16.png" alt="" /></div>
-						<div class="sheep9 sheep" id="sheep9"><img src="images/17.png" alt="" /></div>
-						<div class="ban1"><img src="images/7.png"/></div>
-						<div class="ban2"><img src="images/8.png"/></div>
+						<div class="red1 book" id="red1"><img src="images/9.png" alt="" /></div>
+						<div class="red2 book" id="red2"><img src="images/9.png" alt="" /></div>
+						<div class="red3 book" id="red3"><img src="images/9.png" alt="" /></div>
+						<div class="red4 book" id="red4"><img src="images/9.png" alt="" /></div>
+						<div class="red5 book" id="red5"><img src="images/9.png" alt="" /></div>
+						<div class="red6 book" id="red6"><img src="images/9.png" alt="" /></div>
+						<div class="blue7 book" id="blue7"><img src="images/10.png" alt="" /></div>
+						<div class="red8 book" id="red8"><img src="images/9.png" alt="" /></div>
+						<div class="red9 book" id="red9"><img src="images/9.png" alt="" /></div>
 					</div>
+					<div class="nub12">
+						<div class="big1 book" id="big1"><img src="images/12.png" alt="" /></div>
+						<div class="small2 book" id="small2"><img src="images/11.png" alt="" /></div>
+						<div class="small3 book" id="sheep3"><img src="images/11.png" alt="" /></div>
+						<div class="big4 book" id="big4"><img src="images/12.png" alt="" /></div>
+						<div class="big5 book" id="big5"><img src="images/12.png" alt="" /></div>
+						<div class="big6 book" id="big6"><img src="images/12.png" alt="" /></div>
+						<div class="big7 book" id="big7"><img src="images/12.png" alt="" /></div>
+						<div class="big8 book" id="big8"><img src="images/12.png" alt="" /></div>
+						<div class="big9 book" id="big9"><img src="images/12.png" alt="" /></div>
+					</div>
+					<div class="nub13">
+						<div class="circle1 book" id="circle1"><img src="images/13.png" alt="" /></div>
+						<div class="square2 book" id="square2"><img src="images/14.png" alt="" /></div>
+						<div class="circle3 book" id="circle3"><img src="images/13.png" alt="" /></div>
+						<div class="circle4 book" id="circle4"><img src="images/13.png" alt="" /></div>
+						<div class="circle5 book" id="circle5"><img src="images/13.png" alt="" /></div>
+						<div class="square6 book" id="square6"><img src="images/14.png" alt="" /></div>
+						<div class="circle7 book" id="circle7"><img src="images/13.png" alt="" /></div>
+						<div class="square8 book" id="square8"><img src="images/14.png" alt="" /></div>
+						<div class="circle9 book" id="circle9"><img src="images/13.png" alt="" /></div>
+					</div>
+					<div class="nub14">
+						<div class="sheep1 book" id="sheep1"><img src="images/15.png" alt="" /></div>
+						<div class="sheep2 book" id="sheep2"><img src="images/16.png" alt="" /></div>
+						<div class="sheep3 book" id="sheep3"><img src="images/15.png" alt="" /></div>
+						<div class="sheep4 book" id="sheep4"><img src="images/16.png" alt="" /></div>
+						<div class="sheep5 book" id="sheep5"><img src="images/15.png" alt="" /></div>
+						<div class="sheep6 book" id="sheep6"><img src="images/16.png" alt="" /></div>
+						<div class="sheep7 book" id="sheep7"><img src="images/15.png" alt="" /></div>
+						<div class="sheep8 book" id="sheep8"><img src="images/16.png" alt="" /></div>
+						<div class="sheep9 book" id="sheep9"><img src="images/15.png" alt="" /></div>
+					</div>
+					
 				</div>
 				<div class="nub2">
 						<div class="num9"><img src="images/18.png"/></div>
@@ -214,6 +286,7 @@
 				<div class="hand1"><img src="images/47.png" alt="" /></div>
 				<div class="hand2"><img src="images/47.png" alt="" /></div>
 				<div class="succ"><img src="images/48.png"/></div>
+				<div class="bg"></div>
 			</div>
 		</div>
    </div>
@@ -299,7 +372,6 @@
 			locate+'images/51.png',
 			locate+'images/52.png',
 			locate+'images/53.png',
-			locate+'images/54.png',
 			locate+'images/bg.jpg'
 		
 		],
@@ -317,7 +389,7 @@
 			for(var i=0;i<16;i++){
 				tagLink+='<link rel="prefetch" href="audio/P'+i+'.mp3" />';
 			}
-			for(var i=1;i<55;i++){
+			for(var i=1;i<54;i++){
 					tagLink+='<link rel="prefetch" href="images/'+i+'.png" />';
 			}
 			tagLink+='<link rel="prefetch" href="images/bg.jpg"/>';
