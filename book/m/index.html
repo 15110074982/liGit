@@ -142,8 +142,8 @@
 .mlon3{width:12%;position:absolute;left:83%;top:80%}
 
 .hand{width:5%;position:absolute;left:31%;top:48%;display:none}
-.hand1{width:5%;position:absolute;left:30%;top:68%;display:none}
-.hand2{width:5%;position:absolute;left:49%;top:54%;display:none}
+.hand1{width:5%;position:absolute;left:32%;top:72%;display:none}
+.hand2{width:5%;position:absolute;left:14%;top:48%;display:none}
 .nub2 img{float:left}
 @keyframes go {
   0% {
@@ -156,8 +156,31 @@
 .go{
 	-webkit-animation: go 1.5s;
 }
+@keyframes go1 {
+  0% {
+    left:14%;top:48%;
+  }
+   100%{
+      left:25%;top:89%;
+  }
+}
+.go1{
+	-webkit-animation: go1 1.5s;
+}
+@keyframes scale{
+	 0% {
+    transform: scale3d(1, 1, 1);
+  }
+   50% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+   100%{
+     transform: scale3d(1, 1, 1);
+  }
+	 
+}
 .scale{
-	 transform: scale3d(1.05, 1.05, 1.05);;
+	-webkit-animation: scale 1.5s;
 }
 </style>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -208,7 +231,7 @@
 					<div class="nub12">
 						<div class="big1 book" id="big1"><img src="images/12.png" alt="" /></div>
 						<div class="small2 book" id="small2"><img src="images/11.png" alt="" /></div>
-						<div class="small3 book" id="sheep3"><img src="images/11.png" alt="" /></div>
+						<div class="small3 book" id="small3"><img src="images/11.png" alt="" /></div>
 						<div class="big4 book" id="big4"><img src="images/12.png" alt="" /></div>
 						<div class="big5 book" id="big5"><img src="images/12.png" alt="" /></div>
 						<div class="big6 book" id="big6"><img src="images/12.png" alt="" /></div>

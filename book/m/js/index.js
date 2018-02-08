@@ -1,3 +1,4 @@
+  window.onload=function(){
   var $print=$("#container");
      changeOrientation($print);
      var imageH;//图片相对高;
@@ -64,9 +65,9 @@
 				playSound(arr[1]);
 			},300)
 			$(".nub1").show();
+			$(".nub11").show();
 			$(".nub2").hide();
-		    $(".nub3").hide();
-			//$(".nub11").show();
+		  $(".nub3").hide();
 			$(".content img").attr("src","images/5.png");
 			$(".next img").attr("src","images/50.png");
 			setTimeout(function(){
@@ -90,7 +91,7 @@
 		$(".nub2").show();
 		$(".nub3").hide();
 		$(".content img").attr("src","images/6.png");
-		$(".next img").attr("src","images/24.png");
+		$(".next img").attr("src","images/50.png");
 		setTimeout(function(){
 			$(".page1").addClass("animated rotateOut").fadeOut();
 			$(".page2").addClass("animated rotateIn").fadeIn();
@@ -164,24 +165,62 @@
 		 a7=false;
 		 a8=false;
 		 a9=false;
-	 	 $(".question").removeClass("animated pulse infinite").fadeOut();
+	 	 $(".question").removeClass("animated pulse infinite");
 	 	$(".succ").hide();
 		if($(".nub1").css("display")=="block"){
-			setTimeout(function(){
-				playSound(arr[2]);
-			},300)
-			$(".nub1").fadeOut();
-			$(".nub2").fadeIn();
-			$(".content img").attr("src","images/5.png");
 			 $(".next img").attr("src","images/50.png");
-			/*setTimeout(function(){
-				$(".hand").addClass("animated pulse").fadeIn();
-				$(".nub2 .box2 .road").addClass("animated pulse");
-					setTimeout(function(){
-					$(".hand").addClass("animated pulse").fadeOut();
-				$(".nub2 .box2 .road").removeClass("animated pulse");
-				},1000)
-			},1000)*/
+				if($(".nub11").css("display")=="block"){
+						$(".nub11").fadeOut();
+			      $(".nub12").fadeIn();
+			      $(".content img").attr("src","images/5.png");
+			      setTimeout(function(){
+								$(".hand").addClass("go").show();
+								setTimeout(function(){
+									$(".hand").removeClass("go").hide();
+								},1500);
+							 reset();
+						},1000);
+						
+				}else if($(".nub12").css("display")=="block"){
+					   $(".nub12").fadeOut();
+			       $(".nub13").fadeIn();
+			       $(".content img").attr("src","images/5.png");
+			        setTimeout(function(){
+								$(".hand2").addClass("go1").show();
+								setTimeout(function(){
+									$(".hand2").removeClass("go1").hide();
+								},1500);
+							reset();
+						},1000)
+		    }else if($(".nub13").css("display")=="block"){
+					  $(".nub13").fadeOut();
+			      $(".nub14").fadeIn();
+			      $(".content img").attr("src","images/5.png");
+			      setTimeout(function(){
+								$(".hand").addClass("go").show();
+								setTimeout(function(){
+									$(".hand").removeClass("go").hide();
+								},1500);
+							reset();
+						},1000)
+		    }else if($(".nub14").css("display")=="block"){
+		    	 $(".nub1").fadeOut();
+					  $(".nub14").fadeOut();
+			      $(".nub2").fadeIn();
+			      $(".content img").attr("src","images/6.png");
+		      	setTimeout(function(){
+								playSound(arr[2]);
+						},300)
+		      	 setTimeout(function(){
+								$(".hand1").addClass("scale").show();
+								$(".num3").addClass("scale");
+								setTimeout(function(){
+									$(".hand1").removeClass("scale").hide();
+									$(".num3").removeClass("scale");
+								},1500);
+							reset();
+						},1000);
+		    }
 		}else if($(".nub2").css("display")=="block"){
 			setTimeout(function(){
 				playSound(arr[3]);
@@ -207,36 +246,66 @@
 	//重置操作
 	$(".reset").click(function(){
 		pause();
-		/*$(this).addClass("animated pulse");
-		setTimeout(function(){
-			$(".next").removeClass("animated pulse")
-		},800);*/
-		$(".nub2 .box2 .person").removeClass("go").show();
-		 $(".nub11 .blue").removeClass("animated pulse infinite");
-	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
-	 	 $(".nub2 .box2 .road").removeClass("animated pulse infinite");
-	 	 $(".nub3 .box2 .mouse2").removeClass("animated pulse infinite");
+		 a1=false;
+		 a2=false;
+		 a3=false;
+		 a4=false;
+		 a5=false;
+		 a6=false;
+		 a7=false;
+		 a8=false;
+		 a9=false;
+	 	 $(".question").removeClass("animated pulse infinite");
+	 	$(".succ").hide();
 		if($(".nub1").css("display")=="block"){
-		    $(".content img").attr("src","images/5.png");
-				/*setTimeout(function(){
-					$(".hand1").addClass("animated pulse").show();
-					$(".nub2 .blue").addClass("animated pulse");
-					setTimeout(function(){
-						$(".hand1").removeClass("animated pulse").fadeOut();
-						$(".nub1 .blue").removeClass("animated pulse");
-					},800);
-				},1000)*/
+				 $(".next img").attr("src","images/50.png");
+				 $(".content img").attr("src","images/5.png");
+				if($(".nub11").css("display")=="block"){
+			      setTimeout(function(){
+								$(".hand").addClass("go").show();
+								setTimeout(function(){
+									$(".hand").removeClass("go").hide();
+								},1500);
+						},1000);
+						reset();
+				}else if($(".nub12").css("display")=="block"){
+			        setTimeout(function(){
+								$(".hand").addClass("go").show();
+								setTimeout(function(){
+									$(".hand").removeClass("go").hide();
+								},1500);
+						},1000)
+			       reset();
+		    }else if($(".nub13").css("display")=="block"){
+			      setTimeout(function(){
+								$(".hand2").addClass("go1").show();
+								setTimeout(function(){
+									$(".hand2").removeClass("go1").hide();
+								},1500);
+						},1000);
+						reset();
+		    }else if($(".nub14").css("display")=="block"){
+		      	setTimeout(function(){
+								$(".hand").addClass("go").show();
+								setTimeout(function(){
+									$(".hand").removeClass("go").hide();
+								},1500);
+						},1000)
+		      	reset();
+		    }
 			
 		}else if($(".nub2").css("display")=="block"){
+			 $(".next img").attr("src","images/50.png");
 			 $(".content img").attr("src","images/6.png");
-			/*setTimeout(function(){
-				$(".hand").addClass("animated pulse").fadeIn();
-				$(".nub2 .box2 .road").addClass("animated pulse");
-					setTimeout(function(){
-					$(".hand").addClass("animated pulse").fadeOut();
-				$(".nub2 .box2 .road").removeClass("animated pulse");
-				},1000)
-			},1000)*/
+				setTimeout(function(){
+									$(".hand1").addClass("scale").show();
+									$(".num3").addClass("scale");
+									setTimeout(function(){
+										$(".hand1").removeClass("scale").hide();
+										$(".num3").removeClass("scale");
+									},1500);
+								reset();
+							},1000);
 		}else if($(".nub3").css("display")=="block"){
 			 $(".content img").attr("src","images/6.png");
 						$(".nub1").hide();
@@ -253,28 +322,8 @@
 		}
 	});
 
-	/*声音播放区*/
-	var playing;
-	function playSound(buffer){
-		source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
-	    source.buffer = buffer;//  告诉音频源 播放哪一段音频
-	    source.connect(context.destination);// 连接到输出源
-	    source.start(0);//开始播放
-	    playing=true;
-	   }
-	function pause() {
-		if(playing){
-         source.stop();
-         playing=false;
-      }
-    }
-	var source1;
-	function playSound1(buffer){
-		source1 = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
-	    source1.buffer = buffer;//  告诉音频源 播放哪一段音频
-	    source1.connect(context.destination);// 连接到输出源
-	    source1.start(0);//开始播放
-	   }
+	
+	
 	
  	 var startX;
      var startY;
@@ -445,7 +494,7 @@
 		 }else{
 		 	playSound1(arr[14]);
 		 	 $(this).css({
-                "left":"53%",
+                "left":"52%",
                 "top":"5%",                    
                 })
 		 }
@@ -748,7 +797,7 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"67%",
+	                "left":"14%",
 	                "top":"71%",
 	                "pointer-events":"none"
                 })
@@ -770,4 +819,1664 @@
 		 }
 	},false);
 	
+  
+
+  big1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.2;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	big1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"10%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"20%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+
+	big4.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.68;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	big4.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big4.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"14%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a4=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"68%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	big5.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.1;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	big5.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big5.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"18%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a5=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"10%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	big6.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.27;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	big6.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big6.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"22%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a6=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"27%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	big7.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.44;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	big7.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big7.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"26%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a7=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"44%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	big8.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.61;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	big8.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big8.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"30%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a8=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"61%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	big9.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.78;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	big9.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	big9.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"34%",
+	                "top":"63%",
+	                "pointer-events":"none"
+                })
+                a9=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"78%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+		small2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.37;
+		 sy=halfH*0.11;//移动前left:0.4,top:0.31
+	},false);
+	small2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	small2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"65%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"37%",
+                "top":"11%",                    
+                })
+		 }
+	},false);
+
+	small3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.51;
+		 sy=halfH*0.11;//移动前left:0.4,top:0.31
+	},false);
+	small3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	small3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"69%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a3=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"51%",
+                "top":"11%",                    
+                })
+		 }
+	},false);
 	
+	
+	
+	circle1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.2;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	circle1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	circle1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"6%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"20%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	circle3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.52;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	circle3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	circle3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"14%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a3=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"52%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	circle4.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.68;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	circle4.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	circle4.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"18%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a4=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"68%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	circle5.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.1;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	circle5.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	circle5.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"22%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a5=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"10%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	circle7.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.44;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	circle7.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	circle7.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"30%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a7=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"44%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	
+
+	circle9.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.78;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	circle9.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	circle9.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"34%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a9=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"78%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	
+	
+	square2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.35;
+		 sy=halfH*0.06;//移动前left:0.4,top:0.31
+	},false);
+	square2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	square2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"65%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"35%",
+                "top":"6%",                    
+                })
+		 }
+	},false);
+	
+	square6.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.26;
+		 sy=halfH*0.41;//移动前left:0.4,top:0.31
+	},false);
+	square6.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	square6.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"67%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a6=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"26%",
+                "top":"41%",                    
+                })
+		 }
+	},false);
+	square8.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.6;
+		 sy=halfH*0.41;//移动前left:0.4,top:0.31
+	},false);
+	square8.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	square8.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"69%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a8=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"60%",
+                "top":"41%",                    
+                })
+		 }
+	},false);
+	
+	
+	
+	
+/*第一大题4小题*/	
+	
+	sheep2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.36;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	sheep2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"10%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"36%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	
+	sheep4.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.68;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	sheep4.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep4.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"18%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a4=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"68%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	
+	sheep6.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.27;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	sheep6.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep6.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"26%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a6=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"27%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	sheep8.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.61;
+		 sy=halfH*0.4;//移动前left:0.4,top:0.31
+	},false);
+	sheep8.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep8.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"30%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a8=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"61%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	
+	
+	sheep1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.20;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	sheep1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"67%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"20%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	sheep3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.52;
+		 sy=halfH*0.05;//移动前left:0.4,top:0.31
+	},false);
+	sheep3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"65%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a3=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"52%",
+                "top":"5%",                    
+                })
+		 }
+	},false);
+	sheep5.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.10;
+		 sy=halfH*0.40;//移动前left:0.4,top:0.31
+	},false);
+	sheep5.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep5.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"69%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a5=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"10%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	sheep7.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.44;
+		 sy=halfH*0.40;//移动前left:0.4,top:0.31
+	},false);
+	sheep7.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep7.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"63%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a7=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"44%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	sheep9.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.78;
+		 sy=halfH*0.40;//移动前left:0.4,top:0.31
+	},false);
+	sheep9.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	sheep9.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.43*45/478;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $(this).css({
+	                "left":"71%",
+	                "top":"71%",
+	                "pointer-events":"none"
+                })
+                a9=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"78%",
+                "top":"40%",                    
+                })
+		 }
+	},false);
+	
+}
+function reset(){
+							$(".red1").css({
+	                "left":"20%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+               });
+               $(".red2").css({
+	                "left":"36%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".red3").css({
+	                "left":"52%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".red4").css({
+	                "left":"68%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".red5").css({
+	                "left":"10%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".red6").css({
+	                "left":"27%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".blue7").css({
+	                "left":"44%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".red8").css({
+	                "left":"61%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".red9").css({
+	                "left":"78%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+							$(".big1").css({
+	                "left":"20%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+               });
+               $(".small2").css({
+	                "left":"37%",
+	                "top":"11%",
+	                "pointer-events":"auto"
+                })
+               $(".small3").css({
+	                "left":"51%",
+	                "top":"11%",
+	                "pointer-events":"auto"
+                })
+               $(".big4").css({
+	                "left":"68%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".big5").css({
+	                "left":"10%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".big6").css({
+	                "left":"27%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".big7").css({
+	                "left":"44%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".big8").css({
+	                "left":"61%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".big9").css({
+	                "left":"78%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+               });
+               
+		          $(".circle1").css({
+	                "left":"20%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+               });
+               $(".square2").css({
+	                "left":"35%",
+	                "top":"6%",
+	                "pointer-events":"auto"
+                })
+               $(".circle3").css({
+	                "left":"52%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".circle4").css({
+	                "left":"68%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".circle5").css({
+	                "left":"10%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".square6").css({
+	                "left":"26%",
+	                "top":"41%",
+	                "pointer-events":"auto"
+                })
+               $(".circle7").css({
+	                "left":"44%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".square8").css({
+	                "left":"60%",
+	                "top":"41%",
+	                "pointer-events":"auto"
+                })
+               $(".circle9").css({
+	                "left":"78%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep1").css({
+	                "left":"20%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+               });
+               $(".sheep2").css({
+	                "left":"36%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep3").css({
+	                "left":"52%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep4").css({
+	                "left":"68%",
+	                "top":"5%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep5").css({
+	                "left":"10%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep6").css({
+	                "left":"27%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep7").css({
+	                "left":"44%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep8").css({
+	                "left":"61%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+               $(".sheep9").css({
+	                "left":"78%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+	}
+	/*声音播放区*/
+	var playing;
+		var source1;
+	function playSound(buffer){
+		source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source.buffer = buffer;//  告诉音频源 播放哪一段音频
+	    source.connect(context.destination);// 连接到输出源
+	    source.start(0);//开始播放
+	    playing=true;
+	   }
+	function pause() {
+		if(playing){
+         source.stop();
+         playing=false;
+      }
+    }
+
+	function playSound1(buffer){
+		source1 = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source1.buffer = buffer;//  告诉音频源 播放哪一段音频
+	    source1.connect(context.destination);// 连接到输出源
+	    source1.start(0);//开始播放
+	   }
