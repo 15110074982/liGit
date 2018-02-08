@@ -223,20 +223,19 @@
 		    }
 		}else if($(".nub2").css("display")=="block"){
 			setTimeout(function(){
-				playSound(arr[3]);
+				playSound(arr[11]);
 			},300)
 			$(".nub2").fadeOut();
 			$(".nub3").fadeIn();
+			$(".nub31").show();
 			$(".content img").attr("src","images/6.png");
-			 $(".next img").attr("src","images/26.png");
-			/*setTimeout(function(){
-					$(".hand2").addClass("animated pulse").fadeIn();
-				    $(".nub3 .box2 .mouse2").addClass("animated pulse");
+			$(".next img").attr("src","images/50.png");
+			setTimeout(function(){
+					$(".hand3").addClass("go2").fadeIn();
 					setTimeout(function(){
-						$(".hand2").addClass("animated pulse").fadeOut();
-					    $(".nub3 .box2 .mouse2").removeClass("animated pulse");
+						$(".hand3").addClass("go2").fadeOut();
 				   },1000)
-				},1000)*/
+				},1000)
 		}else if($(".nub3").css("display")=="block"){
 			$(".nub3").fadeOut();
 			$(".page1").removeClass("animated rotateOut").fadeIn()
@@ -257,6 +256,7 @@
 		 a9=false;
 	 	 $(".question").removeClass("animated pulse infinite");
 	 	$(".succ").hide();
+	 		reset();
 		if($(".nub1").css("display")=="block"){
 				 $(".next img").attr("src","images/50.png");
 				 $(".content img").attr("src","images/5.png");
@@ -267,7 +267,6 @@
 									$(".hand").removeClass("go").hide();
 								},1500);
 						},1000);
-						reset();
 				}else if($(".nub12").css("display")=="block"){
 			        setTimeout(function(){
 								$(".hand").addClass("go").show();
@@ -275,7 +274,6 @@
 									$(".hand").removeClass("go").hide();
 								},1500);
 						},1000)
-			       reset();
 		    }else if($(".nub13").css("display")=="block"){
 			      setTimeout(function(){
 								$(".hand2").addClass("go1").show();
@@ -283,7 +281,6 @@
 									$(".hand2").removeClass("go1").hide();
 								},1500);
 						},1000);
-						reset();
 		    }else if($(".nub14").css("display")=="block"){
 		      	setTimeout(function(){
 								$(".hand").addClass("go").show();
@@ -291,7 +288,6 @@
 									$(".hand").removeClass("go").hide();
 								},1500);
 						},1000)
-		      	reset();
 		    }
 			
 		}else if($(".nub2").css("display")=="block"){
@@ -304,21 +300,18 @@
 										$(".hand1").removeClass("scale").hide();
 										$(".num3").removeClass("scale");
 									},1500);
-								reset();
 							},1000);
 		}else if($(".nub3").css("display")=="block"){
 			 $(".content img").attr("src","images/6.png");
 						$(".nub1").hide();
 						$(".nub2").hide();
 						$(".nub3").show();
-                		/*setTimeout(function(){
-								$(".hand2").addClass("animated pulse").fadeIn();
-							    $(".nub3 .box2 .mouse2").addClass("animated pulse");
-								setTimeout(function(){
-									$(".hand2").addClass("animated pulse").fadeOut();
-								    $(".nub3 .box2 .mouse2").removeClass("animated pulse");
-							   },1000)
-						},1000)*/
+                		setTimeout(function(){
+							$(".hand3").addClass("go2").fadeIn();
+							setTimeout(function(){
+								$(".hand3").addClass("go2").fadeOut();
+						   },1000)
+						},1000)
 		}
 	});
 
@@ -1824,7 +1817,7 @@
 		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
 	                "left":"10%",
-	                "top":"71%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a2=true;//改
@@ -1878,7 +1871,7 @@
 		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
 	                "left":"18%",
-	                "top":"71%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a4=true;//改
@@ -1932,7 +1925,7 @@
 		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
 	                "left":"26%",
-	                "top":"71%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a6=true;//改
@@ -1985,7 +1978,7 @@
 		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
 	                "left":"30%",
-	                "top":"71%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a8=true;//改
@@ -2039,8 +2032,8 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"67%",
-	                "top":"71%",
+	                "left":"59%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a1=true;//改
@@ -2092,8 +2085,8 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"65%",
-	                "top":"71%",
+	                "left":"63%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a3=true;//改
@@ -2145,8 +2138,8 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"69%",
-	                "top":"71%",
+	                "left":"67%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a5=true;//改
@@ -2198,8 +2191,8 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"63%",
-	                "top":"71%",
+	                "left":"71%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a7=true;//改
@@ -2251,8 +2244,8 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"71%",
-	                "top":"71%",
+	                "left":"76%",
+	                "top":"65%",
 	                "pointer-events":"none"
                 })
                 a9=true;//改
@@ -2273,9 +2266,186 @@
 		 }
 	},false);
 	
+	/*第二大题*/
+	$(".num").click(function(){
+		pause();
+		var index=$(this).index();
+		var that=$(this);
+		that.addClass("scale");
+		setTimeout(function(){
+			that.removeClass("scale");
+		},1400)
+		if(index==1){
+			setTimeout(function(){
+				playSound(arr[3])
+			},300)
+		}else if(index==2){
+			setTimeout(function(){
+				playSound(arr[4])
+			},300)
+		}else if(index==3){
+			setTimeout(function(){
+				playSound(arr[5])
+			},300)
+		}else if(index==4){
+			setTimeout(function(){
+				playSound(arr[6])
+			},300)
+		}else if(index==5){
+			setTimeout(function(){
+				playSound(arr[7])
+			},300)
+		}else if(index==6){
+			setTimeout(function(){
+				playSound(arr[8])
+			},300)
+		}else if(index==7){
+			setTimeout(function(){
+				playSound(arr[9])
+			},300)
+		}else if(index==8){
+			setTimeout(function(){
+				playSound(arr[10])
+			},300)
+		}							
+	})
+	/*第三大题*/
+	rabit1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.05;
+		 sy=halfH*0.8;//移动前left:0.4,top:0.31
+	},false);
+	rabit1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	rabit1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"22%",
+	                "top":"51%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"5%",
+                "top":"80%",                    
+                })
+		 }
+	},false);
+	rabit3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.79;
+		 sy=halfH*0.8;//移动前left:0.4,top:0.31
+	},false);
+	rabit3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	rabit3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"62%",
+	                "top":"52%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },1000)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"79%",
+                "top":"80%",                    
+                })
+		 }
+	},false);
+	rabit2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.42;
+		 sy=halfH*0.75;//移动前left:0.4,top:0.31
+	},false);
+	rabit2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	rabit2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"42%",
+                "top":"75%",                    
+                })
+		
+	},false);
+	
 }
 function reset(){
-							$(".red1").css({
+				$(".red1").css({
 	                "left":"20%",
 	                "top":"5%",
 	                "pointer-events":"auto"
@@ -2454,6 +2624,16 @@ function reset(){
                $(".sheep9").css({
 	                "left":"78%",
 	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+                 $(".rabit1").css({
+	                "left":"78%",
+	                "top":"40%",
+	                "pointer-events":"auto"
+                })
+                   $(".rabit3").css({
+	                "left":"5%",
+	                "top":"80%",
 	                "pointer-events":"auto"
                 })
 	}
