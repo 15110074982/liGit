@@ -1,10 +1,11 @@
-     var $print=$("#container");
+var $print=$("#container");
      changeOrientation($print);
      var imageH;//图片相对高;
      var halfH;
+     
 	 var winH;//屏幕宽高  
      var winW;
-     var a=Number($(window).width());//320
+      var a=Number($(window).width());//320
      var b=Number($(window).height());//504
      if(a>b){
          winW=a;   
@@ -14,22 +15,23 @@
      	 winW=b;
      	 winH=a;
      }
-     //获取图片相对高度方法;
+        //获取图片相对高度方法;
+     getImageH($(".nav1").attr("src"));
    function getImageH(url){
 		var img=new Image();
 		img.src=url;
-		console.log(url)
-		//img.onload=function(){
+		img.onload=function(){
 			var imgW=img.width;//图片真实宽高
 			var imgH=img.height;
 			//图片相对高度
 			imageH=parseInt(winW*imgH/imgW);
 			halfH=winH-imageH;
-		//}
+			console.log(imageH,halfH);
+		}
 		
 	}
-    getImageH($(".nav1").attr("src"));
     /* 导航宽高*/
+   window.onload=function(){
    console.log(imageH,halfH);
 	$(".nav").height(imageH);
 	$(".question").height(halfH);
@@ -182,26 +184,8 @@
 	});
 	
 	var playing;
-	function playSound(buffer){
-		source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
-	    source.buffer = buffer;//  告诉音频源 播放哪一段音频
-	    source.connect(context.destination);// 连接到输出源
-	    source.start(0);//开始播放
-	    playing=true;
-	   }
-	function pause() {
-		if(playing){
-         source.stop();
-         playing=false;
-      }
-    }
 	var source1;
-	function playSound1(buffer){
-		source1 = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
-	    source1.buffer = buffer;//  告诉音频源 播放哪一段音频
-	    source1.connect(context.destination);// 连接到输出源
-	    source1.start(0);//开始播放
-	   }
+	
 	
 
 
@@ -244,15 +228,15 @@
 	},false);
 	nuber6.addEventListener("touchend",function(e){
 		 e.preventDefault();
-		/*$(".bg").css({
-		 		 "left":winW*0.4*0.405,
-                "top":winW*0.4*0.3,
+		$(".bg").css({
+		 		 "left":winW*0.42*0.4,
+                "top":winW*0.42*0.3,
                 "width":winW*0.4*0.1,
                 "height":winW*0.4*0.1,
                 "background":"#fff"
-		 	})*/
+		 	})
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.4&&px<=winW*0.4*0.5 && py>=winW*0.4*0.31 && py<=(winW*0.4*0.41)){
+		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.31 && py<=(winW*0.42*0.41)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"7%",
@@ -304,7 +288,7 @@
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.4&&px<=winW*0.4*0.5 && py>=winW*0.4*0.41 && py<=(winW*0.4*0.51)){
+		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.41 && py<=(winW*0.42*0.51)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"29%",
@@ -356,7 +340,7 @@
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.50&&px<=winW*0.4*0.6 && py>=winW*0.4*0.41 && py<=(winW*0.4*0.51)){
+		 if(px>=winW*0.42*0.50&&px<=winW*0.42*0.6 && py>=winW*0.42*0.41 && py<=(winW*0.42*0.51)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"40%",
@@ -617,7 +601,7 @@
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.89&&px<=winW*0.4*0.99 && py>=winW*0.4*0.20 && py<=(winW*0.4*0.30)){
+		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.30)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"7%",
@@ -669,7 +653,7 @@
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.69&&px<=winW*0.4*0.79 && py>=winW*0.4*0.30 && py<=(winW*0.4*0.40)){
+		 if(px>=winW*0.42*0.69&&px<=winW*0.42*0.79 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"29%",
@@ -720,7 +704,7 @@
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.79&&px<=winW*0.4*0.89 && py>=winW*0.4*0.30 && py<=(winW*0.4*0.40)){
+		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.89 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"40%",
@@ -771,7 +755,7 @@
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.89&&px<=winW*0.4*0.99 && py>=winW*0.4*0.30 && py<=(winW*0.4*0.40)){
+		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"51%",
@@ -1005,7 +989,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.3&&px<=winW*0.4*0.4 && py>=winW*0.4*0.20 && py<=(winW*0.4*0.30)){
+		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.4 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.30)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"11",
@@ -1056,7 +1040,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.2&&px<=winW*0.4*0.3 && py>=winW*0.4*0.30 && py<=(winW*0.4*0.40)){
+		 if(px>=winW*0.42*0.2&&px<=winW*0.42*0.3 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"35%",
@@ -1108,7 +1092,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.4&&px<=winW*0.4*0.5 && py>=winW*0.4*0.30 && py<=(winW*0.4*0.40)){
+		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"47%",
@@ -1160,7 +1144,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.3&&px<=winW*0.4*0.4 && py>=winW*0.4*0.40 && py<=(winW*0.4*0.50)){
+		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.4 && py>=winW*0.42*0.40 && py<=(winW*0.42*0.50)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"71%",
@@ -1212,7 +1196,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.89&&px<=winW*0.4*0.99 && py>=winW*0.4*0.50 && py<=(winW*0.4*0.60)){
+		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.50 && py<=(winW*0.42*0.60)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"95%",
@@ -1264,7 +1248,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.69&&px<=winW*0.4*0.79 && py>=winW*0.4*0.59 && py<=(winW*0.4*0.69)){
+		 if(px>=winW*0.42*0.69&&px<=winW*0.42*0.79 && py>=winW*0.42*0.59 && py<=(winW*0.42*0.69)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"107%",
@@ -1316,7 +1300,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.79&&px<=winW*0.4*0.89 && py>=winW*0.4*0.69 && py<=(winW*0.4*0.79)){
+		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.89 && py>=winW*0.42*0.69 && py<=(winW*0.42*0.79)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"-28%",
@@ -1368,7 +1352,7 @@ nuber45.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.4*0.89&&px<=winW*0.4*0.99 && py>=winW*0.4*0.79 && py<=(winW*0.4*0.89)){
+		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.79 && py<=(winW*0.42*0.89)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"-15%",
@@ -1528,3 +1512,26 @@ nuber45.addEventListener("touchstart",function(e){
                 "top":"107%",                    
                 })
 	},false);
+	
+}
+   
+function playSound(buffer){
+		source = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source.buffer = buffer;//  告诉音频源 播放哪一段音频
+	    source.connect(context.destination);// 连接到输出源
+	    source.start(0);//开始播放
+	    playing=true;
+	   }
+	function pause() {
+		if(playing){
+         source.stop();
+         playing=false;
+      }
+    }
+	
+	function playSound1(buffer){
+		source1 = context.createBufferSource();//创建一个音频源 相当于是装音频的容器
+	    source1.buffer = buffer;//  告诉音频源 播放哪一段音频
+	    source1.connect(context.destination);// 连接到输出源
+	    source1.start(0);//开始播放
+	   }

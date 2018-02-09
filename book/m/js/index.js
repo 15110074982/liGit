@@ -1,11 +1,12 @@
-  window.onload=function(){
+
   var $print=$("#container");
      changeOrientation($print);
      var imageH;//图片相对高;
      var halfH;
+     
 	 var winH;//屏幕宽高  
      var winW;
-     var a=Number($(window).width());//320
+      var a=Number($(window).width());//320
      var b=Number($(window).height());//504
      if(a>b){
          winW=a;   
@@ -15,25 +16,30 @@
      	 winW=b;
      	 winH=a;
      }
-     //获取图片相对高度方法;
+        //获取图片相对高度方法;
+     getImageH($(".nav1").attr("src"));
    function getImageH(url){
 		var img=new Image();
 		img.src=url;
-		console.log(url)
-		//img.onload=function(){
+		img.onload=function(){
 			var imgW=img.width;//图片真实宽高
 			var imgH=img.height;
 			//图片相对高度
 			imageH=parseInt(winW*imgH/imgW);
 			halfH=winH-imageH;
-		//}
+			console.log(imageH,halfH);
+		}
 		
 	}
-    getImageH($(".nav1").attr("src"));
+   
     /* 导航内容高度*/
-   console.log(imageH,halfH);
+  
+window.onload=function(){
+	 console.log(imageH,halfH);
 	$(".nav").height(imageH);
 	$(".question").height(halfH);
+   
+  
 	var a1=false;
 	var a2=false;
 	var a3=false;
@@ -95,15 +101,17 @@
 		setTimeout(function(){
 			$(".page1").addClass("animated rotateOut").fadeOut();
 			$(".page2").addClass("animated rotateIn").fadeIn();
-			/*setTimeout(function(){
-				$(".hand").addClass("animated pulse").fadeIn();
-				$(".nub2 .box2 .road").addClass("animated pulse");
+			setTimeout(function(){
+					$(".hand1").addClass("scale").show();
+					$(".num3").addClass("scale");
 					setTimeout(function(){
-					$(".hand").addClass("animated pulse").fadeOut();
-				$(".nub2 .box2 .road").removeClass("animated pulse");
-				},1000)
-			},1000)*/
+						$(".hand1").removeClass("scale").hide();
+						$(".num3").removeClass("scale");
+					},1500);
+			},1000);
 		},800)
+		
+		
 	})
 
 	
@@ -167,8 +175,8 @@
 		 a9=false;
 	 	 $(".question").removeClass("animated pulse infinite");
 	 	$(".succ").hide();
+	 	$(".next img").attr("src","images/50.png");
 		if($(".nub1").css("display")=="block"){
-			 $(".next img").attr("src","images/50.png");
 				if($(".nub11").css("display")=="block"){
 						$(".nub11").fadeOut();
 			      $(".nub12").fadeIn();
@@ -218,7 +226,7 @@
 									$(".hand1").removeClass("scale").hide();
 									$(".num3").removeClass("scale");
 								},1500);
-							reset();
+								reset();
 						},1000);
 		    }
 		}else if($(".nub2").css("display")=="block"){
@@ -229,17 +237,66 @@
 			$(".nub3").fadeIn();
 			$(".nub31").show();
 			$(".content img").attr("src","images/6.png");
-			$(".next img").attr("src","images/50.png");
 			setTimeout(function(){
 					$(".hand3").addClass("go2").fadeIn();
 					setTimeout(function(){
 						$(".hand3").addClass("go2").fadeOut();
-				   },1000)
+				   },1500)
 				},1000)
 		}else if($(".nub3").css("display")=="block"){
-			$(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
+			if($(".nub31").css("display")=="block"){
+					  $(".nub31").fadeOut();
+				      $(".nub32").fadeIn();
+				      $(".content img").attr("src","images/6.png");
+				      setTimeout(function(){
+							$(".hand3").addClass("go2").fadeIn();
+							setTimeout(function(){
+								$(".hand3").addClass("go2").fadeOut();
+						    },1500)
+							reset();
+					  },1000)
+						
+				}else if($(".nub32").css("display")=="block"){
+					setTimeout(function(){
+							playSound(arr[12]);
+					},300)	
+					   $(".nub32").fadeOut();
+				       $(".nub33").fadeIn();
+				       $(".content img").attr("src","images/6.png");
+			          setTimeout(function(){
+						$(".hand3").addClass("go2").fadeIn();
+						setTimeout(function(){
+							$(".hand3").addClass("go2").fadeOut();
+					    },1500)
+						reset();
+					  },1000)
+		       }else if($(".nub33").css("display")=="block"){
+					   $(".nub33").fadeOut();
+				       $(".nub34").fadeIn();
+				       $(".next img").attr("src","images/52.png");
+				       $(".content img").attr("src","images/6.png");
+			          setTimeout(function(){
+						$(".hand3").addClass("go2").fadeIn();
+						setTimeout(function(){
+							$(".hand3").addClass("go2").fadeOut();
+					    },1500)
+						reset();
+					  },1000)
+		       }else if($(".nub34").css("display")=="block"){
+					   $(".nub34").fadeOut();
+				        $(".nub3").fadeOut();
+				        $(".page1").removeClass("animated rotateOut").fadeIn()
+			           $(".page2").removeClass("animated rotateOut").fadeOut()
+				       $(".content img").attr("src","images/5.png");
+				        $(".next img").attr("src","images/50.png");
+			          setTimeout(function(){
+							$(".hand3").addClass("go2").fadeIn();
+							setTimeout(function(){
+								$(".hand3").addClass("go2").fadeOut();
+						    },1500)
+						reset();
+					  },1000)
+		       }
 		}
 	});
 	//重置操作
@@ -310,7 +367,7 @@
 							$(".hand3").addClass("go2").fadeIn();
 							setTimeout(function(){
 								$(".hand3").addClass("go2").fadeOut();
-						   },1000)
+						   },1500)
 						},1000)
 		}
 	});
@@ -376,7 +433,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -429,7 +486,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -482,7 +539,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -535,7 +592,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -588,7 +645,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -641,7 +698,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -694,7 +751,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -747,7 +804,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -790,7 +847,7 @@
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
-	                "left":"14%",
+	                "left":"67%",
 	                "top":"71%",
 	                "pointer-events":"none"
                 })
@@ -801,7 +858,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -857,7 +914,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -911,7 +968,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -964,7 +1021,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1017,7 +1074,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1070,7 +1127,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1123,7 +1180,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1176,7 +1233,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1229,7 +1286,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1283,7 +1340,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1339,7 +1396,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1392,7 +1449,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1445,7 +1502,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1498,7 +1555,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1551,7 +1608,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1606,7 +1663,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1661,7 +1718,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1715,7 +1772,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1768,7 +1825,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1827,7 +1884,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1881,7 +1938,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1935,7 +1992,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -1988,7 +2045,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2043,7 +2100,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2096,7 +2153,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2149,7 +2206,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2202,7 +2259,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2255,7 +2312,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2353,7 +2410,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2406,7 +2463,7 @@
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
 	                	 playSound1(arr[13]);
-                	 },1000)
+                	 },200)
                 }
 		 }else{
 		 	playSound1(arr[14]);
@@ -2443,6 +2500,413 @@
 		
 	},false);
 	
+	
+	cat1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.05;
+		 sy=halfH*0.82;//移动前left:0.4,top:0.31
+	},false);
+	cat1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	cat1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"25%",
+	                "top":"52%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"5%",
+                "top":"82%",                    
+                })
+		 }
+	},false);
+	
+	cat3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.77;
+		 sy=halfH*0.78;//移动前left:0.4,top:0.31
+	},false);
+	cat3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	cat3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"61%",
+	                "top":"50%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"77%",
+                "top":"78%",                    
+                })
+		 }
+	},false);
+	
+	cat2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.43;
+		 sy=halfH*0.78;//移动前left:0.4,top:0.31
+	},false);
+	cat2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	cat2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"43%",
+                "top":"78%",                    
+                })
+		
+	},false);
+	
+	melon1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.05;
+		 sy=halfH*0.84;//移动前left:0.4,top:0.31
+	},false);
+	melon1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	melon1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"28%",
+	                "top":"52%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"5%",
+                "top":"84%",                    
+                })
+		 }
+	},false);
+	
+	melon3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.79;
+		 sy=halfH*0.80;//移动前left:0.4,top:0.31
+	},false);
+	melon3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	melon3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"62%",
+	                "top":"48%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"79%",
+                "top":"80%",                    
+                })
+		 }
+	},false);
+	
+	melon2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.45;
+		 sy=halfH*0.80;//移动前left:0.4,top:0.31
+	},false);
+	melon2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	melon2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"45%",
+                "top":"80%",                    
+                })
+		
+	},false);
+	
+	mlon2.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.43;
+		 sy=halfH*0.84;//移动前left:0.4,top:0.31
+	},false);
+	mlon2.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	mlon2.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"23%",
+	                "top":"52%",
+	                "pointer-events":"none"
+                })
+                a1=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"43%",
+                "top":"84%",                    
+                })
+		 }
+	},false);
+	
+	mlon3.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.83;
+		 sy=halfH*0.80;//移动前left:0.4,top:0.31
+	},false);
+	mlon3.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	mlon3.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+		 	     $(this).css({
+	                "left":"64%",
+	                "top":"47%",
+	                "pointer-events":"none"
+                })
+                a2=true;//改
+                playSound1(arr[15]);
+                if(a1&&a2){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+		 }else{
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"83%",
+                "top":"80%",                    
+                })
+		 }
+	},false);
+	
+	mlon1.addEventListener("touchstart",function(e){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 sx=winW*0.05;
+		 sy=halfH*0.84;//移动前left:0.4,top:0.31
+	},false);
+	mlon1.addEventListener("touchmove",function(e){
+		 e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+	     $(this).css({
+                "left":px,
+                "top":py,                    
+                })
+	},false);
+	mlon1.addEventListener("touchend",function(e){
+		 e.preventDefault();
+		 	playSound1(arr[14]);
+		 	 $(this).css({
+                "left":"5%",
+                "top":"84%",                    
+                })
+		
+	},false);
+	
+
 }
 function reset(){
 				$(".red1").css({
@@ -2627,12 +3091,42 @@ function reset(){
 	                "pointer-events":"auto"
                 })
                  $(".rabit1").css({
-	                "left":"78%",
-	                "top":"40%",
+	                "left":"5%",
+	                "top":"80%",
 	                "pointer-events":"auto"
                 })
                    $(".rabit3").css({
+	                "left":"79%",
+	                "top":"80%",
+	                "pointer-events":"auto"
+                })
+                $(".cat1").css({
 	                "left":"5%",
+	                "top":"82%",
+	                "pointer-events":"auto"
+                })
+                   $(".cat3").css({
+	                "left":"77%",
+	                "top":"78%",
+	                "pointer-events":"auto"
+                })
+                 $(".melon1").css({
+	                "left":"5%",
+	                "top":"84%",
+	                "pointer-events":"auto"
+                })
+                   $(".melon3").css({
+	                "left":"79%",
+	                "top":"80%",
+	                "pointer-events":"auto"
+                })
+                    $(".mlon2").css({
+	                "left":"43%",
+	                "top":"84%",
+	                "pointer-events":"auto"
+                })
+                   $(".mlon3").css({
+	                "left":"83%",
 	                "top":"80%",
 	                "pointer-events":"auto"
                 })
