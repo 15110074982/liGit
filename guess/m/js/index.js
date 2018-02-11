@@ -228,13 +228,13 @@ var $print=$("#container");
 	},false);
 	nuber6.addEventListener("touchend",function(e){
 		 e.preventDefault();
-		$(".bg").css({
+		/*$(".bg").css({
 		 		 "left":winW*0.42*0.4,
                 "top":winW*0.42*0.3,
                 "width":winW*0.4*0.1,
                 "height":winW*0.4*0.1,
                 "background":"#fff"
-		 	})
+		 	})*/
 		//移动后left:0.4,top:0.31
 		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.31 && py<=(winW*0.42*0.41)){
 		 	    $(this).hide();//下一步点击改
