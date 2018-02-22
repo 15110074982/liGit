@@ -2333,34 +2333,66 @@ window.onload=function(){
 			that.removeClass("scale");
 		},1400)
 		if(index==1){
+				$(".num").eq(7).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(7).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[3])
 			},300)
 		}else if(index==2){
+				$(".num").eq(6).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(6).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[4])
 			},300)
 		}else if(index==3){
+				$(".num").eq(5).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(5).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[5])
 			},300)
 		}else if(index==4){
+				$(".num").eq(4).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(4).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[6])
 			},300)
 		}else if(index==5){
+				$(".num").eq(3).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(3).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[7])
 			},300)
 		}else if(index==6){
+				$(".num").eq(2).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(2).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[8])
 			},300)
 		}else if(index==7){
+				$(".num").eq(1).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(1).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[9])
 			},300)
 		}else if(index==8){
+				$(".num").eq(0).addClass("scale");
+			setTimeout(function(){
+				$(".num").eq(0).removeClass("scale");
+			},1400);
 			setTimeout(function(){
 				playSound(arr[10])
 			},300)
