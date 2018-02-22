@@ -120,7 +120,7 @@ var $print=$("#container");
 		 $(".nub11 .blue").removeClass("animated pulse infinite");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	 $(".nub2 .box2 .road").removeClass("animated pulse infinite");
-	 	 $(".nub3 .box2 .mouse1").removeClass("animated pulse infinite");
+	 	 $(".nub3 .box1 .mouse1").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
 			setTimeout(function(){
 				playSound(arr[2]);
@@ -169,7 +169,7 @@ var $print=$("#container");
 		 $(".nub11 .blue").removeClass("animated pulse infinite");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	 $(".nub2 .box2 .road").removeClass("animated pulse infinite");
-	 	 $(".nub3 .box2 .mouse1").removeClass("animated pulse infinite");
+	 	 $(".nub3 .box1 .mouse1").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
 		    $(".content img").attr("src","images/5.png");
 				/*setTimeout(function(){
