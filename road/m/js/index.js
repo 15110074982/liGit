@@ -61,15 +61,15 @@ var $print=$("#container");
 	      playSound1(arr[5]);
 	})
 	
-	$(".nub3 .box2 .mouse2").click(function(){
+	$(".nub3 .box2 .mouse1").click(function(){
 		 playSound1(arr[6]);
 		setTimeout(function(){
 			 playSound1(arr[4]);
-			$(".nub3 .box2 .mouse2").addClass("animated pulse infinite");
+			$(".nub3 .box2 .mouse1").addClass("animated pulse infinite");
 			$(".succ").addClass("animated pulse infinite").fadeIn();
 		},600)
 	})
-	$(".nub3 .box1 .mouse1").click(function(){
+	$(".nub3 .box1 .mouse2").click(function(){
 	      playSound1(arr[5]);
 	});
 	$(".nub3 .box3 .mouse3").click(function(){
@@ -120,7 +120,7 @@ var $print=$("#container");
 		 $(".nub11 .blue").removeClass("animated pulse infinite");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	 $(".nub2 .box2 .road").removeClass("animated pulse infinite");
-	 	 $(".nub3 .box2 .mouse2").removeClass("animated pulse infinite");
+	 	 $(".nub3 .box2 .mouse1").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
 			setTimeout(function(){
 				playSound(arr[2]);
@@ -169,7 +169,7 @@ var $print=$("#container");
 		 $(".nub11 .blue").removeClass("animated pulse infinite");
 	 	 $(".succ").removeClass("animated pulse infinite").fadeOut();
 	 	 $(".nub2 .box2 .road").removeClass("animated pulse infinite");
-	 	 $(".nub3 .box2 .mouse2").removeClass("animated pulse infinite");
+	 	 $(".nub3 .box2 .mouse1").removeClass("animated pulse infinite");
 		if($(".nub1").css("display")=="block"){
 		    $(".content img").attr("src","images/5.png");
 				/*setTimeout(function(){
