@@ -33,14 +33,7 @@
 	}
    
     /* 导航内容高度*/
-  
-window.onload=function(){
-	 console.log(imageH,halfH);
-	$(".nav").height(imageH);
-	$(".question").height(halfH);
-   
-  
-	var a1=false;
+  	var a1=false;
 	var a2=false;
 	var a3=false;
 	var a4=false;
@@ -63,6 +56,13 @@ window.onload=function(){
 	var c6=false;
 	var c7=false;
 	var c8=false;
+window.onload=function(){
+	 console.log(imageH,halfH);
+	$(".nav").height(imageH);
+	$(".question").height(halfH);
+   
+  
+
 	 /* 标题操作*/
 	$(".title1").click(function(){
 			$(this).removeClass("fadeInDown").addClass("bounceIn");
@@ -390,7 +390,7 @@ window.onload=function(){
      
    
 	
-	red1.addEventListener("touchstart",function(e){
+	/*red1.addEventListener("touchstart",function(e){
 		 startY = e.touches[0].pageX; 
 		 startX = e.touches[0].pageY;
 		 sx=winW*0.2;
@@ -411,14 +411,6 @@ window.onload=function(){
 		 e.preventDefault();
 		  boxy=winW*0.43*46/477;
 		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
 		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
 		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 		 	     $(this).css({
@@ -442,7 +434,7 @@ window.onload=function(){
                 "top":"5%",                    
                 })
 		 }
-	},false);
+	},false);*/
 	red2.addEventListener("touchstart",function(e){
 		 startY = e.touches[0].pageX; 
 		 startX = e.touches[0].pageY;
@@ -3186,3 +3178,82 @@ function reset(){
 	    source1.connect(context.destination);// 连接到输出源
 	    source1.start(0);//开始播放
 	   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+red1.addEventListener("touchstart",function(e){start(e,red1);},false);
+red1.addEventListener("touchmove",function(e){ move(e,"red1");},false);
+red1.addEventListener("touchend",function(e){ end(e,"6%","71%",a1,"20%","5%","red1");},false);
+	
+function start(e,id){
+		 startY = e.touches[0].pageX; 
+		 startX = e.touches[0].pageY;
+		 //sx=winW*0.2;
+		 //sy=halfH*0.05;//移动前left:0.4,top:0.31
+		 	sx=id.offsetLeft;
+		  sy=id.offsetTop;
+		  console.log(sx,sy)
+	}
+function move(e,id){
+	e.preventDefault();
+		 moveY = e.touches[0].pageX; 
+		 moveX = e.touches[0].pageY;
+		 px=moveX-startX+sx;
+		 py=-(moveY-startY-sy);
+		 console.log(px)
+	     $("#"+id).css({
+                "left":px,
+                "top":py,                    
+                })
+	}
+function end(e,left1,top1,flag,left2,top2,id){
+		e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+		 	     $("#"+id).css({
+	                "left":left1,
+	                "top":top1,
+	                "pointer-events":"none"
+                })
+                flag=true;//改
+                playSound1(arr[15]);
+                success();
+		 }else{
+		 	playSound1(arr[14]);
+		 	  $("#"+id).css({
+                "left":left2,
+                "top":top2,                    
+                })
+		 }
+	}
+ function success(){
+                	 if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+                }
