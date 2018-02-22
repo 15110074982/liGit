@@ -65,7 +65,7 @@ var $print=$("#container");
 		 playSound1(arr[6]);
 		setTimeout(function(){
 			 playSound1(arr[4]);
-			$(".nub3 .box2 .mouse1").addClass("animated pulse infinite");
+			$(".nub3 .box1 .mouse1").addClass("animated pulse infinite");
 			$(".succ").addClass("animated pulse infinite").fadeIn();
 		},600)
 	})
