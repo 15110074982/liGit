@@ -56,6 +56,10 @@
 	var c6=false;
 	var c7=false;
 	var c8=false;
+	
+	var buff=false;
+var buff1=false;
+var eid="";
 window.onload=function(){
 	 console.log(imageH,halfH);
 	$(".nav").height(imageH);
@@ -173,6 +177,9 @@ window.onload=function(){
 		 a7=false;
 		 a8=false;
 		 a9=false;
+		 buff=false;
+		 buff1=false;
+		 eid="";
 	 	 $(".question").removeClass("animated pulse infinite");
 	 	$(".succ").hide();
 	 	$(".next img").attr("src","images/50.png");
@@ -311,6 +318,9 @@ window.onload=function(){
 		 a7=false;
 		 a8=false;
 		 a9=false;
+		  buff=false;
+		 buff1=false;
+		 eid="";
 	 	 $(".question").removeClass("animated pulse infinite");
 	 	$(".succ").hide();
 	 		reset();
@@ -2723,43 +2733,80 @@ function reset(){
 
 red1.addEventListener("touchstart",function(e){start(e,red1);},false);
 red1.addEventListener("touchmove",function(e){ move(e,"red1");},false);
-red1.addEventListener("touchend",function(e){ end(e,"6%","71%",a1,"20%","5%","56%","71%","red1");},false);
+red1.addEventListener("touchend",function(e){ end(e,"6%","71%","a1","20%","5%","56%","71%","red1");},false);
 
 red2.addEventListener("touchstart",function(e){start(e,red2);},false);
 red2.addEventListener("touchmove",function(e){ move(e,"red2");},false);
-red2.addEventListener("touchend",function(e){ end(e,"10%","71%",a2,"36%","5%","60%","71%","red2");},false);
+red2.addEventListener("touchend",function(e){ end(e,"10%","71%","a2","36%","5%","60%","71%","red2");},false);
 
 red3.addEventListener("touchstart",function(e){start(e,red3);},false);
 red3.addEventListener("touchmove",function(e){ move(e,"red3");},false);
-red3.addEventListener("touchend",function(e){ end(e,"14%","71%",a3,"52%","5%","64%","71%","red3");},false);
+red3.addEventListener("touchend",function(e){ end(e,"14%","71%","a3","52%","5%","64%","71%","red3");},false);
 
 red4.addEventListener("touchstart",function(e){start(e,red4);},false);
 red4.addEventListener("touchmove",function(e){ move(e,"red4");},false);
-red4.addEventListener("touchend",function(e){ end(e,"18%","71%",a4,"68%","5%","68%","71%","red4");},false);
+red4.addEventListener("touchend",function(e){ end(e,"18%","71%","a4","68%","5%","68%","71%","red4");},false);
 
 red5.addEventListener("touchstart",function(e){start(e,red5);},false);
 red5.addEventListener("touchmove",function(e){ move(e,"red5");},false);
-red5.addEventListener("touchend",function(e){ end(e,"22%","71%",a5,"10%","40%","72%","71%","red5");},false);
+red5.addEventListener("touchend",function(e){ end(e,"22%","71%","a5","10%","40%","72%","71%","red5");},false);
 
 red6.addEventListener("touchstart",function(e){start(e,red6);},false);
 red6.addEventListener("touchmove",function(e){ move(e,"red6");},false);
-red6.addEventListener("touchend",function(e){ end(e,"26%","71%",a6,"27%","40%","76%","71%","red6");},false);
+red6.addEventListener("touchend",function(e){ end(e,"26%","71%","a6","27%","40%","76%","71%","red6");},false);
 
 red8.addEventListener("touchstart",function(e){start(e,red8);},false);
 red8.addEventListener("touchmove",function(e){ move(e,"red8");},false);
-red8.addEventListener("touchend",function(e){ end(e,"30%","71%",a8,"61%","40%","80%","71%","red8");},false);
+red8.addEventListener("touchend",function(e){ end(e,"30%","71%","a8","61%","40%","80%","71%","red8");},false);
 
 red9.addEventListener("touchstart",function(e){start(e,red9);},false);
 red9.addEventListener("touchmove",function(e){ move(e,"red9");},false);
-red9.addEventListener("touchend",function(e){ end(e,"34%","71%",a9,"78%","40%","84%","71%","red9");},false);
-
+red9.addEventListener("touchend",function(e){ end(e,"34%","71%","a9","78%","40%","84%","71%","red9");},false);
 
 blue7.addEventListener("touchstart",function(e){start(e,blue7);},false);
 blue7.addEventListener("touchmove",function(e){ move(e,"blue7");},false);
-blue7.addEventListener("touchend",function(e){ end(e,"18%","71%",a7,"44%","40%","67%","71%","blue7");},false);
-var buff=false;
-var buff1=false;
-var eid="";
+blue7.addEventListener("touchend",function(e){ end(e,"18%","71%","a7","44%","40%","67%","71%","blue7");},false);
+
+
+//第二题
+big1.addEventListener("touchstart",function(e){start(e,big1);},false);
+big1.addEventListener("touchmove",function(e){ move(e,"red1");},false);
+big1.addEventListener("touchend",function(e){ end(e,"6%","71%","a1","20%","5%","56%","71%","big1");},false);
+
+small2.addEventListener("touchstart",function(e){start(e,small2);},false);
+small2.addEventListener("touchmove",function(e){ move(e,"small2");},false);
+small2.addEventListener("touchend",function(e){ end(e,"10%","71%","a2","36%","5%","60%","71%","small2");},false);
+
+small3.addEventListener("touchstart",function(e){start(e,small3);},false);
+small3.addEventListener("touchmove",function(e){ move(e,"small3");},false);
+small3.addEventListener("touchend",function(e){ end(e,"14%","71%","a3","52%","5%","64%","71%","small3");},false);
+
+big4.addEventListener("touchstart",function(e){start(e,big4);},false);
+big4.addEventListener("touchmove",function(e){ move(e,"big4");},false);
+big4.addEventListener("touchend",function(e){ end(e,"18%","71%","a4","68%","5%","68%","71%","big4");},false);
+
+big5.addEventListener("touchstart",function(e){start(e,big5);},false);
+big5.addEventListener("touchmove",function(e){ move(e,"big5");},false);
+big5.addEventListener("touchend",function(e){ end(e,"22%","71%","a5","10%","40%","72%","71%","big5");},false);
+
+big6.addEventListener("touchstart",function(e){start(e,big6);},false);
+big6.addEventListener("touchmove",function(e){ move(e,"big6");},false);
+big6.addEventListener("touchend",function(e){ end(e,"26%","71%","a6","27%","40%","76%","71%","big6");},false);
+
+big7.addEventListener("touchstart",function(e){start(e,big7);},false);
+big7.addEventListener("touchmove",function(e){ move(e,"big7");},false);
+big7.addEventListener("touchend",function(e){ end(e,"26%","71%","a7","27%","40%","76%","71%","big7");},false);
+
+big8.addEventListener("touchstart",function(e){start(e,big8);},false);
+big8.addEventListener("touchmove",function(e){ move(e,"big8");},false);
+big8.addEventListener("touchend",function(e){ end(e,"30%","71%","a8","61%","40%","80%","71%","big8");},false);
+
+big9.addEventListener("touchstart",function(e){start(e,big9);},false);
+big9.addEventListener("touchmove",function(e){ move(e,"big9");},false);
+big9.addEventListener("touchend",function(e){ end(e,"34%","71%","a9","78%","40%","84%","71%","big9");},false);
+
+
+
 function start(e,id){
 		 startY = e.touches[0].pageX; 
 		 startX = e.touches[0].pageY;
@@ -2801,26 +2848,25 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 			                "top":top1,
 			                "pointer-events":"none"
 		               });
-		               if(flag==a1){
+		               if(flag=="a1"){
 		               	a1=true;
-		               }else if(flag==a2){
+		               }else if(flag=="a2"){
 		               	a2=true;
-		               }else if(flag==a3){
+		               }else if(flag=="a3"){
 		               	a3=true;
-		               }else if(flag==a4){
+		               }else if(flag=="a4"){
 		               	a4=true;
-		               }else if(flag==a5){
+		               }else if(flag=="a5"){
 		               	a5=true;
-		               }else if(flag==a6){
+		               }else if(flag=="a6"){
 		               	a6=true;
-		               }else if(flag==a7){
+		               }else if(flag=="a7"){
 		               	a7=true;
-		               }else if(flag==a8){
+		               }else if(flag=="a8"){
 		               	a8=true;
-		               }else if(flag==a9){
+		               }else if(flag=="a9"){
 		               	a9=true;
 		               }
-		              console.log(a1)
 		                playSound1(arr[15]);
 		                //success();
 		                buff=true;
@@ -2831,23 +2877,23 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 			                "top":top3,
 			                "pointer-events":"none"
 		                })
-		                if(flag==a1){
+		               if(flag=="a1"){
 		               	a1=true;
-		               }else if(flag==a2){
+		               }else if(flag=="a2"){
 		               	a2=true;
-		               }else if(flag==a3){
+		               }else if(flag=="a3"){
 		               	a3=true;
-		               }else if(flag==a4){
+		               }else if(flag=="a4"){
 		               	a4=true;
-		               }else if(flag==a5){
+		               }else if(flag=="a5"){
 		               	a5=true;
-		               }else if(flag==a6){
+		               }else if(flag=="a6"){
 		               	a6=true;
-		               }else if(flag==a7){
+		               }else if(flag=="a7"){
 		               	a7=true;
-		               }else if(flag==a8){
+		               }else if(flag=="a8"){
 		               	a8=true;
-		               }else if(flag==a9){
+		               }else if(flag=="a9"){
 		               	a9=true;
 		               }
 		                playSound1(arr[15]);
@@ -2871,23 +2917,23 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 						                "top":top3,
 						                "pointer-events":"none"
 					                })
-					                 if(flag==a1){
+					               if(flag=="a1"){
 					               	a1=true;
-					               }else if(flag==a2){
+					               }else if(flag=="a2"){
 					               	a2=true;
-					               }else if(flag==a3){
+					               }else if(flag=="a3"){
 					               	a3=true;
-					               }else if(flag==a4){
+					               }else if(flag=="a4"){
 					               	a4=true;
-					               }else if(flag==a5){
+					               }else if(flag=="a5"){
 					               	a5=true;
-					               }else if(flag==a6){
+					               }else if(flag=="a6"){
 					               	a6=true;
-					               }else if(flag==a7){
+					               }else if(flag=="a7"){
 					               	a7=true;
-					               }else if(flag==a8){
+					               }else if(flag=="a8"){
 					               	a8=true;
-					               }else if(flag==a9){
+					               }else if(flag=="a9"){
 					               	a9=true;
 					               }
 					                playSound1(arr[15]);
@@ -2906,23 +2952,23 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 					                "top":top1,
 					                "pointer-events":"none"
 				                })
-				           if(flag==a1){
+				           if(flag=="a1"){
 		               	a1=true;
-		               }else if(flag==a2){
+		               }else if(flag=="a2"){
 		               	a2=true;
-		               }else if(flag==a3){
+		               }else if(flag=="a3"){
 		               	a3=true;
-		               }else if(flag==a4){
+		               }else if(flag=="a4"){
 		               	a4=true;
-		               }else if(flag==a5){
+		               }else if(flag=="a5"){
 		               	a5=true;
-		               }else if(flag==a6){
+		               }else if(flag=="a6"){
 		               	a6=true;
-		               }else if(flag==a7){
+		               }else if(flag=="a7"){
 		               	a7=true;
-		               }else if(flag==a8){
+		               }else if(flag=="a8"){
 		               	a8=true;
-		               }else if(flag==a9){
+		               }else if(flag=="a9"){
 		               	a9=true;
 		               }
 				                playSound1(arr[15]);
@@ -2947,23 +2993,23 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 			                "top":top3,
 			                "pointer-events":"none"
 		                })
-		                if(flag==a1){
+		               if(flag=="a1"){
 		               	a1=true;
-		               }else if(flag==a2){
+		               }else if(flag=="a2"){
 		               	a2=true;
-		               }else if(flag==a3){
+		               }else if(flag=="a3"){
 		               	a3=true;
-		               }else if(flag==a4){
+		               }else if(flag=="a4"){
 		               	a4=true;
-		               }else if(flag==a5){
+		               }else if(flag=="a5"){
 		               	a5=true;
-		               }else if(flag==a6){
+		               }else if(flag=="a6"){
 		               	a6=true;
-		               }else if(flag==a7){
+		               }else if(flag=="a7"){
 		               	a7=true;
-		               }else if(flag==a8){
+		               }else if(flag=="a8"){
 		               	a8=true;
-		               }else if(flag==a9){
+		               }else if(flag=="a9"){
 		               	a9=true;
 		               }
 		                playSound1(arr[15]);
@@ -2985,23 +3031,23 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 					                "top":top1,
 					                "pointer-events":"none"
 				                })
-				                  if(flag==a1){
+				            if(flag=="a1"){
 		               	a1=true;
-		               }else if(flag==a2){
+		               }else if(flag=="a2"){
 		               	a2=true;
-		               }else if(flag==a3){
+		               }else if(flag=="a3"){
 		               	a3=true;
-		               }else if(flag==a4){
+		               }else if(flag=="a4"){
 		               	a4=true;
-		               }else if(flag==a5){
+		               }else if(flag=="a5"){
 		               	a5=true;
-		               }else if(flag==a6){
+		               }else if(flag=="a6"){
 		               	a6=true;
-		               }else if(flag==a7){
+		               }else if(flag=="a7"){
 		               	a7=true;
-		               }else if(flag==a8){
+		               }else if(flag=="a8"){
 		               	a8=true;
-		               }else if(flag==a9){
+		               }else if(flag=="a9"){
 		               	a9=true;
 		               }
 				                playSound1(arr[15]);
@@ -3022,25 +3068,25 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 						                "top":top3,
 						                "pointer-events":"none"
 					                })
-					                 if(flag==a1){
-					               	a1=true;
-					               }else if(flag==a2){
-					               	a2=true;
-					               }else if(flag==a3){
-					               	a3=true;
-					               }else if(flag==a4){
-					               	a4=true;
-					               }else if(flag==a5){
-					               	a5=true;
-					               }else if(flag==a6){
-					               	a6=true;
-					               }else if(flag==a7){
-					               	a7=true;
-					               }else if(flag==a8){
-					               	a8=true;
-					               }else if(flag==a9){
-					               	a9=true;
-					               }
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
 					                playSound1(arr[15]);
 					                success();
 									 }else{
@@ -3057,23 +3103,23 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 					                "top":top1,
 					                "pointer-events":"none"
 				                })
-				           if(flag==a1){
+				           if(flag=="a1"){
 		               	a1=true;
-		               }else if(flag==a2){
+		               }else if(flag=="a2"){
 		               	a2=true;
-		               }else if(flag==a3){
+		               }else if(flag=="a3"){
 		               	a3=true;
-		               }else if(flag==a4){
+		               }else if(flag=="a4"){
 		               	a4=true;
-		               }else if(flag==a5){
+		               }else if(flag=="a5"){
 		               	a5=true;
-		               }else if(flag==a6){
+		               }else if(flag=="a6"){
 		               	a6=true;
-		               }else if(flag==a7){
+		               }else if(flag=="a7"){
 		               	a7=true;
-		               }else if(flag==a8){
+		               }else if(flag=="a8"){
 		               	a8=true;
-		               }else if(flag==a9){
+		               }else if(flag=="a9"){
 		               	a9=true;
 		               }
 				                playSound1(arr[15]);
@@ -3090,41 +3136,7 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 				 	 	 	
 				 	 	 }
 				  	
-				  	
-				  	/*if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-				 			 $("#"+id).css({
-			                "left":left5,
-			                "top":top5,
-			                "pointer-events":"none"
-		                })
-		                 if(flag==a1){
-		               	a1=true;
-		               }else if(flag==a2){
-		               	a2=true;
-		               }else if(flag==a3){
-		               	a3=true;
-		               }else if(flag==a4){
-		               	a4=true;
-		               }else if(flag==a5){
-		               	a5=true;
-		               }else if(flag==a6){
-		               	a6=true;
-		               }else if(flag==a7){
-		               	a7=true;
-		               }else if(flag==a8){
-		               	a8=true;
-		               }else if(flag==a9){
-		               	a9=true;
-		               }
-		                playSound1(arr[15]);
-		                success();
-						 }else{
-						 	playSound1(arr[14]);
-						 	  $("#"+id).css({
-				                "left":left2,
-				                "top":top2,                    
-				                })
-						 }*/
+				  
 				  }
 		 }
 	}
