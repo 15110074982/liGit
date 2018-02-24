@@ -398,1461 +398,6 @@ window.onload=function(){
      var hd1;
      var hd3;
      
-   
-  
-
-  big1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.2;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	big1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"10%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"20%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-
-	big4.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.68;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	big4.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big4.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"14%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a4=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"68%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	big5.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.1;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	big5.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big5.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"18%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a5=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"10%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	big6.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.27;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	big6.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big6.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"22%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a6=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"27%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	big7.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.44;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	big7.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big7.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"26%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a7=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"44%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	big8.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.61;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	big8.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big8.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"30%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a8=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"61%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	big9.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.78;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	big9.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	big9.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"34%",
-	                "top":"63%",
-	                "pointer-events":"none"
-                })
-                a9=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"78%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-		small2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.37;
-		 sy=halfH*0.11;//移动前left:0.4,top:0.31
-	},false);
-	small2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	small2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"65%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"37%",
-                "top":"11%",                    
-                })
-		 }
-	},false);
-
-	small3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.51;
-		 sy=halfH*0.11;//移动前left:0.4,top:0.31
-	},false);
-	small3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	small3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"69%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a3=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"51%",
-                "top":"11%",                    
-                })
-		 }
-	},false);
-	
-	
-	
-	circle1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.2;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	circle1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	circle1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"6%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"20%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	circle3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.52;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	circle3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	circle3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"14%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a3=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"52%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	circle4.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.68;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	circle4.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	circle4.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"18%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a4=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"68%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	circle5.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.1;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	circle5.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	circle5.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"22%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a5=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"10%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	circle7.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.44;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	circle7.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	circle7.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"30%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a7=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"44%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	
-
-	circle9.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.78;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	circle9.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	circle9.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"34%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a9=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"78%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	
-	
-	square2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.35;
-		 sy=halfH*0.06;//移动前left:0.4,top:0.31
-	},false);
-	square2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	square2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"65%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"35%",
-                "top":"6%",                    
-                })
-		 }
-	},false);
-	
-	square6.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.26;
-		 sy=halfH*0.41;//移动前left:0.4,top:0.31
-	},false);
-	square6.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	square6.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"67%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a6=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"26%",
-                "top":"41%",                    
-                })
-		 }
-	},false);
-	square8.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.6;
-		 sy=halfH*0.41;//移动前left:0.4,top:0.31
-	},false);
-	square8.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	square8.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"69%",
-	                "top":"71%",
-	                "pointer-events":"none"
-                })
-                a8=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"60%",
-                "top":"41%",                    
-                })
-		 }
-	},false);
-	
-	
-	
-	
-/*第一大题4小题*/	
-	
-	sheep2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.36;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	sheep2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"10%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"36%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	
-	sheep4.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.68;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	sheep4.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep4.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"18%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a4=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"68%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	
-	sheep6.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.27;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	sheep6.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep6.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"26%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a6=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"27%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	sheep8.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.61;
-		 sy=halfH*0.4;//移动前left:0.4,top:0.31
-	},false);
-	sheep8.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep8.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*46/477;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"30%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a8=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"61%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	
-	
-	sheep1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.20;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	sheep1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"59%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"20%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	sheep3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.52;
-		 sy=halfH*0.05;//移动前left:0.4,top:0.31
-	},false);
-	sheep3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"63%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a3=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"52%",
-                "top":"5%",                    
-                })
-		 }
-	},false);
-	sheep5.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.10;
-		 sy=halfH*0.40;//移动前left:0.4,top:0.31
-	},false);
-	sheep5.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep5.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"67%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a5=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"10%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	sheep7.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.44;
-		 sy=halfH*0.40;//移动前left:0.4,top:0.31
-	},false);
-	sheep7.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep7.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"71%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a7=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"44%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	sheep9.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.78;
-		 sy=halfH*0.40;//移动前left:0.4,top:0.31
-	},false);
-	sheep9.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	sheep9.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.43*45/478;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-		 	     $(this).css({
-	                "left":"76%",
-	                "top":"65%",
-	                "pointer-events":"none"
-                })
-                a9=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"78%",
-                "top":"40%",                    
-                })
-		 }
-	},false);
-	
 	/*第二大题*/
 	$(".num").click(function(){
 		pause();
@@ -2770,16 +1315,16 @@ blue7.addEventListener("touchend",function(e){ end(e,"18%","71%","a7","44%","40%
 
 //第二题
 big1.addEventListener("touchstart",function(e){start(e,big1);},false);
-big1.addEventListener("touchmove",function(e){ move(e,"red1");},false);
+big1.addEventListener("touchmove",function(e){ move(e,"big1");},false);
 big1.addEventListener("touchend",function(e){ end1(e,"10%","63%","a1","20%","5%","56%","63%","big1");},false);
 
 small2.addEventListener("touchstart",function(e){start(e,small2);},false);
 small2.addEventListener("touchmove",function(e){ move(e,"small2");},false);
-small2.addEventListener("touchend",function(e){ end1(e,"14%","71%","a2","37%","11%","65%","71%","small2");},false);
+small2.addEventListener("touchend",function(e){ end1(e,"18%","71%","a2","37%","11%","65%","71%","small2");},false);
 
 small3.addEventListener("touchstart",function(e){start(e,small3);},false);
 small3.addEventListener("touchmove",function(e){ move(e,"small3");},false);
-small3.addEventListener("touchend",function(e){ end1(e,"18%","71%","a3","51%","11%","69%","71%","small3");},false);
+small3.addEventListener("touchend",function(e){ end1(e,"22%","71%","a3","51%","11%","69%","71%","small3");},false);
 
 big4.addEventListener("touchstart",function(e){start(e,big4);},false);
 big4.addEventListener("touchmove",function(e){ move(e,"big4");},false);
@@ -2804,6 +1349,84 @@ big8.addEventListener("touchend",function(e){ end1(e,"30%","63%","a8","61%","40%
 big9.addEventListener("touchstart",function(e){start(e,big9);},false);
 big9.addEventListener("touchmove",function(e){ move(e,"big9");},false);
 big9.addEventListener("touchend",function(e){ end1(e,"34%","63%","a9","78%","40%","80%","63%","big9");},false);
+
+
+
+//第三题
+circle1.addEventListener("touchstart",function(e){start(e,circle1);},false);
+circle1.addEventListener("touchmove",function(e){ move(e,"circle1");},false);
+circle1.addEventListener("touchend",function(e){ end2(e,"6%","71%","a1","20%","5%","56%","71%","circle1");},false);
+
+square2.addEventListener("touchstart",function(e){start(e,square2);},false);
+square2.addEventListener("touchmove",function(e){ move(e,"square2");},false);
+square2.addEventListener("touchend",function(e){ end2(e,"14%","71%","a2","35%","6%","65%","72%","square2");},false);
+
+circle3.addEventListener("touchstart",function(e){start(e,circle3);},false);
+circle3.addEventListener("touchmove",function(e){ move(e,"circle3");},false);
+circle3.addEventListener("touchend",function(e){ end2(e,"14%","71%","a3","52%","5%","60%","71%","circle3");},false);
+
+circle4.addEventListener("touchstart",function(e){start(e,circle4);},false);
+circle4.addEventListener("touchmove",function(e){ move(e,"circle4");},false);
+circle4.addEventListener("touchend",function(e){ end2(e,"18%","71%","a4","68%","5%","64%","71%","circle4");},false);
+
+circle5.addEventListener("touchstart",function(e){start(e,circle5);},false);
+circle5.addEventListener("touchmove",function(e){ move(e,"circle5");},false);
+circle5.addEventListener("touchend",function(e){ end2(e,"22%","71%","a5","10%","40%","68%","71%","circle5");},false);
+
+square6.addEventListener("touchstart",function(e){start(e,square6);},false);
+square6.addEventListener("touchmove",function(e){ move(e,"square6");},false);
+square6.addEventListener("touchend",function(e){ end2(e,"18%","71%","a6","26%","41%","69%","72%","square6");},false);
+
+circle7.addEventListener("touchstart",function(e){start(e,circle7);},false);
+circle7.addEventListener("touchmove",function(e){ move(e,"circle7");},false);
+circle7.addEventListener("touchend",function(e){ end2(e,"26%","71%","a7","44%","40%","72%","71%","circle7");},false);
+
+square8.addEventListener("touchstart",function(e){start(e,square8);},false);
+square8.addEventListener("touchmove",function(e){ move(e,"square8");},false);
+square8.addEventListener("touchend",function(e){ end2(e,"22%","71%","a8","60%","41%","73%","72%","square8");},false);
+
+circle9.addEventListener("touchstart",function(e){start(e,circle9);},false);
+circle9.addEventListener("touchmove",function(e){ move(e,"circle9");},false);
+circle9.addEventListener("touchend",function(e){ end2(e,"30%","71%","a9","78%","40%","76%","71%","circle9");},false);
+
+
+
+//第4题
+sheep1.addEventListener("touchstart",function(e){start(e,sheep1);},false);
+sheep1.addEventListener("touchmove",function(e){ move(e,"sheep1");},false);
+sheep1.addEventListener("touchend",function(e){ end3(e,"14%","65%","a1","20%","5%","60%","65%","sheep1");},false);
+
+sheep2.addEventListener("touchstart",function(e){start(e,sheep2);},false);
+sheep2.addEventListener("touchmove",function(e){ move(e,"sheep2");},false);
+sheep2.addEventListener("touchend",function(e){ end3(e,"18%","65%","a2","36%","5%","64%","65%","sheep2");},false);
+
+sheep3.addEventListener("touchstart",function(e){start(e,sheep3);},false);
+sheep3.addEventListener("touchmove",function(e){ move(e,"sheep3");},false);
+sheep3.addEventListener("touchend",function(e){ end3(e,"18%","65%","a3","52%","5%","64%","65%","sheep3");},false);
+
+sheep4.addEventListener("touchstart",function(e){start(e,sheep4);},false);
+sheep4.addEventListener("touchmove",function(e){ move(e,"sheep4");},false);
+sheep4.addEventListener("touchend",function(e){ end3(e,"22%","65%","a4","68%","5%","68%","65%","sheep4");},false);
+
+sheep5.addEventListener("touchstart",function(e){start(e,sheep5);},false);
+sheep5.addEventListener("touchmove",function(e){ move(e,"sheep5");},false);
+sheep5.addEventListener("touchend",function(e){ end3(e,"22%","65%","a5","10%","40%","68%","65%","sheep5");},false);
+
+sheep6.addEventListener("touchstart",function(e){start(e,sheep6);},false);
+sheep6.addEventListener("touchmove",function(e){ move(e,"sheep6");},false);
+sheep6.addEventListener("touchend",function(e){ end3(e,"26%","65%","a6","27%","40%","72%","65%","sheep6");},false);
+
+sheep7.addEventListener("touchstart",function(e){start(e,sheep7);},false);
+sheep7.addEventListener("touchmove",function(e){ move(e,"sheep7");},false);
+sheep7.addEventListener("touchend",function(e){ end3(e,"26%","65%","a7","44%","40%","72%","65%","sheep7");},false);
+
+sheep8.addEventListener("touchstart",function(e){start(e,sheep8);},false);
+sheep8.addEventListener("touchmove",function(e){ move(e,"sheep8");},false);
+sheep8.addEventListener("touchend",function(e){ end3(e,"30%","65%","a8","61%","40%","76%","65%","sheep8");},false);
+
+sheep9.addEventListener("touchstart",function(e){start(e,sheep9);},false);
+sheep9.addEventListener("touchmove",function(e){ move(e,"sheep9");},false);
+sheep9.addEventListener("touchend",function(e){ end3(e,"30%","65%","a9","78%","40%","76%","65%","sheep9");},false);
 
 
 
@@ -3300,82 +1923,157 @@ function end1(e,left1,top1,flag,left2,top2,left3,top3,id){
 				 	 	 }
 			 	      
 				  }else{//左板是小本子
-				  	//大本子在右板
-				  	if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-				 			 $("#"+id).css({
-			                "left":left3,
-			                "top":top3,
-			                "pointer-events":"none"
-		                })
-		               if(flag=="a1"){
-		               	a1=true;
-		               }else if(flag=="a2"){
-		               	a2=true;
-		               }else if(flag=="a3"){
-		               	a3=true;
-		               }else if(flag=="a4"){
-		               	a4=true;
-		               }else if(flag=="a5"){
-		               	a5=true;
-		               }else if(flag=="a6"){
-		               	a6=true;
-		               }else if(flag=="a7"){
-		               	a7=true;
-		               }else if(flag=="a8"){
-		               	a8=true;
-		               }else if(flag=="a9"){
-		               	a9=true;
-		               }
-		                playSound1(arr[15]);
-		                success();
-						 }else{
-						 	playSound1(arr[14]);
-						 	  $("#"+id).css({
-				                "left":left2,
-				                "top":top2,                    
-				                })
-						 }
+				  	if(id=="small2"||id=="small3"){
+						 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						           if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }else if(flag=="a3"){
+				               	a3=true;
+				               }else if(flag=="a4"){
+				               	a4=true;
+				               }else if(flag=="a5"){
+				               	a5=true;
+				               }else if(flag=="a6"){
+				               	a6=true;
+				               }else if(flag=="a7"){
+				               	a7=true;
+				               }else if(flag=="a8"){
+				               	a8=true;
+				               }else if(flag=="a9"){
+				               	a9=true;
+				               }
+						                playSound1(arr[15]);
+						                success();
+						               // buff=true;
+										  }else{
+											 	playSound1(arr[14]);
+											 	  $("#"+id).css({
+									                "left":left2,
+									                "top":top2,                    
+									                })
+										 }
+				 	 	 }else{
+							  	//大本子在右板
+							  	if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+					    }
 				  }
 		 }else if(buff1){//右板子有东西
-		 	 if(eid=="blue7"){//右板子是蓝色本子
-		 	 	//左板是红本子
-			 	      if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
-						 	     $("#"+id).css({
-					                "left":left1,
-					                "top":top1,
-					                "pointer-events":"none"
-				                })
-				            if(flag=="a1"){
-		               	a1=true;
-		               }else if(flag=="a2"){
-		               	a2=true;
-		               }else if(flag=="a3"){
-		               	a3=true;
-		               }else if(flag=="a4"){
-		               	a4=true;
-		               }else if(flag=="a5"){
-		               	a5=true;
-		               }else if(flag=="a6"){
-		               	a6=true;
-		               }else if(flag=="a7"){
-		               	a7=true;
-		               }else if(flag=="a8"){
-		               	a8=true;
-		               }else if(flag=="a9"){
-		               	a9=true;
-		               }
-				                playSound1(arr[15]);
-				                success();
-				               // buff=true;
-					  }else{
-						 	playSound1(arr[14]);
-						 	  $("#"+id).css({
-				                "left":left2,
-				                "top":top2,                    
-				                })
-					 }
-				  }else{//右板子是红色本子
-				  	if(id!="blue7"){//红本子应该在右板
+		 	 if(eid=="small2"||eid=="small3"){//右板子是小本子
+		 	 					if(id=="small2"||id=="small3"){//小本子在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{
+				 	 	    //左板是大本子
+					 	      if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }else if(flag=="a3"){
+				               	a3=true;
+				               }else if(flag=="a4"){
+				               	a4=true;
+				               }else if(flag=="a5"){
+				               	a5=true;
+				               }else if(flag=="a6"){
+				               	a6=true;
+				               }else if(flag=="a7"){
+				               	a7=true;
+				               }else if(flag=="a8"){
+				               	a8=true;
+				               }else if(flag=="a9"){
+				               	a9=true;
+				               }
+						                playSound1(arr[15]);
+						                success();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+					  }
+				  }else{//第一个动的是右板子是大本子
+				  	if(id!="small2"&&id!="small3"){//大本子应该在右板
 				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 							 			 $("#"+id).css({
 						                "left":left3,
@@ -3410,7 +2108,395 @@ function end1(e,left1,top1,flag,left2,top2,left3,top3,id){
 							                "top":top2,                    
 							                })
 									 }
-				 	 	 }else{//蓝本子应该在左板
+				 	 	 }else{//小子应该在左板
+				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				           if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				 	 	 	
+				 	 	 	
+				 	 	 }
+				  	
+				  
+				  }
+		 }
+	}
+
+function end2(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2&&!a4&&!a5&&!a6&&!a7&&!a8&&!a9){
+				 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左板有东西
+		 	console.log(eid)
+		 	 if(eid!="square2"&&eid!="square6"&&eid!="square8"){//左板是大本子
+				 	 	 if(id=="square2"||id=="square6"||id=="square8"){//小本子在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{//大本子在左板
+				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				           if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				 	 	 	
+				 	 	 	
+				 	 	 }
+			 	      
+				  }else{//左板是小本子
+				  	if(id=="square2"||id=="square6"||id=="square8"){
+						 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						           if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }else if(flag=="a3"){
+				               	a3=true;
+				               }else if(flag=="a4"){
+				               	a4=true;
+				               }else if(flag=="a5"){
+				               	a5=true;
+				               }else if(flag=="a6"){
+				               	a6=true;
+				               }else if(flag=="a7"){
+				               	a7=true;
+				               }else if(flag=="a8"){
+				               	a8=true;
+				               }else if(flag=="a9"){
+				               	a9=true;
+				               }
+						                playSound1(arr[15]);
+						                success();
+						               // buff=true;
+										  }else{
+											 	playSound1(arr[14]);
+											 	  $("#"+id).css({
+									                "left":left2,
+									                "top":top2,                    
+									                })
+										 }
+				 	 	 }else{
+							  	//大本子在右板
+							  	if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+					    }
+				  }
+		 }else if(buff1){//右板子有东西
+		 	 if(eid=="square2"||eid=="square6"||eid=="square8"){//右板子是小本子
+		 	 					if(id=="square2"||id=="square6"||id=="square8"){//小本子在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{
+				 	 	    //左板是大本子
+					 	      if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }else if(flag=="a3"){
+				               	a3=true;
+				               }else if(flag=="a4"){
+				               	a4=true;
+				               }else if(flag=="a5"){
+				               	a5=true;
+				               }else if(flag=="a6"){
+				               	a6=true;
+				               }else if(flag=="a7"){
+				               	a7=true;
+				               }else if(flag=="a8"){
+				               	a8=true;
+				               }else if(flag=="a9"){
+				               	a9=true;
+				               }
+						                playSound1(arr[15]);
+						                success();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+					  }
+				  }else{//第一个动的是右板子是大本子
+				  	if(id!="square2"&&id!="square6"&&id!="square8"){//大本子应该在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{//小子应该在左板
 				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 						 	     $("#"+id).css({
 					                "left":left1,
@@ -3458,6 +2544,393 @@ function end1(e,left1,top1,flag,left2,top2,left3,top3,id){
 
 
 
+function end3(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2&&!a4&&!a5&&!a6&&!a7&&!a8&&!a9){
+				 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左板有东西
+		 	console.log(eid)
+		 	 if(eid!="sheep1"&&eid!="sheep3"&&eid!="square5"&&eid!="square7"&&eid!="square9"){//左板是大本子
+				 	 	 if(id=="sheep1"||id=="sheep3"||id=="sheep5"||id=="sheep7"||id=="sheep9"){//小本子在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{//大本子在左板
+				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				           if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				 	 	 	
+				 	 	 	
+				 	 	 }
+			 	      
+				  }else{//左板是小本子
+				  	if(id=="sheep1"||id=="sheep3"||id=="sheep5"||id=="sheep7"||id=="sheep9"){
+						 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						           if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }else if(flag=="a3"){
+				               	a3=true;
+				               }else if(flag=="a4"){
+				               	a4=true;
+				               }else if(flag=="a5"){
+				               	a5=true;
+				               }else if(flag=="a6"){
+				               	a6=true;
+				               }else if(flag=="a7"){
+				               	a7=true;
+				               }else if(flag=="a8"){
+				               	a8=true;
+				               }else if(flag=="a9"){
+				               	a9=true;
+				               }
+						                playSound1(arr[15]);
+						                success();
+						               // buff=true;
+										  }else{
+											 	playSound1(arr[14]);
+											 	  $("#"+id).css({
+									                "left":left2,
+									                "top":top2,                    
+									                })
+										 }
+				 	 	 }else{
+							  	//大本子在右板
+							  	if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+					    }
+				  }
+		 }else if(buff1){//右板子有东西
+		 	 if(eid=="sheep1"||eid=="sheep3"||eid=="sheep5"||eid=="sheep7"||eid=="sheep9"){//右板子是小本子
+		 	 					if(id=="sheep1"||id=="sheep3"||id=="sheep5"||id=="sheep7"||id=="sheep9"){//小本子在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{
+				 	 	    //左板是大本子
+					 	      if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }else if(flag=="a3"){
+				               	a3=true;
+				               }else if(flag=="a4"){
+				               	a4=true;
+				               }else if(flag=="a5"){
+				               	a5=true;
+				               }else if(flag=="a6"){
+				               	a6=true;
+				               }else if(flag=="a7"){
+				               	a7=true;
+				               }else if(flag=="a8"){
+				               	a8=true;
+				               }else if(flag=="a9"){
+				               	a9=true;
+				               }
+						                playSound1(arr[15]);
+						                success();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+					  }
+				  }else{//第一个动的是右板子是大本子
+				  	if(id!="sheep1"&&id!="sheep3"&&id!="sheep5"&&id!="sheep7"&&id!="sheep9"){//大本子应该在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{//小子应该在左板
+				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				           if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				 	 	 	
+				 	 	 	
+				 	 	 }
+				  	
+				  
+				  }
+		 }
+	}
 
 
 
