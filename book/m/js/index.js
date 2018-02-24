@@ -1359,7 +1359,7 @@ circle1.addEventListener("touchend",function(e){ end2(e,"6%","71%","a1","20%","5
 
 square2.addEventListener("touchstart",function(e){start(e,square2);},false);
 square2.addEventListener("touchmove",function(e){ move(e,"square2");},false);
-square2.addEventListener("touchend",function(e){ end2(e,"14%","71%","a2","35%","6%","65%","72%","square2");},false);
+square2.addEventListener("touchend",function(e){ end2(e,"14%","73%","a2","35%","6%","65%","73%","square2");},false);
 
 circle3.addEventListener("touchstart",function(e){start(e,circle3);},false);
 circle3.addEventListener("touchmove",function(e){ move(e,"circle3");},false);
@@ -1375,7 +1375,7 @@ circle5.addEventListener("touchend",function(e){ end2(e,"22%","71%","a5","10%","
 
 square6.addEventListener("touchstart",function(e){start(e,square6);},false);
 square6.addEventListener("touchmove",function(e){ move(e,"square6");},false);
-square6.addEventListener("touchend",function(e){ end2(e,"18%","71%","a6","26%","41%","69%","72%","square6");},false);
+square6.addEventListener("touchend",function(e){ end2(e,"18%","73%","a6","26%","41%","69%","73%","square6");},false);
 
 circle7.addEventListener("touchstart",function(e){start(e,circle7);},false);
 circle7.addEventListener("touchmove",function(e){ move(e,"circle7");},false);
@@ -1383,7 +1383,7 @@ circle7.addEventListener("touchend",function(e){ end2(e,"26%","71%","a7","44%","
 
 square8.addEventListener("touchstart",function(e){start(e,square8);},false);
 square8.addEventListener("touchmove",function(e){ move(e,"square8");},false);
-square8.addEventListener("touchend",function(e){ end2(e,"22%","71%","a8","60%","41%","73%","72%","square8");},false);
+square8.addEventListener("touchend",function(e){ end2(e,"22%","73%","a8","60%","41%","73%","73%","square8");},false);
 
 circle9.addEventListener("touchstart",function(e){start(e,circle9);},false);
 circle9.addEventListener("touchmove",function(e){ move(e,"circle9");},false);
@@ -2625,7 +2625,7 @@ function end3(e,left1,top1,flag,left2,top2,left3,top3,id){
 				 }
 		 }else if(buff){//左板有东西
 		 	console.log(eid)
-		 	 if(eid!="sheep1"&&eid!="sheep3"&&eid!="square5"&&eid!="square7"&&eid!="square9"){//左板是大本子
+		 	 if(eid!="sheep1"&&eid!="sheep3"&&eid!="sheep5"&&eid!="sheep7"&&eid!="sheep9"){//左板是大本子
 				 	 	 if(id=="sheep1"||id=="sheep3"||id=="sheep5"||id=="sheep7"||id=="sheep9"){//小本子在右板
 				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
 							 			 $("#"+id).css({
@@ -2941,7 +2941,6 @@ function end3(e,left1,top1,flag,left2,top2,left3,top3,id){
 
 
  function success(){
- 	console.log(a1,a2,a3,a4,a5,a6,a7,a8,a9)
                 	 if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
                 	setTimeout(function(){
 	                	$(".succ").fadeIn();//改
