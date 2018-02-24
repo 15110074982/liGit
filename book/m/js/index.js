@@ -2771,39 +2771,39 @@ blue7.addEventListener("touchend",function(e){ end(e,"18%","71%","a7","44%","40%
 //第二题
 big1.addEventListener("touchstart",function(e){start(e,big1);},false);
 big1.addEventListener("touchmove",function(e){ move(e,"red1");},false);
-big1.addEventListener("touchend",function(e){ end(e,"6%","71%","a1","20%","5%","56%","71%","big1");},false);
+big1.addEventListener("touchend",function(e){ end1(e,"10%","63%","a1","20%","5%","56%","63%","big1");},false);
 
 small2.addEventListener("touchstart",function(e){start(e,small2);},false);
 small2.addEventListener("touchmove",function(e){ move(e,"small2");},false);
-small2.addEventListener("touchend",function(e){ end(e,"10%","71%","a2","36%","5%","60%","71%","small2");},false);
+small2.addEventListener("touchend",function(e){ end1(e,"14%","71%","a2","37%","11%","65%","71%","small2");},false);
 
 small3.addEventListener("touchstart",function(e){start(e,small3);},false);
 small3.addEventListener("touchmove",function(e){ move(e,"small3");},false);
-small3.addEventListener("touchend",function(e){ end(e,"14%","71%","a3","52%","5%","64%","71%","small3");},false);
+small3.addEventListener("touchend",function(e){ end1(e,"18%","71%","a3","51%","11%","69%","71%","small3");},false);
 
 big4.addEventListener("touchstart",function(e){start(e,big4);},false);
 big4.addEventListener("touchmove",function(e){ move(e,"big4");},false);
-big4.addEventListener("touchend",function(e){ end(e,"18%","71%","a4","68%","5%","68%","71%","big4");},false);
+big4.addEventListener("touchend",function(e){ end1(e,"14%","63%","a4","68%","5%","60%","63%","big4");},false);
 
 big5.addEventListener("touchstart",function(e){start(e,big5);},false);
 big5.addEventListener("touchmove",function(e){ move(e,"big5");},false);
-big5.addEventListener("touchend",function(e){ end(e,"22%","71%","a5","10%","40%","72%","71%","big5");},false);
+big5.addEventListener("touchend",function(e){ end1(e,"18%","63%","a5","10%","40%","64%","63%","big5");},false);
 
 big6.addEventListener("touchstart",function(e){start(e,big6);},false);
 big6.addEventListener("touchmove",function(e){ move(e,"big6");},false);
-big6.addEventListener("touchend",function(e){ end(e,"26%","71%","a6","27%","40%","76%","71%","big6");},false);
+big6.addEventListener("touchend",function(e){ end1(e,"22%","63%","a6","27%","40%","68%","63%","big6");},false);
 
 big7.addEventListener("touchstart",function(e){start(e,big7);},false);
 big7.addEventListener("touchmove",function(e){ move(e,"big7");},false);
-big7.addEventListener("touchend",function(e){ end(e,"26%","71%","a7","27%","40%","76%","71%","big7");},false);
+big7.addEventListener("touchend",function(e){ end1(e,"26%","63%","a7","44%","40%","72%","63%","big7");},false);
 
 big8.addEventListener("touchstart",function(e){start(e,big8);},false);
 big8.addEventListener("touchmove",function(e){ move(e,"big8");},false);
-big8.addEventListener("touchend",function(e){ end(e,"30%","71%","a8","61%","40%","80%","71%","big8");},false);
+big8.addEventListener("touchend",function(e){ end1(e,"30%","63%","a8","61%","40%","76%","63%","big8");},false);
 
 big9.addEventListener("touchstart",function(e){start(e,big9);},false);
 big9.addEventListener("touchmove",function(e){ move(e,"big9");},false);
-big9.addEventListener("touchend",function(e){ end(e,"34%","71%","a9","78%","40%","84%","71%","big9");},false);
+big9.addEventListener("touchend",function(e){ end1(e,"34%","63%","a9","78%","40%","80%","63%","big9");},false);
 
 
 
@@ -3140,6 +3140,333 @@ function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 				  }
 		 }
 	}
+
+
+function end1(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.43*46/477;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2&&!a4&&!a5&&!a6&&!a7&&!a8&&!a9){
+				 if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左板有东西
+		 	console.log(eid)
+		 	 if(eid!="small2"&&eid!="small3"){//左板是大本子
+				 	 	 if(id=="small2"||id=="small3"){//小本子在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }else if(flag=="a3"){
+					               	a3=true;
+					               }else if(flag=="a4"){
+					               	a4=true;
+					               }else if(flag=="a5"){
+					               	a5=true;
+					               }else if(flag=="a6"){
+					               	a6=true;
+					               }else if(flag=="a7"){
+					               	a7=true;
+					               }else if(flag=="a8"){
+					               	a8=true;
+					               }else if(flag=="a9"){
+					               	a9=true;
+					               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{//大本子在左板
+				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				           if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				 	 	 	
+				 	 	 	
+				 	 	 }
+			 	      
+				  }else{//左板是小本子
+				  	//大本子在右板
+				  	if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+		                playSound1(arr[15]);
+		                success();
+						 }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+						 }
+				  }
+		 }else if(buff1){//右板子有东西
+		 	 if(eid=="blue7"){//右板子是蓝色本子
+		 	 	//左板是红本子
+			 	      if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				            if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				  }else{//右板子是红色本子
+				  	if(id!="blue7"){//红本子应该在右板
+				 	 	 		if(px>=winW*0.53&&px<=winW*0.96 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+					                playSound1(arr[15]);
+					                success();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }else{//蓝本子应该在左板
+				 	 	 		if(px>=winW*0.04&&px<=winW*0.47 && py>=(halfH*0.88-70)&& py<=(halfH*0.88+boxy)){
+						 	     $("#"+id).css({
+					                "left":left1,
+					                "top":top1,
+					                "pointer-events":"none"
+				                })
+				           if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }else if(flag=="a3"){
+		               	a3=true;
+		               }else if(flag=="a4"){
+		               	a4=true;
+		               }else if(flag=="a5"){
+		               	a5=true;
+		               }else if(flag=="a6"){
+		               	a6=true;
+		               }else if(flag=="a7"){
+		               	a7=true;
+		               }else if(flag=="a8"){
+		               	a8=true;
+		               }else if(flag=="a9"){
+		               	a9=true;
+		               }
+				                playSound1(arr[15]);
+				                success();
+				               // buff=true;
+					  }else{
+						 	playSound1(arr[14]);
+						 	  $("#"+id).css({
+				                "left":left2,
+				                "top":top2,                    
+				                })
+					 }
+				 	 	 	
+				 	 	 	
+				 	 	 }
+				  	
+				  
+				  }
+		 }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
  function success(){
  	console.log(a1,a2,a3,a4,a5,a6,a7,a8,a9)
                 	 if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
