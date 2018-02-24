@@ -236,7 +236,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.31 && py<=(winW*0.42*0.41)){
+		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.6 && py>=winW*0.42*0.21 && py<=(winW*0.42*0.51)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"7%",
@@ -288,7 +288,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.41 && py<=(winW*0.42*0.51)){
+		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.6 && py>=winW*0.42*0.31 && py<=(winW*0.42*0.61)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"29%",
@@ -340,7 +340,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.50&&px<=winW*0.42*0.6 && py>=winW*0.42*0.41 && py<=(winW*0.42*0.51)){
+		 if(px>=winW*0.42*0.40&&px<=winW*0.42*0.7 && py>=winW*0.42*0.31 && py<=(winW*0.42*0.61)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"40%",
@@ -601,7 +601,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.30)){
+		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.99 && py>=winW*0.42*0.10 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"7%",
@@ -653,7 +653,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.69&&px<=winW*0.42*0.79 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
+		 if(px>=winW*0.42*0.59&&px<=winW*0.42*0.89 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.50)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"29%",
@@ -704,7 +704,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.89 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
+		 if(px>=winW*0.42*0.69&&px<=winW*0.42*0.99 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.50)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"40%",
@@ -755,7 +755,7 @@ var $print=$("#container");
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
+		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.99 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.50)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"51%",
@@ -989,7 +989,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.4 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.30)){
+		 if(px>=winW*0.42*0.2&&px<=winW*0.42*0.5 && py>=winW*0.42*0.10 && py<=(winW*0.42*0.40)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"11",
@@ -1040,7 +1040,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.2&&px<=winW*0.42*0.3 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
+		 if(px>=winW*0.42*0.1&&px<=winW*0.42*0.4 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.50)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"35%",
@@ -1092,7 +1092,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.4&&px<=winW*0.42*0.5 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.40)){
+		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.6 && py>=winW*0.42*0.20 && py<=(winW*0.42*0.50)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"47%",
@@ -1144,7 +1144,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.3&&px<=winW*0.42*0.4 && py>=winW*0.42*0.40 && py<=(winW*0.42*0.50)){
+		 if(px>=winW*0.42*0.2&&px<=winW*0.42*0.5 && py>=winW*0.42*0.30 && py<=(winW*0.42*0.60)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"71%",
@@ -1196,7 +1196,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.50 && py<=(winW*0.42*0.60)){
+		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.99 && py>=winW*0.42*0.40 && py<=(winW*0.42*0.70)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"95%",
@@ -1248,7 +1248,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.69&&px<=winW*0.42*0.79 && py>=winW*0.42*0.59 && py<=(winW*0.42*0.69)){
+		 if(px>=winW*0.42*0.59&&px<=winW*0.42*0.89 && py>=winW*0.42*0.49 && py<=(winW*0.42*0.79)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"107%",
@@ -1300,7 +1300,7 @@ nuber33.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.89 && py>=winW*0.42*0.69 && py<=(winW*0.42*0.79)){
+		 if(px>=winW*0.42*0.69&&px<=winW*0.42*0.99 && py>=winW*0.42*0.59 && py<=(winW*0.42*0.89)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"-28%",
@@ -1352,7 +1352,7 @@ nuber45.addEventListener("touchstart",function(e){
                 "background":"#fff"
 		 	})*/
 		//移动后left:0.4,top:0.31
-		 if(px>=winW*0.42*0.89&&px<=winW*0.42*0.99 && py>=winW*0.42*0.79 && py<=(winW*0.42*0.89)){
+		 if(px>=winW*0.42*0.79&&px<=winW*0.42*0.99 && py>=winW*0.42*0.69 && py<=(winW*0.42*0.99)){
 		 	    $(this).hide();//下一步点击改
 		 	     $(this).css({
 	                "left":"-15%",
