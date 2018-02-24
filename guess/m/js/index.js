@@ -67,7 +67,7 @@ var $print=$("#container");
 		}
 	});
 	$(".page1").click(function(){
-		pause();
+		//pause();
 		setTimeout(function(){
 			playSound(arr[1]);
 		},300)
