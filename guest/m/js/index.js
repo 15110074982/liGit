@@ -22,8 +22,10 @@ var $print=$("#container");
 		$(".content img").attr("src","images/5.png");
 		$(".next img").attr("src","images/37.png");
 		setTimeout(function(){
-			$(".page1").addClass("animated rotateOut").fadeOut();
-			$(".page2").addClass("animated rotateIn").fadeIn();
+			//$(".page1").addClass("animated rotateOut").fadeOut();
+			//$(".page2").addClass("animated rotateIn").fadeIn();
+			$(".page1").fadeOut()
+			$(".page2").fadeIn();
 			setTimeout(function(){
 				$(".hand1").addClass("animated pulse").show();
 				$(".nub11 .person").addClass("animated pulse infinite");
@@ -47,8 +49,10 @@ var $print=$("#container");
 		$(".content img").attr("src","images/6.png");
 		$(".next img").attr("src","images/37.png");
 		setTimeout(function(){
-			$(".page1").addClass("animated rotateOut").fadeOut();
-			$(".page2").addClass("animated rotateIn").fadeIn();
+			//$(".page1").addClass("animated rotateOut").fadeOut();
+			//$(".page2").addClass("animated rotateIn").fadeIn();
+			$(".page1").fadeOut()
+			$(".page2").fadeIn();
 			setTimeout(function(){
 				$(".hand").addClass("gusture").show();
 					setTimeout(function(){
@@ -71,8 +75,10 @@ var $print=$("#container");
 	   $(".next img").attr("src","images/41.png");
 		$(this).removeClass("rubberBand").addClass("bounceIn")
 		setTimeout(function(){
-			$(".page1").addClass("animated rotateOut").fadeOut()
-			$(".page2").addClass("animated rotateIn").fadeIn();
+			//$(".page1").addClass("animated rotateOut").fadeOut()
+			//$(".page2").addClass("animated rotateIn").fadeIn();
+			$(".page1").fadeOut()
+			$(".page2").fadeIn();
 			 setTimeout(function(){
 				$(".hand").addClass("gusture1").show();
 					setTimeout(function(){
@@ -478,24 +484,8 @@ var $print=$("#container");
      var hd;
      var hd1;
      var hd3;
-	bird.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.4;
-		 sy=winW*0.86*527/988*0.09;
-		 $(this).addClass("scale");
-	},false);
-	bird.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	bird.addEventListener("touchstart",function(e){start(e,bird,"0.4","0.09")},false);
+	bird.addEventListener("touchmove",function(e){move(e,"bird")},false);
 	bird.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		 boxy=winW*0.86*0.28*232/284;
@@ -530,24 +520,8 @@ var $print=$("#container");
 		 }
 	},false);
 	
-	bird1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.07;
-		 sy=winW*0.86*527/988*0.09;
-		 $(this).addClass("scale");
-	},false);
-	bird1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	bird1.addEventListener("touchstart",function(e){start(e,bird1,"0.07","0.09")},false);
+	bird1.addEventListener("touchmove",function(e){move(e,"bird1")},false);
 	bird1.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		$(this).removeClass("scale");
@@ -559,24 +533,8 @@ var $print=$("#container");
 		
 	},false);
 	
-	bird3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.73;
-		 sy=winW*0.86*527/988*0.09;
-		 $(this).addClass("scale");
-	},false);
-	bird3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	bird3.addEventListener("touchstart",function(e){start(e,bird3,"0.73","0.09")},false);
+	bird3.addEventListener("touchmove",function(e){move(e,"bird3")},false);
 	bird3.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		$(this).removeClass("scale");
@@ -589,24 +547,8 @@ var $print=$("#container");
 	},false);
 	
    
-   bird11.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.07;
-		 sy=winW*0.86*527/988*0.09;
-		 $(this).addClass("scale");
-	},false);
-	bird11.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+    bird11.addEventListener("touchstart",function(e){start(e,bird11,"0.07","0.09")},false);
+	bird11.addEventListener("touchmove",function(e){move(e,"bird11")},false);
 	bird11.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		 boxy=winW*0.86*0.28*232/284;
@@ -635,24 +577,8 @@ var $print=$("#container");
 		 }
 	},false);
 	
-	 bird13.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.73;
-		 sy=winW*0.86*527/988*0.09;
-		 $(this).addClass("scale");
-	},false);
-	bird13.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	bird13.addEventListener("touchstart",function(e){start(e,bird13,"0.73","0.09")},false);
+	bird13.addEventListener("touchmove",function(e){move(e,"bird13")},false);
 	bird13.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		 boxy=winW*0.86*0.28*232/284;
@@ -680,24 +606,8 @@ var $print=$("#container");
 		 }
 	},false);
 	
-   bird12.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.4;
-		 sy=winW*0.86*527/988*0.09;
-		 $(this).addClass("scale");
-	},false);
-	bird12.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+     bird12.addEventListener("touchstart",function(e){start(e,bird12,"0.4","0.09")},false);
+	bird12.addEventListener("touchmove",function(e){move(e,"bird12")},false);
 	bird12.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		$(this).removeClass("scale");
@@ -711,24 +621,8 @@ var $print=$("#container");
 	
 	
 	//第三页答题
-	 no1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.86*0.9;
-		 sy=winW*0.86*527/988*0.05;
-		 $(this).addClass("scale");
-	},false);
-	no1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	no1.addEventListener("touchstart",function(e){start(e,no1,"0.9","0.05")},false);
+	no1.addEventListener("touchmove",function(e){move(e,"no1")},false);
 	no1.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		  boxy=winW*0.86*0.60*49/572; 
@@ -806,25 +700,8 @@ var $print=$("#container");
 		
 	},false);
 	
-	 no2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 //源的left 0.9;top 0.2;
-		 sx=winW*0.86*0.9;
-		 sy=winW*0.86*527/988*0.2;
-		 $(this).addClass("scale");
-	},false);
-	no2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	no2.addEventListener("touchstart",function(e){start(e,no2,"0.9","0.2")},false);
+	no2.addEventListener("touchmove",function(e){move(e,"no2")},false);
 	no2.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		  boxy=winW*0.86*0.60*51/572; 
@@ -855,25 +732,8 @@ var $print=$("#container");
 		
 	},false);
 	
-	 no3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 //源的left 0.9;top 0.2;
-		 sx=winW*0.86*0.9;
-		 sy=winW*0.86*527/988*0.36;
-		 $(this).addClass("scale");
-	},false);
-	no3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	no3.addEventListener("touchstart",function(e){start(e,no3,"0.9","0.36")},false);
+	no3.addEventListener("touchmove",function(e){move(e,"no3")},false);
 	no3.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		  boxy=winW*0.86*0.64*61/600; 
@@ -904,25 +764,8 @@ var $print=$("#container");
 		
 	},false);
 	
-	 no4.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 //源的left 0.9;top 0.2;
-		 sx=winW*0.86*0.9;
-		 sy=winW*0.86*527/988*0.51;
-		 $(this).addClass("scale");
-	},false);
-	no4.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	no4.addEventListener("touchstart",function(e){start(e,no4,"0.9","0.51")},false);
+	no4.addEventListener("touchmove",function(e){move(e,"no4")},false);
 	no4.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		  boxy=winW*0.86*0.54*57/504; 
@@ -953,25 +796,8 @@ var $print=$("#container");
 		
 	},false);
 	
-	 no5.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 //源的left 0.9;top 0.2;
-		 sx=winW*0.86*0.9;
-		 sy=winW*0.86*527/988*0.66;
-		 $(this).addClass("scale");
-	},false);
-	no5.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	no5.addEventListener("touchstart",function(e){start(e,no5,"0.9","0.66")},false);
+	no5.addEventListener("touchmove",function(e){move(e,"no5")},false);
 	no5.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		  boxy=winW*0.86*0.54*40/500; 
@@ -1000,25 +826,8 @@ var $print=$("#container");
 		
 	},false);
 	
-	 no6.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 //源的left 0.9;top 0.2;
-		 sx=winW*0.86*0.9;
-		 sy=winW*0.86*527/988*0.81;
-		 $(this).addClass("scale");
-	},false);
-	no6.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
+	no6.addEventListener("touchstart",function(e){start(e,no6,"0.9","0.81")},false);
+	no6.addEventListener("touchmove",function(e){move(e,"no6")},false);
 	no6.addEventListener("touchend",function(e){
 		 e.preventDefault();
 		  boxy=winW*0.86*0.64*81/600; 
@@ -1047,3 +856,38 @@ var $print=$("#container");
 		
 		
 	},false);
+	
+
+function start(e,id,left,top){
+	 if(screen.orientation.angle==90){
+		 	 startX = e.touches[0].pageX; 
+		     startY= e.touches[0].pageY;
+		      sx=winW*0.86*left;
+		      sy=winW*0.86*527/988*top;
+		 }else{
+		 	 startY = e.touches[0].pageX; 
+			 startX = e.touches[0].pageY;
+			 sx=winW*0.86*left;
+			 sy=winW*0.86*527/988*top;
+		 }
+		 $(this).addClass("scale");
+	}
+function move(e,id){
+	e.preventDefault();
+	 if(screen.orientation.angle==90){
+		  	    moveX = e.touches[0].pageX; 
+				moveY = e.touches[0].pageY;
+				 px=moveX-startX+sx+34;
+				 py=moveY-startY+sy;
+		  	
+		  }else{
+				 moveY = e.touches[0].pageX; 
+				moveX = e.touches[0].pageY;
+				 px=moveX-startX+sx;
+				 py=-(moveY-startY-sy);
+		 }
+	      $("#"+id).css({
+                "left":px,
+                "top":py,                    
+                })
+	}
