@@ -8,6 +8,13 @@ function changeOrientation( $print ){
 	  $print.css('left',  0-(height-width)/2 );
 	  $print.css('transform' , 'rotate(90deg)');
 	   $print.css('transform-origin' , '50% 50%');
+	    $(".title1").css("width","28%")
+			    $(".title2").css("width","28%").css("left","33%")
+			     $(".title3").css("width","28%")
+	     $(".nav").css('transform-origin' , '0 0').css('transform',"scale3d(1,1,1)").css("top","0%")
+			 $(".question").css('transform-origin' , '50% 0').css('transform',"scale3d(1,1,1)")
+	   winW=height;
+	   winH=width;
  } 
  //alert(width+"  h  "+height)
    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
@@ -18,42 +25,45 @@ function changeOrientation( $print ){
 			var width1 = document.documentElement.clientWidth;
 			 var height1 =  document.documentElement.clientHeight;
 			
-			 //$print =  $('#print');
 			 if( width1 > height1 ){
 			 		$print.width(width1);
-				$print.height(height1);
-			  /* if(width1/height1>height/width){
-			   	  var scale=height/width1;
-			   	  	$print.css('transform' , "scale("+scale+",1)");
-			   }else{
-			   		var scale=width/height1;
-			   			$print.css('transform' , "scale(1,"+scale+")");
-			  }*/
-			  //$("#viewport").attr("content","width=device-width,initial-scale="+scale+",user-scalable=no")
-			
-				$print.css('top',  0 );
-				$print.css('left',  0 );
-				$print.css('transform' , 'none');
-			
-				$print.css('transform-origin' , '50% 50%');
+				  $print.height(height1);
+				  winW=width1;
+	        winH=height1;
+			 // if(width1/height1>height/width){
+			   	//  var ratio=height/width1-0.1;
+			  // }else{
+			  	//alert(height1+"w"+width)
+			   		var ratio=height1/width;
+			  //}
+			   $(".title1").css("width","22%")
+			    $(".title2").css("width","22%").css("left","39%")
+			     $(".title3").css("width","22%")
+			    $(".nav").css('transform-origin' , '0 0').css('transform',"scale3d(1,0.8,1)").css("top","0%")
+			    $(".question").css('transform-origin' , '50% 0').css('transform',"scale3d("+ratio+","+ratio+",1)")
+				 $print.css('top',  0 );
+				 $print.css('left',  0 );
+				 $print.css('transform' , 'none');
+			  	$print.css('transform-origin' , '50% 50%');
 			 }
 			 else{
-			 	/*  if(width1/height1>width/height){
-			   	  var scale=width1/width;
-			   }else{
-			   		var scale=height1/height;
-			   }*/
+			 	//alert(1)
 				$print.width(height1);
 				$print.height(width1);
+				winW=height1;
+	      winH=width1;
 				$print.css('top',  (height1-width1)/2 );
 				$print.css('left',  0-(height1-width1)/2 );
 				$print.css('transform' , 'rotate(90deg)');
-					//$print.css('transform' , "scale(0.8,0.8)");
 				$print.css('transform-origin' , '50% 50%');
+				$(".title1").css("width","28%")
+			    $(".title2").css("width","28%").css("left","33%")
+			     $(".title3").css("width","28%")
+	     $(".nav").css('transform-origin' , '0 0').css('transform',"scale3d(1,1,1)").css("top","0%")
+			 $(".question").css('transform-origin' , '50% 0').css('transform',"scale3d(1,1,1)")
 			 }
-		  //alert(width1+"  hh  "+height1)
 			
-		}  , 500 );
+		}  , 300 );
 
 		
 	}, false);

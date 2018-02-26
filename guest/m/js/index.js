@@ -1,3 +1,6 @@
+var winH;  
+var winW;
+ var ratio;
 var $print=$("#container");
 	changeOrientation($print);
 	var b1=false;
@@ -459,10 +462,9 @@ var $print=$("#container");
 			
 		}
 	})
-	 var winH;  
-     var winW;
-     var a=Number($(window).width());//320
-     var b=Number($(window).height());//504
+	
+    /* var a=document.documentElement.clientWidth;//320
+     var b=document.documentElement.clientHeight;//504
      if(a>b){
          winW=a;   
      	 winH=b; 
@@ -471,7 +473,7 @@ var $print=$("#container");
      	 winW=b;
      	 winH=a;
      	 
-     }
+     }*/
      var startX;
      var startY;
      var sx;
@@ -631,13 +633,6 @@ var $print=$("#container");
 		console.log(px,py)
 		 
 		if(px>=winW*0.86*0.07&&px<=winW*0.86*0.67 && py>=winW*0.86*527/988*0.53-8&& py<=(winW*0.86*527/988*0.53+boxy)){
-			/*$(".bg").css({
-            "left":winW*0.86*0.07,
-            "top":winW*0.86*527/988*0.53-8, 
-            "width":winW*0.86*0.67-winW*0.86*0.07,   
-            "height":(winW*0.86*527/988*0.53+boxy)-winW*0.86*527/988*0.53+8, 
-            "background":"#f00"
-            })*/
 		$(this).css({
             "left":"61%",
             "top":"50%",                    
@@ -648,46 +643,6 @@ var $print=$("#container");
 	          	//alert(lf1);
                	$(".succ").fadeIn();
                  	playSound1(arr[6]);
-					/*setTimeout(function(){
-			                	 $(".succ").hide();
-			               $(".nub3").fadeOut();
-			$(".page1").removeClass("animated rotateOut").fadeIn()
-			$(".page2").removeClass("animated rotateOut").fadeOut()
-			                   $(".content img").attr("src","images/7.png");
-			                    setTimeout(function(){
-				                	$("#no1").css({
-						                "left":"90%",
-						                "top":"5%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no2").css({
-						                "left":"90%",
-						                "top":"20%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no3").css({
-						                "left":"90%",
-						                "top":"36%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no4").css({
-						                "left":"90%",
-						                "top":"51%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no5").css({
-						                "left":"90%",
-						                "top":"66%", 
-						                "pointer-events":"auto",
-			                		});
-			                		$("#no6").css({
-						                "left":"90%",
-						                "top":"81%", 
-						                "pointer-events":"auto",
-			                		});
-	                          },600);
-			          },1200)*/
-	             
 	          }
 		 }else{
 		 	playSound1(arr[7])
@@ -859,7 +814,8 @@ var $print=$("#container");
 	
 
 function start(e,id,left,top){
-	 if(screen.orientation.angle==90){
+	//alert(window.orientation)
+	 if(window.orientation==90||window.orientation==-90){
 		 	 startX = e.touches[0].pageX; 
 		     startY= e.touches[0].pageY;
 		      sx=winW*0.86*left;
@@ -874,12 +830,11 @@ function start(e,id,left,top){
 	}
 function move(e,id){
 	e.preventDefault();
-	 if(screen.orientation.angle==90){
+	 if(window.orientation==90||window.orientation==-90){
 		  	    moveX = e.touches[0].pageX; 
 				moveY = e.touches[0].pageY;
-				 px=moveX-startX+sx+34;
+				 px=moveX-startX+sx;
 				 py=moveY-startY+sy;
-		  	
 		  }else{
 				 moveY = e.touches[0].pageX; 
 				moveX = e.touches[0].pageY;
