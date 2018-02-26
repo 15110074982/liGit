@@ -473,547 +473,6 @@ window.onload=function(){
 			},300)
 		}							
 	})
-	/*第三大题*/
-	rabit1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.05;
-		 sy=halfH*0.8;//移动前left:0.4,top:0.31
-	},false);
-	rabit1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	rabit1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"22%",
-	                "top":"51%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"5%",
-                "top":"80%",                    
-                })
-		 }
-	},false);
-	rabit3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.79;
-		 sy=halfH*0.8;//移动前left:0.4,top:0.31
-	},false);
-	rabit3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	rabit3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"62%",
-	                "top":"52%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"79%",
-                "top":"80%",                    
-                })
-		 }
-	},false);
-	rabit2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.42;
-		 sy=halfH*0.75;//移动前left:0.4,top:0.31
-	},false);
-	rabit2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	rabit2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"42%",
-                "top":"75%",                    
-                })
-		
-	},false);
-	
-	
-	cat1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.05;
-		 sy=halfH*0.82;//移动前left:0.4,top:0.31
-	},false);
-	cat1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	cat1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"25%",
-	                "top":"52%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"5%",
-                "top":"82%",                    
-                })
-		 }
-	},false);
-	
-	cat3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.77;
-		 sy=halfH*0.78;//移动前left:0.4,top:0.31
-	},false);
-	cat3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	cat3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"61%",
-	                "top":"50%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"77%",
-                "top":"78%",                    
-                })
-		 }
-	},false);
-	
-	cat2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.43;
-		 sy=halfH*0.78;//移动前left:0.4,top:0.31
-	},false);
-	cat2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	cat2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"43%",
-                "top":"78%",                    
-                })
-		
-	},false);
-	
-	melon1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.05;
-		 sy=halfH*0.84;//移动前left:0.4,top:0.31
-	},false);
-	melon1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	melon1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"28%",
-	                "top":"52%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"5%",
-                "top":"84%",                    
-                })
-		 }
-	},false);
-	
-	melon3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.79;
-		 sy=halfH*0.80;//移动前left:0.4,top:0.31
-	},false);
-	melon3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	melon3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"62%",
-	                "top":"48%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"79%",
-                "top":"80%",                    
-                })
-		 }
-	},false);
-	
-	melon2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.45;
-		 sy=halfH*0.80;//移动前left:0.4,top:0.31
-	},false);
-	melon2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	melon2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"45%",
-                "top":"80%",                    
-                })
-		
-	},false);
-	
-	mlon2.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.43;
-		 sy=halfH*0.84;//移动前left:0.4,top:0.31
-	},false);
-	mlon2.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	mlon2.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"23%",
-	                "top":"52%",
-	                "pointer-events":"none"
-                })
-                a1=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"43%",
-                "top":"84%",                    
-                })
-		 }
-	},false);
-	
-	mlon3.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.83;
-		 sy=halfH*0.80;//移动前left:0.4,top:0.31
-	},false);
-	mlon3.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	mlon3.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		  boxy=winW*0.2*130/245;
-		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
-		/*$(".bg").css({
-				"position":"absolute",
-		 		 "left":winW*0.04,
-                "top":halfH*0.88-70,
-                "width":winW*0.43,
-                "height":boxy+70,
-                "background":"#f00"
-		 	})*/
-		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
-		 if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
-		 	     $(this).css({
-	                "left":"64%",
-	                "top":"47%",
-	                "pointer-events":"none"
-                })
-                a2=true;//改
-                playSound1(arr[15]);
-                if(a1&&a2){
-                	setTimeout(function(){
-	                	$(".succ").fadeIn();//改
-	                	$(".question").addClass("animated pulse infinite")
-	                	 playSound1(arr[13]);
-                	 },200)
-                }
-		 }else{
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"83%",
-                "top":"80%",                    
-                })
-		 }
-	},false);
-	
-	mlon1.addEventListener("touchstart",function(e){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 sx=winW*0.05;
-		 sy=halfH*0.84;//移动前left:0.4,top:0.31
-	},false);
-	mlon1.addEventListener("touchmove",function(e){
-		 e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-	     $(this).css({
-                "left":px,
-                "top":py,                    
-                })
-	},false);
-	mlon1.addEventListener("touchend",function(e){
-		 e.preventDefault();
-		 	playSound1(arr[14]);
-		 	 $(this).css({
-                "left":"5%",
-                "top":"84%",                    
-                })
-		
-	},false);
-	
-
 }
 function reset(){
 				$(".red1").css({
@@ -1430,6 +889,60 @@ sheep9.addEventListener("touchend",function(e){ end3(e,"30%","65%","a9","78%","4
 
 
 
+//第3页第一题
+rabit1.addEventListener("touchstart",function(e){start(e,rabit1);},false);
+rabit1.addEventListener("touchmove",function(e){ move(e,"rabit1");},false);
+rabit1.addEventListener("touchend",function(e){ end6(e,"22%","51%","a1","5%","80%","62%","52%","rabit1");},false);
+
+rabit3.addEventListener("touchstart",function(e){start(e,rabit3);},false);
+rabit3.addEventListener("touchmove",function(e){ move(e,"rabit3");},false);
+rabit3.addEventListener("touchend",function(e){ end6(e,"22%","52%","a2","79%","80%","62%","52%","rabit3");},false);
+
+rabit2.addEventListener("touchstart",function(e){start(e,rabit2);},false);
+rabit2.addEventListener("touchmove",function(e){ move(e,"rabit2");},false);
+rabit2.addEventListener("touchend",function(e){ end11(e,"42%","75%","rabit2");},false);
+
+
+cat1.addEventListener("touchstart",function(e){start(e,cat1);},false);
+cat1.addEventListener("touchmove",function(e){ move(e,"cat1");},false);
+cat1.addEventListener("touchend",function(e){ end7(e,"25%","52%","a1","5%","82%","65%","52%","cat1");},false);
+
+cat3.addEventListener("touchstart",function(e){start(e,cat3);},false);
+cat3.addEventListener("touchmove",function(e){ move(e,"cat3");},false);
+cat3.addEventListener("touchend",function(e){ end7(e,"21%","50%","a2","77%","78%","61%","50%","cat3");},false);
+
+cat2.addEventListener("touchstart",function(e){start(e,cat2);},false);
+cat2.addEventListener("touchmove",function(e){ move(e,"cat2");},false);
+cat2.addEventListener("touchend",function(e){ end11(e,"42%","75%","cat2");},false);
+
+
+
+melon1.addEventListener("touchstart",function(e){start(e,melon1);},false);
+melon1.addEventListener("touchmove",function(e){ move(e,"melon1");},false);
+melon1.addEventListener("touchend",function(e){ end8(e,"28%","52%","a1","5%","84%","68%","52%","melon1");},false);
+
+melon3.addEventListener("touchstart",function(e){start(e,melon3);},false);
+melon3.addEventListener("touchmove",function(e){ move(e,"melon3");},false);
+melon3.addEventListener("touchend",function(e){ end8(e,"22%","48%","a2","79%","80%","62%","48%","melon3");},false);
+
+melon2.addEventListener("touchstart",function(e){start(e,melon2);},false);
+melon2.addEventListener("touchmove",function(e){ move(e,"melon2");},false);
+melon2.addEventListener("touchend",function(e){ end11(e,"45%","80%","melon2");},false);
+
+
+mlon2.addEventListener("touchstart",function(e){start(e,mlon2);},false);
+mlon2.addEventListener("touchmove",function(e){ move(e,"mlon2");},false);
+mlon2.addEventListener("touchend",function(e){ end9(e,"23%","52%","a1","43%","84%","64%","52%","mlon2");},false);
+
+mlon3.addEventListener("touchstart",function(e){start(e,mlon3);},false);
+mlon3.addEventListener("touchmove",function(e){ move(e,"mlon3");},false);
+mlon3.addEventListener("touchend",function(e){ end9(e,"24%","47%","a2","83%","80%","64%","47%","mlon3");},false);
+
+mlon1.addEventListener("touchstart",function(e){start(e,mlon1);},false);
+mlon1.addEventListener("touchmove",function(e){ move(e,"mlon1");},false);
+mlon1.addEventListener("touchend",function(e){ end11(e,"5%","84%","mlon1");},false);
+
+
 function start(e,id){
 		 startY = e.touches[0].pageX; 
 		 startX = e.touches[0].pageY;
@@ -1451,6 +964,648 @@ function move(e,id){
                 "top":py,                    
                 })
 	}
+
+function end11(e,left1,top1,id){
+	 e.preventDefault();
+		 	playSound1(arr[14]);
+		 	 $("#"+id).css({
+                "left":left1,
+                "top":top1,                    
+                })
+}
+function end9(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2){
+					 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左框有东西
+		 	console.log(eid)
+		 	 if(eid!="mlon3"){//左框是第一个
+				 	 	 if(id=="mlon3"){//第3个在右框
+				 	 	  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }else{//左框是第3题
+				    if(id=="mlon2"){//第1个在右框
+						  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+						 			 $("#"+id).css({
+					                "left":left3,
+					                "top":top3,
+					                "pointer-events":"none"
+				                })
+				               if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+				                playSound1(arr[15]);
+				                success1();
+								 }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+								 }
+						 }
+				  }
+		 }else if(buff1){//右框有东西
+		 	 if(eid=="mlon2"){//右框是第1题
+		 	 	  if(id=="mlon3"){
+					 	      if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+						                playSound1(arr[15]);
+						                success1();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+						}
+				  }else{//右框是第3题
+				  	if(id=="mlon2"){//左框是第1题
+				 	 	 	  if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left1,
+						                "top":top1,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }
+		 }
+	}
+function end8(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2){
+					 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左框有东西
+		 	console.log(eid)
+		 	 if(eid!="melon3"){//左框是第一个
+				 	 	 if(id=="melon3"){//第3个在右框
+				 	 	  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }else{//左框是第3题
+				    if(id=="melon1"){//第1个在右框
+						  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+						 			 $("#"+id).css({
+					                "left":left3,
+					                "top":top3,
+					                "pointer-events":"none"
+				                })
+				               if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+				                playSound1(arr[15]);
+				                success1();
+								 }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+								 }
+						 }
+				  }
+		 }else if(buff1){//右框有东西
+		 	 if(eid=="melon1"){//右框是第1题
+		 	 	  if(id=="melon3"){
+					 	      if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+						                playSound1(arr[15]);
+						                success1();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+						}
+				  }else{//右框是第3题
+				  	if(id=="melon1"){//左框是第1题
+				 	 	 	  if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left1,
+						                "top":top1,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }
+		 }
+	}
+
+
+function end7(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2){
+					 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左框有东西
+		 	console.log(eid)
+		 	 if(eid!="cat3"){//左框是第一个
+				 	 	 if(id=="cat3"){//第3个在右框
+				 	 	  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }else{//左框是第3题
+				    if(id=="cat1"){//第1个在右框
+						  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+						 			 $("#"+id).css({
+					                "left":left3,
+					                "top":top3,
+					                "pointer-events":"none"
+				                })
+				               if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+				                playSound1(arr[15]);
+				                success1();
+								 }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+								 }
+						 }
+				  }
+		 }else if(buff1){//右框有东西
+		 	 if(eid=="cat1"){//右框是第1题
+		 	 	  if(id=="cat3"){
+					 	      if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+						                playSound1(arr[15]);
+						                success1();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+						}
+				  }else{//右框是第3题
+				  	if(id=="cat1"){//左框是第1题
+				 	 	 	  if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left1,
+						                "top":top1,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }
+		 }
+	}
+
+
+function end6(e,left1,top1,flag,left2,top2,left3,top3,id){
+		e.preventDefault();
+		  boxy=winW*0.2*130/245;
+		  console.log(boxy)//目标div的高度; width:0.60;图片真实高度49；宽度572;
+		/*$(".bg").css({
+				"position":"absolute",
+		 		 "left":winW*0.04,
+                "top":halfH*0.88-70,
+                "width":winW*0.43,
+                "height":boxy+70,
+                "background":"#f00"
+		 	})*/
+		//目标div的left:0.07，左上角起点;     //width+left        // top更改      //top+boxy 高度
+		if(!a1&&!a2){
+					 if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 	     $("#"+id).css({
+			                "left":left1,
+			                "top":top1,
+			                "pointer-events":"none"
+		               });
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                buff=true;
+		                eid=id;
+				 }else if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+				 			 $("#"+id).css({
+			                "left":left3,
+			                "top":top3,
+			                "pointer-events":"none"
+		                })
+		               if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+		                playSound1(arr[15]);
+		                //success();
+		                 buff1=true;
+		                 eid=id;
+				 }else{
+				 	playSound1(arr[14]);
+				 	  $("#"+id).css({
+		                "left":left2,
+		                "top":top2,                    
+		                })
+				 }
+		 }else if(buff){//左框有东西
+		 	console.log(eid)
+		 	 if(eid!="rabit3"){//左框是第一个
+				 	 	 if(id=="rabit3"){//第3个在右框
+				 	 	  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left3,
+						                "top":top3,
+						                "pointer-events":"none"
+					                })
+					               if(flag=="a1"){
+					               	a1=true;
+					               }else if(flag=="a2"){
+					               	a2=true;
+					               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }else{//左框是第3题
+				    if(id=="rabit1"){//第1个在右框
+						  	if(px>=winW*0.6&&px<=winW*0.8 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+						 			 $("#"+id).css({
+					                "left":left3,
+					                "top":top3,
+					                "pointer-events":"none"
+				                })
+				               if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+				                playSound1(arr[15]);
+				                success1();
+								 }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+								 }
+						 }
+				  }
+		 }else if(buff1){//右框有东西
+		 	 if(eid=="rabit1"){//右框是第1题
+		 	 	  if(id=="rabit3"){
+					 	      if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+								 	     $("#"+id).css({
+							                "left":left1,
+							                "top":top1,
+							                "pointer-events":"none"
+						                })
+						            if(flag=="a1"){
+				               	a1=true;
+				               }else if(flag=="a2"){
+				               	a2=true;
+				               }
+						                playSound1(arr[15]);
+						                success1();
+						               // buff=true;
+							  }else{
+								 	playSound1(arr[14]);
+								 	  $("#"+id).css({
+						                "left":left2,
+						                "top":top2,                    
+						                })
+							 }
+						}
+				  }else{//右框是第3题
+				  	if(id=="rabit1"){//左框是第1题
+				 	 	 	  if(px>=winW*0.2&&px<=winW*0.4 && py>=(halfH*0.45)&& py<=(halfH*0.45+boxy)){
+							 			 $("#"+id).css({
+						                "left":left1,
+						                "top":top1,
+						                "pointer-events":"none"
+					                })
+					                if(flag=="a1"){
+		               	a1=true;
+		               }else if(flag=="a2"){
+		               	a2=true;
+		               }
+					                playSound1(arr[15]);
+					                success1();
+									 }else{
+									 	playSound1(arr[14]);
+									 	  $("#"+id).css({
+							                "left":left2,
+							                "top":top2,                    
+							                })
+									 }
+				 	 	 }
+				  }
+		 }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function end(e,left1,top1,flag,left2,top2,left3,top3,id){
 		e.preventDefault();
 		  boxy=winW*0.43*46/477;
@@ -2942,6 +3097,16 @@ function end3(e,left1,top1,flag,left2,top2,left3,top3,id){
 
  function success(){
                 	 if(a1&&a2&&a3&&a4&&a5&&a6&&a7&&a8&&a9){
+                	setTimeout(function(){
+	                	$(".succ").fadeIn();//改
+	                	$(".question").addClass("animated pulse infinite")
+	                	 playSound1(arr[13]);
+                	 },200)
+                }
+                }
+ 
+function success1(){
+                	 if(a1&&a2){
                 	setTimeout(function(){
 	                	$(".succ").fadeIn();//改
 	                	$(".question").addClass("animated pulse infinite")
