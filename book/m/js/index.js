@@ -1,12 +1,12 @@
-
+ var winH;//屏幕宽高  
+     var winW;
   var $print=$("#container");
      changeOrientation($print);
      var imageH;//图片相对高;
      var halfH;
      
-	 var winH;//屏幕宽高  
-     var winW;
-      var a=Number($(window).width());//320
+	
+    /*  var a=Number($(window).width());//320
      var b=Number($(window).height());//504
      if(a>b){
          winW=a;   
@@ -15,7 +15,7 @@
      }else if(a<b){
      	 winW=b;
      	 winH=a;
-     }
+     }*/
         //获取图片相对高度方法;
      getImageH($(".nav1").attr("src"));
    function getImageH(url){
@@ -944,22 +944,33 @@ mlon1.addEventListener("touchend",function(e){ end11(e,"5%","84%","mlon1");},fal
 
 
 function start(e,id){
-		 startY = e.touches[0].pageX; 
-		 startX = e.touches[0].pageY;
-		 //sx=winW*0.2;
-		 //sy=halfH*0.05;//移动前left:0.4,top:0.31
-		 	sx=id.offsetLeft;
-		  sy=id.offsetTop;
-		  console.log(sx,sy)
+	if(window.orientation==90||window.orientation==-90){
+		 	 startX = e.touches[0].pageX; 
+		     startY= e.touches[0].pageY;
+		      sx=id.offsetLeft;
+		      sy=id.offsetTop;
+		 }else{
+		 	   startY = e.touches[0].pageX; 
+		     startX = e.touches[0].pageY;
+				 	sx=id.offsetLeft;
+				  sy=id.offsetTop;
+		 }
+		
 	}
 function move(e,id){
 	e.preventDefault();
-		 moveY = e.touches[0].pageX; 
-		 moveX = e.touches[0].pageY;
-		 px=moveX-startX+sx;
-		 py=-(moveY-startY-sy);
-		 console.log(px)
-	     $("#"+id).css({
+	 if(window.orientation==90||window.orientation==-90){
+		  	 moveX = e.touches[0].pageX; 
+				 moveY = e.touches[0].pageY;
+				 px=moveX-startX+sx;
+				 py=moveY-startY+sy;
+		  }else{
+			 moveY = e.touches[0].pageX; 
+			 moveX = e.touches[0].pageY;
+			 px=moveX-startX+sx;
+			 py=-(moveY-startY-sy);
+		 }
+	      $("#"+id).css({
                 "left":px,
                 "top":py,                    
                 })

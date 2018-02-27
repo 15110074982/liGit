@@ -15,7 +15,10 @@ function changeOrientation( $print ){
 			 $(".question").css('transform-origin' , '50% 0').css('transform',"scale3d(1,1,1)")
 	   winW=height;
 	   winH=width;
- } 
+ }else{
+ 	   winW=width;
+	   winH=height;
+ }
  //alert(width+"  h  "+height)
    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
 	window.addEventListener(evt, function() {
