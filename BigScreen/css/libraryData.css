@@ -1,0 +1,61 @@
+/*主体*/
+.content{padding-bottom: 40px;overflow: auto;margin-left:2%;margin-right:2%;}
+.top{overflow: hidden;width: 100%;margin-bottom: 1%;}
+.top_left{width:25%;margin-right: 1%;background:#33354a;float:left;padding:0 1%;}
+.top_left ul{float:left;}			
+.top_left_new{margin-top: 60px;color:#05e3cb;width:34%;float:left;text-align: center;}
+.new_guan{font-size: 30px;margin-bottom: 66px;}
+.new_today{font-size: 50px;margin-bottom: 66px;}
+.new_month{font-size: 30px;margin-bottom: 66px;}
+.new_out{font-size: 26px;margin-bottom: 66px;}
+
+.top_left_intro{margin-top: 160px;color:#fff;width:26%;margin-left:3%;margin-right:3%;float:left;text-align: center;font-size: 26px;}
+.top_left_intro li{margin-bottom: 45px;}
+.top_left_intro li:last-child{margin-bottom: 0px;}
+
+
+.top_left_old{margin-top: 60px;color:#05a5e3;width:34%;float:left;text-align: center;}
+.old_guan{font-size: 30px;margin-bottom: 66px;}
+.old_today{font-size: 50px;margin-bottom: 66px;}
+.old_month{font-size: 30px;margin-bottom: 66px;}
+.old_out{font-size: 26px;margin-bottom: 66px;}
+
+
+.top_mid{width:44%;float:left;}
+.top_mid_left{width:49%;float: left;color:#05e3cb;text-align: center;font-size: 26px;height:49%;background:#33354a;margin-bottom: 2%;}
+.top_mid_right{width:49%;float: right;color:#05e3cb;text-align: center;font-size: 26px;height:49%;background:#33354a;margin-bottom: 2%;}
+.top_mid_left1{width:49%;float: left;color:#05e3cb;text-align: center;font-size: 26px;height:49%;background:#33354a;}
+.top_mid_right1{width:49%;float: right;color:#05A5E3;text-align: center;font-size: 26px;height:49%;background:#33354a;}
+.top_mid_left_num{font-size: 50px; margin-bottom: 15px;margin-top: 18%;}
+
+.top_mid_right_num{font-size: 50px; margin-bottom: 15px;margin-top: 18%;}
+.top_rt{width:27%;float:right;background:#33354a;}
+.top_rt p{font-size: 30px;color:#b4b9ff;padding-top:20px;text-align: center;padding-bottom: 20px;}
+
+.bottom{overflow: hidden;width: 100%;}
+.bottom_left{width:49.5%;margin-right: 1%;background:#33354a;float:left;}
+.bottom_left_intro{float: left;width:38%;height: 100%;}
+#chart2{width:62%;height:100%;float:left;}
+.orders{text-align: center;margin-top:30px;}
+.orders_num{color:#fff;font-size: 50px;margin-bottom: 10px;}
+.orders_intro{color:#B4B9FF;font-size: 30px;margin-bottom: 30px;}
+.orders_intro1{color:#05e3cb;font-size: 30px;margin-bottom: 10px;}
+.orders_intro2{color:#05A5E3;font-size: 30px;}
+.ordersName{margin-right: 30px;}
+
+
+
+.bottom_rt{width:49.5%;background:#33354a;float:right;}
+.bottom_rt_intro{float: left;width:38%;height: 100%;}
+.bottom_rt_intro p{font-size: 30px;color:#b4b9ff;padding-top:10px;text-align: center;padding-bottom: 10px;}
+#chart1{width:62%;height:100%;float:left;}
+.card{text-align: left;color:#fff;font-size:26px;padding-left:60px}
+.card li{margin-bottom:8px;}
+.card .cardTotal{margin-bottom:13px;}
+.cardTotal .cardName{margin-right: 30px;}
+.cardName{margin-right: 15px;}
+
+.rank{padding: 0 40px;color:#fff;font-size: 24px;}
+.rank li{overflow: auto;margin-bottom: 12px;}
+.bookName{float: left;}
+.bookNun{float: right;}

@@ -1,0 +1,41 @@
+*{margin: 0;padding: 0;}
+body{font:12px;font-family:"Microsoft Yahei",Helvetica,sans-serif;}
+li{list-style:none;}
+img{border:0; display:block;}
+*{/* text-decoration:none; *//* -webkit-tap-highlight-color: transparent; */}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:100;}
+i,em{font-style:normal;}
+button, input[type=text], optgroup, select, textarea {-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.clearfix:after{content:"."; display:block; height:0; overflow:hidden; visibility:hidden; clear:both;}
+.left{float: left;}
+.right{float: right;}
+body,html{
+	height: 100%;
+	-webkit-user-select:none; 
+	-moz-user-select:none; 
+	-ms-user-select:none; 
+	user-select:none;
+}
+/*头部*/
+body{background: #272741;}
+.header{height: 100px;background: #0e0e0e;position: relative;margin-bottom: 40px;}
+.left{float:left;font-size: 24px;color:#fff;margin-left: 40px;line-height: 100px;cursor: pointer;}
+.select{float:left;}
+.icon{float:left;margin-left: 20px;margin-top: 44px;}
+.dropDown{position:absolute;left:40px;top:100px;padding: 24px;background: #fff;border-radius: 6px;width:160px;display: none;cursor: pointer;z-index: 99999999999;}
+.dropDown li{margin-bottom: 30px;color:#333;}
+
+.dropDown li:last-child{margin-bottom: 0;}
+.dropDown li a{color:#333;font-size: 18px;text-decoration: none;}
+.dropDown li a:hover{color: #1f7cad;}
+
+.right{float:right;margin-right: 40px;color:#fff;font-size: 18px;line-height: 100px;}
+.right span{margin-left:20px ;}
+.signout{cursor: pointer;}
+.signout:hover{opacity: 0.7;}
+
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar { width: 3px;}
+/* 滚动槽 */::-webkit-scrollbar-track {   }
+/* 滚动条滑块 */::-webkit-scrollbar-thumb {     background: #272741;}::-webkit-scrollbar-thumb:window-inactive {    background: #272741;}

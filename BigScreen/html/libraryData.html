@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图书数据</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<script src="../js/public/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=fa0e66f84df3f0df6c3101fa2fd43955"></script> 
+		<script src="//webapi.amap.com/ui/1.0/main.js"></script>
+		<script src="../js/public/cookie.js"></script>
+		<script src="../js/public/echarts.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/libraryData.css"/>
+	</head>
+	<body>
+		<div class="header">
+			<div class="left">
+				<div class="select">图书数据</div><div class="icon"><img src="../img/dropDown.png" alt="" /></div>
+			</div>
+			<ul class="dropDown">
+				<li><a href="cultureMap.html">文化地图</a></li>
+				<li><a href="library.html">图书馆大屏</a></li>
+				<li><a href="libraryData.html">图书数据</a></li>
+				<li><a href="video.html">直播大屏</a></li>
+			</ul>
+			<div class="right">
+				<span class="date"></span>
+				<span class="time"></span>
+				<span class="day"></span>
+				<span class="signout">退出</span>
+			</div>
+		</div>
+		<div class="content">
+			<div class="top">
+				<div class="top_left">
+					<ul class="top_left_new">
+						<li class="new_guan">朝图新馆</li>
+						<li class="new_today"></li>
+						<li class="new_month"></li>
+						<li class="new_out"></li>
+					</ul>
+					<ul class="top_left_intro">
+						<li>今日<br/>到馆人数</li>
+						<li>累计<br/>到馆人数</li>
+						<li>今日<br/>出馆人数</li>
+					</ul>
+					<ul class="top_left_old">
+						<li class="old_guan">朝图老馆</li>
+						<li class="old_today"></li>
+						<li class="old_month"></li>
+						<li class="old_out"></li>
+					</ul>
+					
+				</div>
+				<div class="top_mid">
+					<ul class="top_mid_left">
+						<li  class="top_mid_left_num"></li>
+						<li class="top_mid_left_borrow">本日借出图书总册</li>
+					</ul>
+					<ul class="top_mid_right">
+						<li class="top_mid_right_num"></li>
+						<li class="top_mid_right_borrow">本周借出图书总册</li>
+					</ul>
+					<ul class="top_mid_left1">
+						<li class="top_mid_left_num"></li>
+						<li class="top_mid_left_borrow">本月借出图书总册</li>
+					</ul>
+					<ul class="top_mid_right1">
+						<li class="top_mid_right_num"></li>
+						<li class="top_mid_right_return">本日还书总册</li>
+					</ul>
+				</div>
+				<div class="top_rt">
+					<p>借阅书籍排行</p>
+					<ul class="rank"></ul>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="bottom_left">
+					<div class="bottom_left_intro">
+						<ul class="orders">
+							<li  class="orders_num">2500</li>
+							<li class="orders_intro">订单总数</li>
+							<li class="orders_intro1"><span class="ordersName">自取订单</span><span class="ordersNum">1000</span></li>
+							<li class="orders_intro2"><span class="ordersName">上门订单</span><span class="ordersNum">1000</span></li>
+						</ul>
+					</div>
+					<div id="chart2" ></div>
+				</div>
+				<div class="bottom_rt">
+					<div class="bottom_rt_intro">
+						<p>办卡数据</p>
+						<ul class="card">
+							<li class="cardTotal"><span class="cardName">办卡总数</span><span class="cardNum"></span></li>
+							<li class="cardB"><span class="cardName">B级卡</span><span class="cardNum"></span></li>
+							<li class="cardC"><span class="cardName">C级卡</span><span class="cardNum"></span></li>
+							<li class="cardD"><span class="cardName">D级卡</span><span class="cardNum"></span></li>
+							<li class="cardE"><span class="cardName">E级卡</span><span class="cardNum"></span></li>
+						</ul>
+					</div>
+					<div id="chart1" ></div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/public/header.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/libraryData.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

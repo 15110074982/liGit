@@ -1,0 +1,88 @@
+*{ -webkit-appearance: none; }
+.login_box,.login{
+	width: 100%;
+	height: 100%;
+	background: url(../img/bg.jpg) no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.login_main{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom:0;
+	width: 624px;
+	margin:auto;
+	height: 482px;
+	background: #fff;
+	border-radius: 10px;
+}
+.login_main .login_title{
+	font-size: 32px;
+	color:#3c4354;
+	margin-top:74px;
+	text-align: center;
+}
+.login_main form{
+	width: 360px;
+	margin: 64px auto 0;
+}
+.form_group{
+	height: 48px;
+    position: relative;
+    margin-bottom: 26px;
+}
+.form_group .input_box{
+	width:100%;
+    height: 100%;
+    line-height: 48px;
+}
+.login_pwd{
+	margin-bottom: 0;
+}
+.form_group .input_box input{
+	width:95%;
+    height: 100%;
+    background: #ebebeb;
+    border-radius:24px;
+    padding-left:5%;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    color:#333;
+}
+.form_group .input_box input::-webkit-input-placeholder{
+	color: #999;
+    font-size: 14px;  
+ 
+}
+.msg{
+	color:#ef2e2e;
+	font-size: 14px;
+	text-align: center;
+	height:16px;
+	width:100%;
+	line-height: 16px;
+	margin: 21px 0;
+	visibility: hidden;
+}
+.login_btn{
+	height: 48px;
+	background: #91bd4a;  
+	width:100%;
+	color: #fff;
+	text-align: center;
+	line-height: 48px;
+	font-size: 18px;
+	letter-spacing: 4px;
+	cursor: pointer;
+	border-radius: 24px;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+			    background-color: #ebebeb !important;
+			        color: #333 !important;
+			}
+ input[type=text]:focus, input[type=password]:focus, textarea:focus {
+     background-color: #ebebeb !important;
+}

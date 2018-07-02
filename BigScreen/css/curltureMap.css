@@ -1,0 +1,9 @@
+/*主体*/
+.content{padding-bottom: 40px;overflow: auto;}
+#container{width:71%;float:left;background: #aaa;margin-left:2%}
+.operate{float:right;width:23%;background: rgb(51,53,74,0.6);margin-right: 2%;}
+.list{margin:36px 12.5%;color:#fff;width:330px}
+.title{text-align: right;font-size: 30px;margin-bottom: 30px;color:#fff;}
+.list_library{position: relative;margin-bottom: 30px;cursor: pointer;}
+.list_library img{margin:auto;width:100%;}
+.list_library p{position:absolute;text-align: center;left:0;right: 0;top:0;bottom: 0;margin: auto;height: 30px;font-size: 26px;}

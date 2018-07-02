@@ -1,0 +1,72 @@
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfix{zoom:1}
+.fl{float: left;}
+.fr{float: right;}
+body{min-width: 1920px;color:#fff;}
+.content_main{width: calc(100% - 80px);height: calc(100% - 140px);padding: 0 40px; }
+.main_c{width:100%; height: calc(100% - 234px);padding-bottom:30px; overflow: hidden;}
+.video_left{ width: 65%;    height: 100%; }
+
+#roomVideo{display: block;width: 100%; height: 100%;position:relative}
+.vjs-control-bar{width: 100%; height: 60px;}
+
+.video_right{ width:calc(100% - 65%);     height: 100%;}
+.video_rt{padding-left: 30px;height: 100%; position: relative; }
+
+.video_bottom{
+	height: 164px; padding-bottom: 40PX;
+}
+.v_b_div li{
+	 width:31%; height:132px; float:left;margin-right: 2%; padding:16px 0 16px 1%; overflow: hidden;
+}
+.v_b_div span{display:block; float: left;}
+.v_b_div .rt{
+	margin-right: 0;
+}
+.v_b_band{
+	height: 46px; line-height: 46px; padding: 10px 0;
+}
+.v_d_sp1{
+	font-size: 26px;
+}
+.v_d_sp2{width: 224px; height: 24px; margin-top: 11px;}
+.v_d_sp1,.v_d_sp2{margin-right: 20px;}
+.v_d_sp3{font-size: 30px; font-weight: bold;}
+.v_d_bar{ height: 24px; background: #05e3cb; }
+.v_d_bar2{ background: #05a5e3; }
+
+.h5_tit{color: #b4b9ff; text-align: center; font-size: 30px; padding:23px 0 25px;}
+.video_rt_list{ padding: 0 32px; margin-bottom: 1px; height:calc(100% - 71px) ; overflow: hidden; }
+.video_rt_list li{ width: 100%; height: 40px; line-height: 40px; font-size:26px ; padding-bottom: 12px;  white-space:nowrap; text-overflow:ellipsis;overflow: hidden; cursor:pointer;}
+.video_rt_list,.video_rt_list_bt{
+	background: #33354a;
+}
+.video_rt_list_bt{
+	height: 50px; padding: 10px 0; text-align: center;
+}
+/*主体*/
+.content{padding-bottom: 40px;overflow: auto;}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    width:50px; height: 50px;
+    color: #33354a;
+    margin:0 50px;
+    cursor: pointer;
+}
+
+.pagination .previous_link1{
+	background:url(../img/prev.png) no-repeat center;
+}
+.pagination .next_link1{
+	background:url(../img/next.png) no-repeat center;
+}
+
+.pagination .previous_link2{
+	background:url(../img/prev_n.png) no-repeat center;
+}
+.pagination .next_link2{
+	background:url(../img/next_n.png) no-repeat center;
+}
+.video_bar4{ background: #05a5e3;}
+.video_bar6{ background: #05a5e3;}

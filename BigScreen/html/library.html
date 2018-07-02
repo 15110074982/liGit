@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图书馆大屏</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<script src="../js/public/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=fa0e66f84df3f0df6c3101fa2fd43955"></script> 
+		<script src="//webapi.amap.com/ui/1.0/main.js"></script>
+		<script src="../js/public/cookie.js"></script>
+		<script src="../js/public/echarts.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/library.css"/>
+	</head>
+	<body>
+		<div class="header">
+			<div class="left">
+				<div class="select">图书馆大屏</div><div class="icon"><img src="../img/dropDown.png" alt="" /></div>
+			</div>
+			<ul class="dropDown">
+				<li><a href="cultureMap.html">文化地图</a></li>
+				<li><a href="library.html">图书馆大屏</a></li>
+				<li><a href="libraryData.html">图书数据</a></li>
+				<li><a href="video.html">直播大屏</a></li>
+			</ul>
+			<div class="right">
+				<span class="date">2018年8月15日</span>
+				<span class="time">17：35：45</span>
+				<span class="day">星期二</span>
+				<span class="signout">退出</span>
+			</div>
+		</div>
+		<div class="content">
+			<div class="map">
+				<div class="option">
+					<div class="select1">全部</div><div class="icon1"><img src="../img/dropDown1.png" alt="" /></div>
+					<ul class="dropDown1">
+						<li id="all">全部</li>
+						<li id="hour">24小时自助图书馆</li>
+						<li id="house">城市书房</li>
+						<li id="book">益民书屋</li>
+						<li id="bookHouse">图书馆分馆</li>
+					</ul>
+				</div>
+				<div id="container"></div>
+			</div>
+			<div class="mid">
+				<div id="chart4" style="width: 100%;"></div>
+				<div id="chart1" style="width: 100%;"></div>
+			</div>
+			<div class="rt">
+				<div id="chart3" style="width: 100%;"></div>
+				<div id="chart2" style="width: 100%;"></div>
+			</div>
+		</div>
+		 
+		<script src="../js/public/header.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/library.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

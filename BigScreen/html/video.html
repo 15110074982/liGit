@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>直播大屏</title>
+	<link href="../css/video.css?v=bcd2ce1385" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/video.css">
+	<link rel="stylesheet" type="text/css" href="../css/video_div.css">
+	<script type="text/javascript" src="../js/public/jquery-1.12.3.min.js"  charset="utf-8"></script>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+			<div class="left">
+				<div class="select">直播大屏</div><div class="icon"><img src="../img/dropDown.png" alt="" /></div>
+			</div>
+			<ul class="dropDown">
+				<li><a href="cultureMap.html">文化地图</a></li>
+				<li><a href="library.html">图书馆大屏</a></li>
+				<li><a href="libraryData.html">图书数据</a></li>
+				<li><a href="video.html">直播大屏</a></li>
+			</ul>
+			<div class="right">
+				<span class="date">2018年8月15日</span>
+				<span class="time">17：35：45</span>
+				<span class="day">星期二</span>
+				<span class="signout">退出</span>
+			</div>
+		</div>
+	<!-- 主体 -->
+	<div class="content_main">
+		<div class="main_c clearfix">
+			<div class="video_left fl">
+				<video id="roomVideo"  width="100%" height="100%"  class="video-js vjs-default-skin vjs-big-play-centered"  preload="auto" controls="controls" autoplay="autoplay">
+				 <!--  
+                        <source src="../output.mp4" type='video/mp4'>  mp4格式  
+                        <source src='rtmp://127.0.0.1/hls/test' type='rtmp/flv'/> rtmp格式  
+                        <source src='http://127.0.0.1/hls/test.m3u8' type='application/x-mpegURL'/>  m3u8格式  
+                    --> 
+                   <source src='' type='' id="videoMP4"> 
+                 <!--  <source src="" type='video/mp4'> 
+                      <source src='' type='rtmp/flv'> -->
+				</video>
+			</div>
+			<div class="video_right fr">
+				<div class="video_rt">
+					<div class="video_rt_list">
+						<h5 class="h5_tit">近期直播</h5>
+						<div >
+							<input type="hidden" id="current_page" value="0">
+							<input type="hidden" id="show_per_page" value="10">
+							<ul id="hiddenresult"></ul>
+						</div>
+					</div>
+					<div class="video_rt_list_bt">
+						<div id="page_navigation" class="pagination"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="video_bottom">
+			<ul class="v_b_div">
+				<li>
+					<div class="v_b_band clearfix">
+						<span class="v_d_sp1">本周新增直播</span>
+						<span class="v_d_sp2"><span class="v_d_bar video_bar1"></span></span>
+						<span class="v_d_sp3 video_num1"></span>
+					</div>
+					<div class="v_b_band clearfix">
+						<span class="v_d_sp1">上周直播数量</span>
+						<span class="v_d_sp2"><span class="v_d_bar v_d_bar2 video_bar2"></span></span>
+						<span class="v_d_sp3 video_num2"></span>
+					</div>
+				</li>
+				<li>
+					<div class="v_b_band clearfix">
+						<span class="v_d_sp1">本周播放次数</span>
+						<span class="v_d_sp2"><span class="v_d_bar video_bar3"></span></span>
+						<span class="v_d_sp3 video_num3"></span>
+					</div>
+					<div class="v_b_band clearfix">
+						<span class="v_d_sp1">上周播放次数</span>
+						<span class="v_d_sp2"><span class="v_d_bar video_bar4"></span></span>
+						<span class="v_d_sp3 video_num4"></span>
+					</div>
+				</li>
+				<li class="rt">
+					<div class="v_b_band clearfix">
+						<span class="v_d_sp1">本周累计观众</span>
+						<span class="v_d_sp2"><span class="v_d_bar video_bar5"></span></span>
+						<span class="v_d_sp3 video_num5"></span>
+					</div>
+					<div class="v_b_band clearfix">
+						<span class="v_d_sp1">上周累计观众</span>
+						<span class="v_d_sp2"><span class="v_d_bar video_bar6"></span></span>
+						<span class="v_d_sp3 video_num6"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/public/cookie.js"></script>
+	<script type="text/javascript" src="../js/public/header.js" charset="utf-8"></script>
+	<script src="../js/public/video.js"></script>
+	<script src="../js/public/videojs-contrib-hls.js?v=c726b94b9923"></script>
+	<script type="text/javascript" src="../js/video_page.js"></script>
+</body>
+</html>
